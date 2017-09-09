@@ -1,0 +1,385 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		981A8A451F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A3E1F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m */; };
+		981A8A461F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A401F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m */; };
+		981A8A471F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A421F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m */; };
+		981A8A481F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A441F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m */; };
+		983254521F643B4E00E41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254511F643B4E00E41AC5 /* main.m */; };
+		983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* AppDelegate.m */; };
+		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
+		9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */; };
+		983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832545F1F643B4E00E41AC5 /* Assets.xcassets */; };
+		983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */; };
+		9832546C1F643C2D00E41AC5 /* YMAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		981A8A3D1F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSItem+CoreDataClass.h"; path = "../YMARSSItem+CoreDataClass.h"; sourceTree = "<group>"; };
+		981A8A3E1F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSItem+CoreDataClass.m"; path = "../YMARSSItem+CoreDataClass.m"; sourceTree = "<group>"; };
+		981A8A3F1F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSItem+CoreDataProperties.h"; path = "../YMARSSItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		981A8A401F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSItem+CoreDataProperties.m"; path = "../YMARSSItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		981A8A411F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSChannel+CoreDataClass.h"; path = "../YMARSSChannel+CoreDataClass.h"; sourceTree = "<group>"; };
+		981A8A421F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataClass.m"; path = "../YMARSSChannel+CoreDataClass.m"; sourceTree = "<group>"; };
+		981A8A431F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSChannel+CoreDataProperties.h"; path = "../YMARSSChannel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		981A8A441F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataProperties.m"; path = "../YMARSSChannel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		9832544D1F643B4E00E41AC5 /* RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983254511F643B4E00E41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		983254531F643B4E00E41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		983254541F643B4E00E41AC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9832545A1F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSS.xcdatamodel; sourceTree = "<group>"; };
+		9832545F1F643B4E00E41AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		983254621F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		983254641F643B4E00E41AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9832546A1F643C2D00E41AC5 /* YMAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMAMainViewController.h; path = ../YMAMainViewController.h; sourceTree = "<group>"; };
+		9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMAMainViewController.m; path = ../YMAMainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9832544A1F643B4E00E41AC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		981A8A301F64568F00B6ACA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		983254441F643B4E00E41AC5 = {
+			isa = PBXGroup;
+			children = (
+				9832544F1F643B4E00E41AC5 /* RSS */,
+				9832544E1F643B4E00E41AC5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9832544E1F643B4E00E41AC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9832544D1F643B4E00E41AC5 /* RSS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9832544F1F643B4E00E41AC5 /* RSS */ = {
+			isa = PBXGroup;
+			children = (
+				981A8A301F64568F00B6ACA1 /* Controller */,
+				9832546F1F644B6C00E41AC5 /* Model */,
+				9832546D1F643C4E00E41AC5 /* View */,
+				983254501F643B4E00E41AC5 /* Supporting Files */,
+			);
+			path = RSS;
+			sourceTree = "<group>";
+		};
+		983254501F643B4E00E41AC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				983254531F643B4E00E41AC5 /* AppDelegate.h */,
+				983254541F643B4E00E41AC5 /* AppDelegate.m */,
+				983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */,
+				9832545F1F643B4E00E41AC5 /* Assets.xcassets */,
+				983254641F643B4E00E41AC5 /* Info.plist */,
+				983254511F643B4E00E41AC5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9832546D1F643C4E00E41AC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9832546A1F643C2D00E41AC5 /* YMAMainViewController.h */,
+				9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */,
+				983254591F643B4E00E41AC5 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9832546F1F644B6C00E41AC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				981A8A3D1F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.h */,
+				981A8A3E1F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m */,
+				981A8A3F1F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.h */,
+				981A8A401F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m */,
+				981A8A411F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.h */,
+				981A8A421F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m */,
+				981A8A431F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.h */,
+				981A8A441F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m */,
+				9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9832544C1F643B4E00E41AC5 /* RSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983254671F643B4E00E41AC5 /* Build configuration list for PBXNativeTarget "RSS" */;
+			buildPhases = (
+				983254491F643B4E00E41AC5 /* Sources */,
+				9832544A1F643B4E00E41AC5 /* Frameworks */,
+				9832544B1F643B4E00E41AC5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSS;
+			productName = RSS;
+			productReference = 9832544D1F643B4E00E41AC5 /* RSS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		983254451F643B4E00E41AC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YMA;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mikhail Yaskou";
+				TargetAttributes = {
+					9832544C1F643B4E00E41AC5 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 983254481F643B4E00E41AC5 /* Build configuration list for PBXProject "RSS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 983254441F643B4E00E41AC5;
+			productRefGroup = 9832544E1F643B4E00E41AC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9832544C1F643B4E00E41AC5 /* RSS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9832544B1F643B4E00E41AC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */,
+				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
+				9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		983254491F643B4E00E41AC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				981A8A481F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m in Sources */,
+				9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */,
+				9832546C1F643C2D00E41AC5 /* YMAMainViewController.m in Sources */,
+				981A8A471F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m in Sources */,
+				981A8A451F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m in Sources */,
+				981A8A461F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m in Sources */,
+				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
+				983254521F643B4E00E41AC5 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		983254591F643B4E00E41AC5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9832545A1F643B4E00E41AC5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				983254621F643B4E00E41AC5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		983254651F643B4E00E41AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		983254661F643B4E00E41AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		983254681F643B4E00E41AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMA.RSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		983254691F643B4E00E41AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = RSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMA.RSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		983254481F643B4E00E41AC5 /* Build configuration list for PBXProject "RSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983254651F643B4E00E41AC5 /* Debug */,
+				983254661F643B4E00E41AC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		983254671F643B4E00E41AC5 /* Build configuration list for PBXNativeTarget "RSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983254681F643B4E00E41AC5 /* Debug */,
+				983254691F643B4E00E41AC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */,
+			);
+			currentVersion = 9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */;
+			path = RSS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 983254451F643B4E00E41AC5 /* Project object */;
+}
