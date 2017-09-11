@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "YMAMainVC.h"
 #import "YMALeftMenuVC.h"
+#import <MagicalRecord/MagicalRecord.h>
+
 
 @interface AppDelegate () <PKRevealing>
 
@@ -20,6 +22,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
     
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -30,7 +33,8 @@
     self.revealController.delegate = self;
     //Apply.
     self.window.rootViewController = self.revealController;
-    
+    //setupCoreDataStack
+    [MagicalRecord setupCoreDataStack];
     return YES;
 }
 
@@ -61,6 +65,7 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+    [MagicalRecord cleanUp];
 }
 
 

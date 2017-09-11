@@ -1,9 +1,9 @@
 //
 //  YMARSSChannel+CoreDataProperties.h
-//  RSS
+//  
 //
-//  Created by Mikhail Yaskou on 09.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 11.09.17.
+//
 //
 
 #import "YMARSSChannel+CoreDataClass.h"
@@ -16,11 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 + (NSFetchRequest<YMARSSChannel *> *)fetchRequest;
 
 @property (nonatomic) int16_t id;
-@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, retain) NSData *image;
 @property (nullable, nonatomic, copy) NSString *link;
-@property (nullable, nonatomic, copy) NSString *url;
+@property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *topic;
-@property (nullable, nonatomic, retain) NSObject *image;
+@property (nullable, nonatomic, copy) NSString *url;
 @property (nullable, nonatomic, retain) NSSet<YMARSSItem *> *items;
 
 @end
