@@ -1,9 +1,9 @@
 //
 //  YMARSSItem+CoreDataProperties.m
-//  RSS
+//  
 //
-//  Created by Mikhail Yaskou on 09.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 11.09.17.
+//
 //
 
 #import "YMARSSItem+CoreDataProperties.h"
@@ -14,14 +14,14 @@
 	return [[NSFetchRequest alloc] initWithEntityName:@"YMARSSItem"];
 }
 
-@dynamic id;
-@dynamic channelid;
-@dynamic title;
-@dynamic link;
-@dynamic date;
-@dynamic topic;
 @dynamic category;
-@dynamic image;
+@dynamic channelid;
+@dynamic date;
+@dynamic id;
+@dynamic imageUrl;
+@dynamic link;
+@dynamic title;
+@dynamic topic;
 @dynamic channel;
 
 @end
