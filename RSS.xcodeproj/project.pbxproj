@@ -12,13 +12,15 @@
 		981A8A461F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A401F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m */; };
 		981A8A471F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A421F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m */; };
 		981A8A481F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 981A8A441F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m */; };
+		982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E11F668EA100119075 /* YMAMainVC.m */; };
+		982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */; };
+		982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E71F668EFC00119075 /* YMAItemsVC.m */; };
 		983254521F643B4E00E41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254511F643B4E00E41AC5 /* main.m */; };
 		983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* AppDelegate.m */; };
 		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
 		9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */; };
 		983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832545F1F643B4E00E41AC5 /* Assets.xcassets */; };
 		983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */; };
-		9832546C1F643C2D00E41AC5 /* YMAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,12 @@
 		981A8A421F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataClass.m"; path = "../YMARSSChannel+CoreDataClass.m"; sourceTree = "<group>"; };
 		981A8A431F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSChannel+CoreDataProperties.h"; path = "../YMARSSChannel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		981A8A441F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataProperties.m"; path = "../YMARSSChannel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		982FB3E01F668EA100119075 /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainVC.h; sourceTree = "<group>"; };
+		982FB3E11F668EA100119075 /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainVC.m; sourceTree = "<group>"; };
+		982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMALeftMenuVC.h; sourceTree = "<group>"; };
+		982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMALeftMenuVC.m; sourceTree = "<group>"; };
+		982FB3E61F668EFC00119075 /* YMAItemsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAItemsVC.h; sourceTree = "<group>"; };
+		982FB3E71F668EFC00119075 /* YMAItemsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAItemsVC.m; sourceTree = "<group>"; };
 		9832544D1F643B4E00E41AC5 /* RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983254511F643B4E00E41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		983254531F643B4E00E41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -41,8 +49,6 @@
 		9832545F1F643B4E00E41AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983254621F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983254641F643B4E00E41AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9832546A1F643C2D00E41AC5 /* YMAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMAMainViewController.h; path = ../YMAMainViewController.h; sourceTree = "<group>"; };
-		9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMAMainViewController.m; path = ../YMAMainViewController.m; sourceTree = "<group>"; };
 		FF040B537E52619884BFFAFE /* libPods-RSS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RSS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -118,9 +124,13 @@
 		9832546D1F643C4E00E41AC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				9832546A1F643C2D00E41AC5 /* YMAMainViewController.h */,
-				9832546B1F643C2D00E41AC5 /* YMAMainViewController.m */,
 				983254591F643B4E00E41AC5 /* Main.storyboard */,
+				982FB3E01F668EA100119075 /* YMAMainVC.h */,
+				982FB3E11F668EA100119075 /* YMAMainVC.m */,
+				982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */,
+				982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */,
+				982FB3E61F668EFC00119075 /* YMAItemsVC.h */,
+				982FB3E71F668EFC00119075 /* YMAItemsVC.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -278,9 +288,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				981A8A481F646E0700B6ACA1 /* YMARSSChannel+CoreDataProperties.m in Sources */,
+				982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */,
 				9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */,
-				9832546C1F643C2D00E41AC5 /* YMAMainViewController.m in Sources */,
 				981A8A471F646E0700B6ACA1 /* YMARSSChannel+CoreDataClass.m in Sources */,
+				982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */,
+				982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */,
 				981A8A451F646E0700B6ACA1 /* YMARSSItem+CoreDataClass.m in Sources */,
 				981A8A461F646E0700B6ACA1 /* YMARSSItem+CoreDataProperties.m in Sources */,
 				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
