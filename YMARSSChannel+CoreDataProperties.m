@@ -1,9 +1,9 @@
 //
 //  YMARSSChannel+CoreDataProperties.m
-//  RSS
+//  
 //
-//  Created by Mikhail Yaskou on 09.09.17.
-//  Copyright © 2017 Mikhail Yaskou. All rights reserved.
+//  Created by Mikhail Yaskou on 11.09.17.
+//
 //
 
 #import "YMARSSChannel+CoreDataProperties.h"
@@ -15,11 +15,11 @@
 }
 
 @dynamic id;
-@dynamic title;
-@dynamic link;
-@dynamic url;
-@dynamic topic;
 @dynamic image;
+@dynamic link;
+@dynamic title;
+@dynamic topic;
+@dynamic url;
 @dynamic items;
 
 @end
