@@ -1,0 +1,4 @@
+target 'RSS' do
+ pod 'MagicalRecord'
+ pod 'PKRevealController'
+end
