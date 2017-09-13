@@ -11,8 +11,10 @@
 @class YMARSSChannel;
 
 @interface YMASAXParser : NSObject <NSXMLParserDelegate>
-- (instancetype)initWithRssChannel:(YMARSSChannel *)rssChannel;
-+ (instancetype)parserWithRssChannel:(YMARSSChannel *)rssChannel;
+- (instancetype)initWithContext:(NSManagedObjectContext *)context;
+
++ (instancetype)parserWithContext:(NSManagedObjectContext *)context;
+
 - (void)parseRSSChannelToCoreDataWithURL:(NSURL *)url;
 
 @end

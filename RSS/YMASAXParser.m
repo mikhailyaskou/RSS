@@ -7,6 +7,7 @@
 //
 
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "YMASAXParser.h"
 #import "YMARSSChannel+CoreDataProperties.h"
 #import "YMARSSItem+CoreDataProperties.h"
@@ -17,6 +18,7 @@
 
 @property(nonatomic, strong) YMARSSChannel *rssChannel;
 @property(nonatomic, strong) YMARSSItem *rssItem;
+@property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) NSMutableString *tagInnerText;
 @property(nonatomic, assign) BOOL isChannelSection;
 @property(nonatomic, strong) NSString *itemImageUrl;
@@ -25,35 +27,23 @@
 
 @implementation YMASAXParser
 
-- (instancetype)init {
-    self = [super init];
-    if (self) {
+- (YMARSSChannel *)rssChannel {
+    if (!_rssChannel){
         _rssChannel = [YMARSSChannel MR_createEntity];
+        _rssChannel.title = @"sdsd";
     }
-    return self;
-}
-
-
-- (instancetype)initWithRssChannel:(YMARSSChannel *)rssChannel {
-    self = [super init];
-    if (self) {
-        _rssChannel = rssChannel;
-    }
-    return self;
-}
-
-+ (instancetype)parserWithRssChannel:(YMARSSChannel *)rssChannel {
-    return [[self alloc] initWithRssChannel:rssChannel];
+    return _rssChannel;
 }
 
 - (void)parseRSSChannelToCoreDataWithURL:(NSURL *)url {
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     [parser setDelegate:self];
-    BOOL result = [parser parse];
     self.isChannelSection = YES;
+    [parser parse];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
+    NSLog(@"Start parsing");
     self.tagInnerText = [NSMutableString new];
 }
 
@@ -76,6 +66,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
     if (self.isChannelSection) {
         //for channel
         ((void (^)())@{
@@ -115,7 +106,7 @@
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;
                     [self.rssChannel addItemsObject:self.rssItem];
-                },
+                        },
         }[elementName] ?: ^{
         })();
 

@@ -7,6 +7,8 @@
 //
 
 #import "YMALeftMenuVC.h"
+#import "YMARSSChannel+CoreDataClass.h"
+#import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 
 @interface YMALeftMenuVC ()
 
@@ -16,6 +18,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     // Do any additional setup after loading the view.
 }
 
