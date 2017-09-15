@@ -11,7 +11,6 @@
 #import "YMALeftMenuVC.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-
 @interface AppDelegate () <PKRevealing>
 
 @property (nonatomic, strong, readwrite) PKRevealController *revealController;
@@ -35,6 +34,7 @@
     self.window.rootViewController = self.revealController;
     //setupCoreDataStack
     [MagicalRecord setupCoreDataStack];
+
     return YES;
 }
 

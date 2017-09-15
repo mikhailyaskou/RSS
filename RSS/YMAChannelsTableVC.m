@@ -12,6 +12,7 @@
 #import "YMARSSChannel+CoreDataClass.h"
 #import "YMAChannelCell.h"
 #import "YMASAXParser.h"
+#import "YMAController.h"
 
 @interface YMAChannelsTableVC ()
 
@@ -25,20 +26,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+        YMAController *controller = [YMAController new];
 
-    
-
- 
-    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *savingContext) {
-        
-        
-        YMASAXParser *parser = [YMASAXParser new];
-        [parser parseRSSChannelToCoreDataWithURL: [NSURL URLWithString:@"https://news.tut.by/rss/all.rss"]];
-        
-    } ];
-    
+    [controller addChannelWithURL:[NSURL URLWithString:@"https://news.tut.by/rss/all.rss"]];
     
     self.channels = [YMARSSChannel MR_findAll];
+
 }
 
 - (void)didReceiveMemoryWarning {

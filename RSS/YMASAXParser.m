@@ -16,9 +16,9 @@
 
 @interface YMASAXParser ()
 
+@property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) YMARSSChannel *rssChannel;
 @property(nonatomic, strong) YMARSSItem *rssItem;
-@property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) NSMutableString *tagInnerText;
 @property(nonatomic, assign) BOOL isChannelSection;
 @property(nonatomic, strong) NSString *itemImageUrl;
@@ -27,15 +27,22 @@
 
 @implementation YMASAXParser
 
-- (YMARSSChannel *)rssChannel {
-    if (!_rssChannel){
-        _rssChannel = [YMARSSChannel MR_createEntity];
-        _rssChannel.title = @"sdsd";
+- (instancetype)initWithContext:(NSManagedObjectContext *)context {
+    self = [super init];
+    if (self) {
+        self.context = context;
     }
-    return _rssChannel;
+
+    return self;
 }
 
-- (void)parseRSSChannelToCoreDataWithURL:(NSURL *)url {
++ (instancetype)parserWithContext:(NSManagedObjectContext *)context {
+    return [[self alloc] initWithContext:context];
+}
+
+
+- (void)parseRSSChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *) channel{
+    self.rssChannel = channel;
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     [parser setDelegate:self];
     self.isChannelSection = YES;
@@ -53,7 +60,7 @@
     //set item section
     if ([elementName isEqualToString:@"item"]) {
         self.isChannelSection = NO;
-        self.rssItem = [YMARSSItem MR_createEntity];
+        self.rssItem = [YMARSSItem MR_createEntityInContext:self.context];
     }
 
     if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media"]) {
@@ -112,5 +119,10 @@
 
     }
 }
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    NSLog(@"end parsing");
+}
+
 
 @end

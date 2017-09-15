@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
 		8ADDE6BBB9E537A113133E32 /* libPods-RSS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF040B537E52619884BFFAFE /* libPods-RSS.a */; };
+		981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */; };
 		982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E11F668EA100119075 /* YMAMainVC.m */; };
 		982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */; };
 		982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E71F668EFC00119075 /* YMAItemsVC.m */; };
@@ -20,6 +22,7 @@
 		986332481F6709DF00BF1434 /* YMAChannelsTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 986332471F6709DF00BF1434 /* YMAChannelsTableVC.m */; };
 		9863324B1F670E0600BF1434 /* YMAChannelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9863324A1F670E0600BF1434 /* YMAChannelCell.m */; };
 		9863324E1F67249C00BF1434 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9863324D1F67249C00BF1434 /* YMAController.m */; };
+		986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 986B5C151F6BC8DB009274CA /* AsyncImageView.m */; };
 		9871577E1F669FF600770E5F /* YMASAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9871577D1F669FF600770E5F /* YMASAXParser.m */; };
 		987157881F66E18600770E5F /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157871F66E18600770E5F /* YMADateHelper.m */; };
 		987157A91F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157A21F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m */; };
@@ -29,8 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
 		37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.debug.xcconfig"; sourceTree = "<group>"; };
 		5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.release.xcconfig"; sourceTree = "<group>"; };
+		981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMARSSItemCollectionViewCell.h; path = ../YMARSSItemCollectionViewCell.h; sourceTree = "<group>"; };
+		981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMARSSItemCollectionViewCell.m; path = ../YMARSSItemCollectionViewCell.m; sourceTree = "<group>"; };
 		982FB3E01F668EA100119075 /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainVC.h; sourceTree = "<group>"; };
 		982FB3E11F668EA100119075 /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainVC.m; sourceTree = "<group>"; };
 		982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMALeftMenuVC.h; sourceTree = "<group>"; };
@@ -52,6 +59,8 @@
 		9863324A1F670E0600BF1434 /* YMAChannelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAChannelCell.m; sourceTree = "<group>"; };
 		9863324C1F67249C00BF1434 /* YMAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAController.h; sourceTree = "<group>"; };
 		9863324D1F67249C00BF1434 /* YMAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAController.m; sourceTree = "<group>"; };
+		986B5C141F6BC8DB009274CA /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		986B5C151F6BC8DB009274CA /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		9871577C1F669FF600770E5F /* YMASAXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMASAXParser.h; sourceTree = "<group>"; };
 		9871577D1F669FF600770E5F /* YMASAXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMASAXParser.m; sourceTree = "<group>"; };
 		987157861F66E18600770E5F /* YMADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADateHelper.h; sourceTree = "<group>"; };
@@ -79,6 +88,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D84ECA0A488B68407E198CA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				986B5C131F6BC8DB009274CA /* AsyncImageView */,
+				1D84EFDF8C9FB7ADEF4473A8 /* TVQuiltLayout */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		1D84EFDF8C9FB7ADEF4473A8 /* TVQuiltLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */,
+				1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */,
+			);
+			name = TVQuiltLayout;
+			path = RSS;
+			sourceTree = SOURCE_ROOT;
+		};
 		6D0962F52BA241C0D393B68E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +152,7 @@
 				9832546F1F644B6C00E41AC5 /* Model */,
 				9832546D1F643C4E00E41AC5 /* View */,
 				983254501F643B4E00E41AC5 /* Supporting Files */,
+				1D84ECA0A488B68407E198CA /* lib */,
 			);
 			path = RSS;
 			sourceTree = "<group>";
@@ -144,6 +173,8 @@
 		9832546D1F643C4E00E41AC5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */,
+				981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */,
 				983254591F643B4E00E41AC5 /* Main.storyboard */,
 				986332491F670E0600BF1434 /* YMAChannelCell.h */,
 				9863324A1F670E0600BF1434 /* YMAChannelCell.m */,
@@ -173,6 +204,15 @@
 				9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		986B5C131F6BC8DB009274CA /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				986B5C141F6BC8DB009274CA /* AsyncImageView.h */,
+				986B5C151F6BC8DB009274CA /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
 			sourceTree = "<group>";
 		};
 		987157851F66E18600770E5F /* Helpers */ = {
@@ -321,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */,
+				986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */,
 				982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */,
 				9863324E1F67249C00BF1434 /* YMAController.m in Sources */,
 				982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */,
@@ -334,7 +375,9 @@
 				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
 				9863324B1F670E0600BF1434 /* YMAChannelCell.m in Sources */,
 				983254521F643B4E00E41AC5 /* main.m in Sources */,
+				981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */,
 				987157AC1F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m in Sources */,
+				1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

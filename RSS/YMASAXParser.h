@@ -15,6 +15,7 @@
 
 + (instancetype)parserWithContext:(NSManagedObjectContext *)context;
 
-- (void)parseRSSChannelToCoreDataWithURL:(NSURL *)url;
+
+- (void)parseRSSChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *) channel;
 
 @end

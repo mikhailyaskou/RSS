@@ -10,4 +10,6 @@
 
 @interface YMAController : NSObject
 
+- (void) addChannelWithURL:(NSURL *)url;
+
 @end
