@@ -63,7 +63,7 @@
         self.rssItem = [YMARSSItem MR_createEntityInContext:self.context];
     }
 
-    if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media"]) {
+    if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media:thumbnail"]) {
         self.itemImageUrl = [attributeDict valueForKey:@"url"];
     }
 }
@@ -109,6 +109,7 @@
                 },
                 @"pubDate": ^{
                     self.rssItem.date = [YMADateHelper dateFromRSSString:self.tagInnerText];
+            NSLog(@"!!!!!!!!!!", self.rssItem.date);
                 },
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;

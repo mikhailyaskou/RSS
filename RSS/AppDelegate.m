@@ -11,7 +11,7 @@
 #import "YMALeftMenuVC.h"
 #import <MagicalRecord/MagicalRecord.h>
 
-@interface AppDelegate () <PKRevealing>
+@interface AppDelegate ()
 
 @property (nonatomic, strong, readwrite) PKRevealController *revealController;
 
@@ -21,7 +21,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
     
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -29,8 +28,8 @@
     YMALeftMenuVC *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"YMALeftMenuVC"];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:mainVC leftViewController:leftMenuVC];
     //Configure.
-    self.revealController.delegate = self;
-    //Apply.
+    [self.revealController setMinimumWidth:207 maximumWidth:207 forViewController:leftMenuVC];
+     //Apply.
     self.window.rootViewController = self.revealController;
     //setupCoreDataStack
     [MagicalRecord setupCoreDataStack];

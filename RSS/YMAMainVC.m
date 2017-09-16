@@ -7,15 +7,17 @@
 //
 
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
-#import <MagicalRecord/NSManagedObject+MagicalAggregation.h>
 #import "YMAMainVC.h"
 #import "YMARSSItem+CoreDataClass.h"
 #import "RFQuiltLayout.h"
 #import "YMARSSItemCollectionViewCell.h"
 #import "YMADateHelper.h"
 #import "AsyncImageView.h"
+#import "NSManagedObject+MagicalAggregation.h"
+
 
 @interface YMAMainVC () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate>
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 
 @property (nonatomic, strong) NSArray *items;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -24,24 +26,81 @@
 
 @implementation YMAMainVC
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-
-
 
     RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
     layout.direction = UICollectionViewScrollDirectionVertical;
     layout.blockPixels = CGSizeMake((self.view.frame.size.width / 2)-8, 150);
     layout.delegate = self;
 
-
     self.items = [YMARSSItem MR_findAll];
-    NSLog(@"Count  1 %u", [self.items count]);
+    
+    [self tabBarTapped];;
+    
+    
+}
 
-    NSLog(@"Count  2 %@", [YMARSSItem MR_numberOfEntities]);
+
+
+#pragma mark - Actions
+
+- (void)tabBarTapped {
+    
+    [self.navigationItem setTitle:@"В мире"];
+    [self.tabBar setSelectedItem:0];
+    
+}
+
+#pragma mark - TabBar Delegate
+
+-(void) addCenterButtonWithImage:(UIImage*)buttonImage highlightImage:(UIImage*)highlightImage
+{
+    UIButton* button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleTopMargin;
+    button.frame = CGRectMake(0.0, 0.0, buttonImage.size.width, buttonImage.size.height);
+    [button setBackgroundImage:buttonImage forState:UIControlStateNormal];
+    [button setBackgroundImage:highlightImage forState:UIControlStateHighlighted];
+    
+    CGFloat heightDifference = buttonImage.size.height - self.tabBar.frame.size.height;
+    if (heightDifference < 0)
+        button.center = self.tabBar.center;
+    else
+    {
+        CGPoint center = self.tabBar.center;
+        center.y = center.y - heightDifference/2.0;
+        button.center = center;
+    }
+    
+    [self.view addSubview:button];
+}
+
+
+
+-(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    
+    [self addCenterButtonWithImage:[UIImage imageNamed:@"camera_button_take.png"] highlightImage:[UIImage imageNamed:@"tabBar_cameraButton_ready_matte.png"]];    
+    
+    
+        
+    if(item.tag==1)
+    {
+        NSLog(@"sssssss");
+    }
+    else
+    {
+        NSLog(@"aaaaa");
+        //your code
+    }
 }
 
 #pragma mark - UICollectionView Delegate
@@ -59,30 +118,32 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     YMARSSItemCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"YMARSSItemCell" forIndexPath:indexPath];
+    
    
     if (cell == nil)
     {
         cell.layer.borderWidth = 1;
         cell.layer.borderColor = UIColor.darkGrayColor.CGColor;
+        
     }
     else
     {
         //cancel loading previous image for cell
-        [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.itemImage];
+      [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.itemImage];
     }
-    
     
     YMARSSItem *item = self.items[indexPath.row];
 
     cell.itemDate.text = [YMADateHelper stringFromDate:[item date]];
     cell.itemTime.text = [YMADateHelper stringFromTime:[item date]];
-    cell.itemImage.imageURL = [NSURL URLWithString:[item imageUrl]];
-    cell.itemTitle.text = item.title;
-    cell.itemImage.image = nil;
-    
-    
-    
 
+    
+    cell.itemTitle.text = item.title;
+    
+    //set placeholder image or cell won't update when image is loaded
+    cell.itemImage.image = [UIImage imageNamed:@"Placeholder.png"];
+    
+    cell.itemImage.imageURL = [NSURL URLWithString:[item imageUrl]];
 
     if (indexPath.row % 2 == 0){
         cell.backgroundColor = UIColor.grayColor;
@@ -90,9 +151,6 @@
     {
         cell.backgroundColor = [UIColor redColor];
     }
-
-
-
 
 
     return cell;

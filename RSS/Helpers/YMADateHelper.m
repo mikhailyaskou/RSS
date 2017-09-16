@@ -20,10 +20,20 @@ static NSString *const YMATimeFormat = @"HH:mm";
     return [formatter stringFromDate:date];
 }
 
-+ (NSDate *)dateFromRSSString:(NSString *)dateString {
-    NSDateFormatter *formatter = [NSDateFormatter new];
-    [formatter setDateFormat:YMARSSDateFormat];
-    return [formatter dateFromString:dateString];
++ (NSDate *)dateFromRSSString:(NSString *)dateString {    
+    //NSDateFormatter *formatter = [NSDateFormatter new];
+    //[formatter setDateFormat:YMARSSDateFormat];
+    //return [formatter dateFromString:dateString];
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, dd MMM yyyy HH:mm:ss ZZ"];
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
+    [dateFormatter setLocale:enUSPOSIXLocale];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    NSLog(@"DateObject : %@", date);
+    
+    return date;
 }
 
 + (NSString *)stringFromDate:(NSDate *)date {

@@ -11,14 +11,14 @@
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
 
 
-@interface YMALeftMenuVC ()
+@interface YMALeftMenuVC () 
+@property (weak, nonatomic) IBOutlet UIView *tableMenuContainerView;
 @end
 
 @implementation YMALeftMenuVC
 
-- (void)viewDidLoad {
+-(void)viewDidLoad{
     [super viewDidLoad];
 }
-
 
 @end
