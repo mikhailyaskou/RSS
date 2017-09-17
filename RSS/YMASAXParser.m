@@ -109,7 +109,6 @@
                 },
                 @"pubDate": ^{
                     self.rssItem.date = [YMADateHelper dateFromRSSString:self.tagInnerText];
-            NSLog(@"!!!!!!!!!!", self.rssItem.date);
                 },
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;

@@ -11,8 +11,6 @@
 @interface YMARSSItemCollectionViewCell : UICollectionViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *itemImage;
-@property (weak, nonatomic) IBOutlet UILabel *itemDate;
-@property (weak, nonatomic) IBOutlet UILabel *itemTime;
 @property (weak, nonatomic) IBOutlet UILabel *itemTitle;
 
 @end

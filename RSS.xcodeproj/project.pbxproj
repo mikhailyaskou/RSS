@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
 		981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */; };
+		9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */; };
 		982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E11F668EA100119075 /* YMAMainVC.m */; };
 		982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */; };
 		982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E71F668EFC00119075 /* YMAItemsVC.m */; };
@@ -32,7 +33,6 @@
 		989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 989E192C1F6BD68B00BD43B3 /* Placeholder.png */; };
 		98D690321F6C5BD3008B2C37 /* ayar_juno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */; };
 		98D690381F6C7CB5008B2C37 /* Снимок экрана 2017-09-16 в 0.24.38.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D690371F6C7CB5008B2C37 /* Снимок экрана 2017-09-16 в 0.24.38.png */; };
-		98D6903C1F6C83D5008B2C37 /* menu.gif in Resources */ = {isa = PBXBuildFile; fileRef = 98D6903B1F6C83D5008B2C37 /* menu.gif */; };
 		C2489997160D3ED24298113B /* Pods_RSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +43,8 @@
 		5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.release.xcconfig"; sourceTree = "<group>"; };
 		981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMARSSItemCollectionViewCell.h; path = ../YMARSSItemCollectionViewCell.h; sourceTree = "<group>"; };
 		981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMARSSItemCollectionViewCell.m; path = ../YMARSSItemCollectionViewCell.m; sourceTree = "<group>"; };
+		9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBar.h; sourceTree = "<group>"; };
+		9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBar.m; sourceTree = "<group>"; };
 		982FB3E01F668EA100119075 /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainVC.h; sourceTree = "<group>"; };
 		982FB3E11F668EA100119075 /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainVC.m; sourceTree = "<group>"; };
 		982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMALeftMenuVC.h; sourceTree = "<group>"; };
@@ -81,7 +83,6 @@
 		989E192C1F6BD68B00BD43B3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = RSS/Placeholder.png; sourceTree = SOURCE_ROOT; };
 		98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ayar_juno.ttf; path = RSS/ayar_juno.ttf; sourceTree = SOURCE_ROOT; };
 		98D690371F6C7CB5008B2C37 /* Снимок экрана 2017-09-16 в 0.24.38.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Снимок экрана 2017-09-16 в 0.24.38.png"; sourceTree = "<group>"; };
-		98D6903B1F6C83D5008B2C37 /* menu.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = menu.gif; sourceTree = "<group>"; };
 		DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +190,8 @@
 				986332471F6709DF00BF1434 /* YMAChannelsTableVC.m */,
 				982FB3E01F668EA100119075 /* YMAMainVC.h */,
 				982FB3E11F668EA100119075 /* YMAMainVC.m */,
+				9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */,
+				9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */,
 				982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */,
 				982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */,
 				982FB3E61F668EFC00119075 /* YMAItemsVC.h */,
@@ -240,7 +243,6 @@
 				989E192C1F6BD68B00BD43B3 /* Placeholder.png */,
 				98D690371F6C7CB5008B2C37 /* Снимок экрана 2017-09-16 в 0.24.38.png */,
 				98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */,
-				98D6903B1F6C83D5008B2C37 /* menu.gif */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -320,7 +322,6 @@
 				98D690381F6C7CB5008B2C37 /* Снимок экрана 2017-09-16 в 0.24.38.png in Resources */,
 				9843336E1F6C9668000AE870 /* camera_button_take.png in Resources */,
 				983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */,
-				98D6903C1F6C83D5008B2C37 /* menu.gif in Resources */,
 				989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */,
 				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
 				984333701F6C967B000AE870 /* tabBar_cameraButton_ready_matte.png in Resources */,
@@ -403,6 +404,7 @@
 				986332481F6709DF00BF1434 /* YMAChannelsTableVC.m in Sources */,
 				987157881F66E18600770E5F /* YMADateHelper.m in Sources */,
 				987157AB1F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m in Sources */,
+				9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */,
 				9871577E1F669FF600770E5F /* YMASAXParser.m in Sources */,
 				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
 				983254521F643B4E00E41AC5 /* main.m in Sources */,

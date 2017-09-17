@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMAMainVC : UIViewController
+@interface YMAMainVC : UIViewController 
 
 @end

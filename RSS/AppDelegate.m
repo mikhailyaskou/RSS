@@ -31,6 +31,7 @@
     [self.revealController setMinimumWidth:207 maximumWidth:207 forViewController:leftMenuVC];
      //Apply.
     self.window.rootViewController = self.revealController;
+    self.revealController.delegate = mainVC;
     //setupCoreDataStack
     [MagicalRecord setupCoreDataStack];
 

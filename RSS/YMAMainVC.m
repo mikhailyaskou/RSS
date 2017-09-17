@@ -14,11 +14,13 @@
 #import "YMADateHelper.h"
 #import "AsyncImageView.h"
 #import "NSManagedObject+MagicalAggregation.h"
+#import "PKRevealController.h"
 
+@interface YMAMainVC () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing>
 
-@interface YMAMainVC () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate>
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
-
+@property (weak, nonatomic) IBOutlet UIView *customBigTabButtonView;
+@property (weak, nonatomic) IBOutlet UIImageView *customBigImage;
 @property (nonatomic, strong) NSArray *items;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -39,19 +41,25 @@
 
     RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
     layout.direction = UICollectionViewScrollDirectionVertical;
-    layout.blockPixels = CGSizeMake((self.view.frame.size.width / 2)-8, 150);
+    layout.blockPixels = CGSizeMake((self.view.frame.size.width / 2)-8, 200);
     layout.delegate = self;
 
     self.items = [YMARSSItem MR_findAll];
     
-    [self tabBarTapped];;
-    
+    //select first tabItem 
+    [self.tabBar setSelectedItem:[self.tabBar.items objectAtIndex:0]];
+
     
 }
 
 
 
 #pragma mark - Actions
+
+- (IBAction)showLeftMenuTapped:(id)sender {
+   [self.revealController showViewController:self.revealController.leftViewController];
+}
+
 
 - (void)tabBarTapped {
     
@@ -83,24 +91,9 @@
     [self.view addSubview:button];
 }
 
-
-
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
-    
-    [self addCenterButtonWithImage:[UIImage imageNamed:@"camera_button_take.png"] highlightImage:[UIImage imageNamed:@"tabBar_cameraButton_ready_matte.png"]];    
-    
-    
-        
-    if(item.tag==1)
-    {
-        NSLog(@"sssssss");
-    }
-    else
-    {
-        NSLog(@"aaaaa");
-        //your code
-    }
+ 
 }
 
 #pragma mark - UICollectionView Delegate
@@ -111,6 +104,7 @@
 }
 
 #pragma mark - UICollectionView Datasource
+
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
     return [self.items count];
 }
@@ -133,10 +127,6 @@
     }
     
     YMARSSItem *item = self.items[indexPath.row];
-
-    cell.itemDate.text = [YMADateHelper stringFromDate:[item date]];
-    cell.itemTime.text = [YMADateHelper stringFromTime:[item date]];
-
     
     cell.itemTitle.text = item.title;
     
