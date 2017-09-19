@@ -2,7 +2,7 @@
 //  YMARSSItem+CoreDataClass.m
 //  
 //
-//  Created by Mikhail Yaskou on 11.09.17.
+//  Created by Mikhail Yaskou on 19.09.17.
 //
 //
 

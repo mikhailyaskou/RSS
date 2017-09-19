@@ -52,12 +52,11 @@
     [self.tabBar setSelectedItem:[self.tabBar.items objectAtIndex:0]];
     
     
+    [[YMAController sharedInstance] addObserver:self forKeyPath:@"rssItems" options:0 context:nil];
     
+    [[YMAController sharedInstance] updateAllChannels];
     
-    YMAController *controller = [YMAController new];
-    
-    [controller addChannelWithURL:[NSURL URLWithString:@"https://lenta.ru/rss/news"]];
-    // [controller addChannelWithURL:[NSURL URLWithString:@"https://news.tut.by/rss/index.rss"]];
+    [[YMAController sharedInstance] applySelectedParameters];
     
 }
 
@@ -75,6 +74,18 @@
     [self.navigationItem setTitle:@"В мире"];
     [self.tabBar setSelectedItem:0];
     
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath
+                      ofObject:(id)object
+                        change:(NSDictionary *)change
+                       context:(void *)context
+{
+    if ([keyPath isEqualToString:@"rssItems"])
+    {
+        NSLog(@"observerTriggered");
+        [self.collectionView reloadData];
+    }
 }
 
 #pragma mark - TabBar Delegate

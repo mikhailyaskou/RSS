@@ -2,7 +2,7 @@
 //  YMARSSChannel+CoreDataProperties.m
 //  
 //
-//  Created by Mikhail Yaskou on 11.09.17.
+//  Created by Mikhail Yaskou on 19.09.17.
 //
 //
 
@@ -16,6 +16,7 @@
 
 @dynamic id;
 @dynamic image;
+@dynamic lastUpdate;
 @dynamic link;
 @dynamic title;
 @dynamic topic;
