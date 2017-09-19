@@ -13,4 +13,10 @@
 + (NSString *)stringFromRSSDate:(NSDate *)date;
 + (NSDate *)dateFromRSSString:(NSString *)dateString;
 
++ (NSString *)stringFromDate:(NSDate *)date;
++ (NSDate *)dateFromString:(NSString *)dateString;
+
++ (NSString *)stringFromTime:(NSDate *)date;
++ (NSDate *)timeFromString:(NSString *)dateString;
+
 @end

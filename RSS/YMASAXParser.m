@@ -7,6 +7,7 @@
 //
 
 #import <MagicalRecord/NSManagedObject+MagicalRecord.h>
+#import <MagicalRecord/MagicalRecord.h>
 #import "YMASAXParser.h"
 #import "YMARSSChannel+CoreDataProperties.h"
 #import "YMARSSItem+CoreDataProperties.h"
@@ -15,6 +16,7 @@
 
 @interface YMASAXParser ()
 
+@property(nonatomic, strong) NSManagedObjectContext *context;
 @property(nonatomic, strong) YMARSSChannel *rssChannel;
 @property(nonatomic, strong) YMARSSItem *rssItem;
 @property(nonatomic, strong) NSMutableString *tagInnerText;
@@ -25,35 +27,30 @@
 
 @implementation YMASAXParser
 
-- (instancetype)init {
+- (instancetype)initWithContext:(NSManagedObjectContext *)context {
     self = [super init];
     if (self) {
-        _rssChannel = [YMARSSChannel MR_createEntity];
+        self.context = context;
     }
+
     return self;
 }
 
-
-- (instancetype)initWithRssChannel:(YMARSSChannel *)rssChannel {
-    self = [super init];
-    if (self) {
-        _rssChannel = rssChannel;
-    }
-    return self;
++ (instancetype)parserWithContext:(NSManagedObjectContext *)context {
+    return [[self alloc] initWithContext:context];
 }
 
-+ (instancetype)parserWithRssChannel:(YMARSSChannel *)rssChannel {
-    return [[self alloc] initWithRssChannel:rssChannel];
-}
 
-- (void)parseRSSChannelToCoreDataWithURL:(NSURL *)url {
+- (void)parseRSSChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *) channel{
+    self.rssChannel = channel;
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     [parser setDelegate:self];
-    BOOL result = [parser parse];
     self.isChannelSection = YES;
+    [parser parse];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
+    NSLog(@"Start parsing");
     self.tagInnerText = [NSMutableString new];
 }
 
@@ -63,10 +60,10 @@
     //set item section
     if ([elementName isEqualToString:@"item"]) {
         self.isChannelSection = NO;
-        self.rssItem = [YMARSSItem MR_createEntity];
+        self.rssItem = [YMARSSItem MR_createEntityInContext:self.context];
     }
 
-    if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media"]) {
+    if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media:thumbnail"]) {
         self.itemImageUrl = [attributeDict valueForKey:@"url"];
     }
 }
@@ -76,6 +73,7 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
+    
     if (self.isChannelSection) {
         //for channel
         ((void (^)())@{
@@ -115,11 +113,16 @@
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;
                     [self.rssChannel addItemsObject:self.rssItem];
-                },
+                        },
         }[elementName] ?: ^{
         })();
 
     }
 }
+
+- (void)parserDidEndDocument:(NSXMLParser *)parser {
+    NSLog(@"end parsing");
+}
+
 
 @end
