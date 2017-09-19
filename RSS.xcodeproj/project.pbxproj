@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
+		981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */; };
+		9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */; };
+		982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E11F668EA100119075 /* YMAMainVC.m */; };
+		982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */; };
+		982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E71F668EFC00119075 /* YMAItemsVC.m */; };
+		983254521F643B4E00E41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254511F643B4E00E41AC5 /* main.m */; };
+		983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* AppDelegate.m */; };
+		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
+		9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */; };
+		983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832545F1F643B4E00E41AC5 /* Assets.xcassets */; };
+		983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */; };
+		9863324E1F67249C00BF1434 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9863324D1F67249C00BF1434 /* YMAController.m */; };
+		986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 986B5C151F6BC8DB009274CA /* AsyncImageView.m */; };
+		9871577E1F669FF600770E5F /* YMASAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 9871577D1F669FF600770E5F /* YMASAXParser.m */; };
+		987157881F66E18600770E5F /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157871F66E18600770E5F /* YMADateHelper.m */; };
+		987157A91F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157A21F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m */; };
+		987157AA1F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157A41F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.m */; };
+		987157AB1F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157A61F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m */; };
+		987157AC1F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157A81F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m */; };
+		989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 989E192C1F6BD68B00BD43B3 /* Placeholder.png */; };
+		98CF0C191F6E96DD00D293DD /* YMACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */; };
+		98CF0C201F6EA6BD00D293DD /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C1F1F6EA6BD00D293DD /* line.png */; };
+		98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C211F6EA7BD00D293DD /* lineTop.png */; };
+		98CF0C241F6EA91000D293DD /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C231F6EA91000D293DD /* lineBottom.png */; };
+		98CF0C261F6EA9FA00D293DD /* lineBottomHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C251F6EA9FA00D293DD /* lineBottomHighlighted.png */; };
+		98CF0C281F6EAAE300D293DD /* lineTopHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C271F6EAAE300D293DD /* lineTopHighlighted.png */; };
+		98CF0C2A1F6EAAEA00D293DD /* lineHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C291F6EAAEA00D293DD /* lineHighlighted.png */; };
+		98CF0C2D1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */; };
+		98CF0C311F6EC6D400D293DD /* YMAMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */; };
+		98D690321F6C5BD3008B2C37 /* ayar_juno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */; };
+		98D690381F6C7CB5008B2C37 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D690371F6C7CB5008B2C37 /* logo.png */; };
+		C2489997160D3ED24298113B /* Pods_RSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
+		37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.debug.xcconfig"; sourceTree = "<group>"; };
+		5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.release.xcconfig"; sourceTree = "<group>"; };
+		981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMARSSItemCollectionViewCell.h; path = ../YMARSSItemCollectionViewCell.h; sourceTree = "<group>"; };
+		981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMARSSItemCollectionViewCell.m; path = ../YMARSSItemCollectionViewCell.m; sourceTree = "<group>"; };
+		9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBar.h; sourceTree = "<group>"; };
+		9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBar.m; sourceTree = "<group>"; };
+		982FB3E01F668EA100119075 /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainVC.h; sourceTree = "<group>"; };
+		982FB3E11F668EA100119075 /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainVC.m; sourceTree = "<group>"; };
+		982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMALeftMenuVC.h; sourceTree = "<group>"; };
+		982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMALeftMenuVC.m; sourceTree = "<group>"; };
+		982FB3E61F668EFC00119075 /* YMAItemsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAItemsVC.h; sourceTree = "<group>"; };
+		982FB3E71F668EFC00119075 /* YMAItemsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAItemsVC.m; sourceTree = "<group>"; };
+		9832544D1F643B4E00E41AC5 /* RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		983254511F643B4E00E41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		983254531F643B4E00E41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		983254541F643B4E00E41AC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9832545A1F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSS.xcdatamodel; sourceTree = "<group>"; };
+		9832545F1F643B4E00E41AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		983254621F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		983254641F643B4E00E41AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9863324C1F67249C00BF1434 /* YMAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAController.h; sourceTree = "<group>"; };
+		9863324D1F67249C00BF1434 /* YMAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAController.m; sourceTree = "<group>"; };
+		986B5C141F6BC8DB009274CA /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		986B5C151F6BC8DB009274CA /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		9871577C1F669FF600770E5F /* YMASAXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMASAXParser.h; sourceTree = "<group>"; };
+		9871577D1F669FF600770E5F /* YMASAXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMASAXParser.m; sourceTree = "<group>"; };
+		987157861F66E18600770E5F /* YMADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADateHelper.h; sourceTree = "<group>"; };
+		987157871F66E18600770E5F /* YMADateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMADateHelper.m; sourceTree = "<group>"; };
+		987157A11F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSChannel+CoreDataClass.h"; path = "../YMARSSChannel+CoreDataClass.h"; sourceTree = "<group>"; };
+		987157A21F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataClass.m"; path = "../YMARSSChannel+CoreDataClass.m"; sourceTree = "<group>"; };
+		987157A31F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSChannel+CoreDataProperties.h"; path = "../YMARSSChannel+CoreDataProperties.h"; sourceTree = "<group>"; };
+		987157A41F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSChannel+CoreDataProperties.m"; path = "../YMARSSChannel+CoreDataProperties.m"; sourceTree = "<group>"; };
+		987157A51F66EC8D00770E5F /* YMARSSItem+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSItem+CoreDataClass.h"; path = "../YMARSSItem+CoreDataClass.h"; sourceTree = "<group>"; };
+		987157A61F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSItem+CoreDataClass.m"; path = "../YMARSSItem+CoreDataClass.m"; sourceTree = "<group>"; };
+		987157A71F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "YMARSSItem+CoreDataProperties.h"; path = "../YMARSSItem+CoreDataProperties.h"; sourceTree = "<group>"; };
+		987157A81F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "YMARSSItem+CoreDataProperties.m"; path = "../YMARSSItem+CoreDataProperties.m"; sourceTree = "<group>"; };
+		989E192C1F6BD68B00BD43B3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = RSS/Placeholder.png; sourceTree = SOURCE_ROOT; };
+		98CF0C171F6E96DD00D293DD /* YMACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBarItem.h; sourceTree = "<group>"; };
+		98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBarItem.m; sourceTree = "<group>"; };
+		98CF0C1F1F6EA6BD00D293DD /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
+		98CF0C211F6EA7BD00D293DD /* lineTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineTop.png; sourceTree = "<group>"; };
+		98CF0C231F6EA91000D293DD /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineBottom.png; sourceTree = "<group>"; };
+		98CF0C251F6EA9FA00D293DD /* lineBottomHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineBottomHighlighted.png; sourceTree = "<group>"; };
+		98CF0C271F6EAAE300D293DD /* lineTopHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineTopHighlighted.png; sourceTree = "<group>"; };
+		98CF0C291F6EAAEA00D293DD /* lineHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineHighlighted.png; sourceTree = "<group>"; };
+		98CF0C2B1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuStaticCellTableViewCell.h; sourceTree = "<group>"; };
+		98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuStaticCellTableViewCell.m; sourceTree = "<group>"; };
+		98CF0C2F1F6EC6D400D293DD /* YMAMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuTableViewController.h; sourceTree = "<group>"; };
+		98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuTableViewController.m; sourceTree = "<group>"; };
+		98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ayar_juno.ttf; path = RSS/ayar_juno.ttf; sourceTree = SOURCE_ROOT; };
+		98D690371F6C7CB5008B2C37 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9832544A1F643B4E00E41AC5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2489997160D3ED24298113B /* Pods_RSS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D84ECA0A488B68407E198CA /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				986B5C131F6BC8DB009274CA /* AsyncImageView */,
+				1D84EFDF8C9FB7ADEF4473A8 /* TVQuiltLayout */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		1D84EFDF8C9FB7ADEF4473A8 /* TVQuiltLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */,
+				1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */,
+			);
+			name = TVQuiltLayout;
+			path = RSS;
+			sourceTree = SOURCE_ROOT;
+		};
+		6D0962F52BA241C0D393B68E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		981A8A301F64568F00B6ACA1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9871577C1F669FF600770E5F /* YMASAXParser.h */,
+				9871577D1F669FF600770E5F /* YMASAXParser.m */,
+				9863324C1F67249C00BF1434 /* YMAController.h */,
+				9863324D1F67249C00BF1434 /* YMAController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		983254441F643B4E00E41AC5 = {
+			isa = PBXGroup;
+			children = (
+				9832544F1F643B4E00E41AC5 /* RSS */,
+				9832544E1F643B4E00E41AC5 /* Products */,
+				FC3346A6670C68333A5B6BDC /* Pods */,
+				6D0962F52BA241C0D393B68E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9832544E1F643B4E00E41AC5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9832544D1F643B4E00E41AC5 /* RSS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9832544F1F643B4E00E41AC5 /* RSS */ = {
+			isa = PBXGroup;
+			children = (
+				98D6902F1F6C4EA3008B2C37 /* Resources */,
+				987157851F66E18600770E5F /* Helpers */,
+				981A8A301F64568F00B6ACA1 /* Controller */,
+				9832546F1F644B6C00E41AC5 /* Model */,
+				9832546D1F643C4E00E41AC5 /* View */,
+				983254501F643B4E00E41AC5 /* Supporting Files */,
+				1D84ECA0A488B68407E198CA /* lib */,
+			);
+			path = RSS;
+			sourceTree = "<group>";
+		};
+		983254501F643B4E00E41AC5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				983254531F643B4E00E41AC5 /* AppDelegate.h */,
+				983254541F643B4E00E41AC5 /* AppDelegate.m */,
+				9832545F1F643B4E00E41AC5 /* Assets.xcassets */,
+				983254641F643B4E00E41AC5 /* Info.plist */,
+				983254511F643B4E00E41AC5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9832546D1F643C4E00E41AC5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98CF0C2E1F6EB3F700D293DD /* leftMenu */,
+				98CF0C1A1F6E96EF00D293DD /* TabBar */,
+				981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */,
+				981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */,
+				983254591F643B4E00E41AC5 /* Main.storyboard */,
+				982FB3E01F668EA100119075 /* YMAMainVC.h */,
+				982FB3E11F668EA100119075 /* YMAMainVC.m */,
+				982FB3E61F668EFC00119075 /* YMAItemsVC.h */,
+				982FB3E71F668EFC00119075 /* YMAItemsVC.m */,
+				983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9832546F1F644B6C00E41AC5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				987157A11F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.h */,
+				987157A21F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m */,
+				987157A31F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.h */,
+				987157A41F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.m */,
+				987157A51F66EC8D00770E5F /* YMARSSItem+CoreDataClass.h */,
+				987157A61F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m */,
+				987157A71F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.h */,
+				987157A81F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m */,
+				9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		986B5C131F6BC8DB009274CA /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				986B5C141F6BC8DB009274CA /* AsyncImageView.h */,
+				986B5C151F6BC8DB009274CA /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		987157851F66E18600770E5F /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				987157861F66E18600770E5F /* YMADateHelper.h */,
+				987157871F66E18600770E5F /* YMADateHelper.m */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		98CF0C1A1F6E96EF00D293DD /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */,
+				9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */,
+				98CF0C171F6E96DD00D293DD /* YMACustomTabBarItem.h */,
+				98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		98CF0C2E1F6EB3F700D293DD /* leftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				98CF0C2B1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.h */,
+				98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */,
+				982FB3E31F668EDA00119075 /* YMALeftMenuVC.h */,
+				982FB3E41F668EDA00119075 /* YMALeftMenuVC.m */,
+				98CF0C2F1F6EC6D400D293DD /* YMAMenuTableViewController.h */,
+				98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */,
+			);
+			name = leftMenu;
+			sourceTree = "<group>";
+		};
+		98D6902F1F6C4EA3008B2C37 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				989E192C1F6BD68B00BD43B3 /* Placeholder.png */,
+				98D690371F6C7CB5008B2C37 /* logo.png */,
+				98CF0C211F6EA7BD00D293DD /* lineTop.png */,
+				98CF0C1F1F6EA6BD00D293DD /* line.png */,
+				98CF0C291F6EAAEA00D293DD /* lineHighlighted.png */,
+				98CF0C271F6EAAE300D293DD /* lineTopHighlighted.png */,
+				98CF0C231F6EA91000D293DD /* lineBottom.png */,
+				98CF0C251F6EA9FA00D293DD /* lineBottomHighlighted.png */,
+				98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		FC3346A6670C68333A5B6BDC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */,
+				5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9832544C1F643B4E00E41AC5 /* RSS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 983254671F643B4E00E41AC5 /* Build configuration list for PBXNativeTarget "RSS" */;
+			buildPhases = (
+				52377016CE2A68360E93E079 /* [CP] Check Pods Manifest.lock */,
+				983254491F643B4E00E41AC5 /* Sources */,
+				9832544A1F643B4E00E41AC5 /* Frameworks */,
+				9832544B1F643B4E00E41AC5 /* Resources */,
+				4F9C3791D7597F2732D2C866 /* [CP] Embed Pods Frameworks */,
+				73C13E4704767A9EAE86DD67 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RSS;
+			productName = RSS;
+			productReference = 9832544D1F643B4E00E41AC5 /* RSS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		983254451F643B4E00E41AC5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = YMA;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mikhail Yaskou";
+				TargetAttributes = {
+					9832544C1F643B4E00E41AC5 = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = USB64ZNNP6;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 983254481F643B4E00E41AC5 /* Build configuration list for PBXProject "RSS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 983254441F643B4E00E41AC5;
+			productRefGroup = 9832544E1F643B4E00E41AC5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9832544C1F643B4E00E41AC5 /* RSS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9832544B1F643B4E00E41AC5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98D690381F6C7CB5008B2C37 /* logo.png in Resources */,
+				98CF0C2A1F6EAAEA00D293DD /* lineHighlighted.png in Resources */,
+				983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */,
+				989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */,
+				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
+				98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */,
+				98CF0C241F6EA91000D293DD /* lineBottom.png in Resources */,
+				98CF0C281F6EAAE300D293DD /* lineTopHighlighted.png in Resources */,
+				98D690321F6C5BD3008B2C37 /* ayar_juno.ttf in Resources */,
+				98CF0C261F6EA9FA00D293DD /* lineBottomHighlighted.png in Resources */,
+				98CF0C201F6EA6BD00D293DD /* line.png in Resources */,
+				9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F9C3791D7597F2732D2C866 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RSS/Pods-RSS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
+				"${BUILT_PRODUCTS_DIR}/PKRevealController/PKRevealController.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKRevealController.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSS/Pods-RSS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		52377016CE2A68360E93E079 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RSS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		73C13E4704767A9EAE86DD67 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RSS/Pods-RSS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		983254491F643B4E00E41AC5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				982FB3E51F668EDA00119075 /* YMALeftMenuVC.m in Sources */,
+				986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */,
+				982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */,
+				9863324E1F67249C00BF1434 /* YMAController.m in Sources */,
+				982FB3E81F668EFC00119075 /* YMAItemsVC.m in Sources */,
+				987157AA1F66EC8D00770E5F /* YMARSSChannel+CoreDataProperties.m in Sources */,
+				9832545E1F643B4E00E41AC5 /* RSS.xcdatamodeld in Sources */,
+				987157A91F66EC8D00770E5F /* YMARSSChannel+CoreDataClass.m in Sources */,
+				987157881F66E18600770E5F /* YMADateHelper.m in Sources */,
+				987157AB1F66EC8D00770E5F /* YMARSSItem+CoreDataClass.m in Sources */,
+				9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */,
+				9871577E1F669FF600770E5F /* YMASAXParser.m in Sources */,
+				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
+				983254521F643B4E00E41AC5 /* main.m in Sources */,
+				981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */,
+				98CF0C2D1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m in Sources */,
+				98CF0C191F6E96DD00D293DD /* YMACustomTabBarItem.m in Sources */,
+				987157AC1F66EC8D00770E5F /* YMARSSItem+CoreDataProperties.m in Sources */,
+				98CF0C311F6EC6D400D293DD /* YMAMenuTableViewController.m in Sources */,
+				1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		983254591F643B4E00E41AC5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9832545A1F643B4E00E41AC5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				983254621F643B4E00E41AC5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		983254651F643B4E00E41AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		983254661F643B4E00E41AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		983254681F643B4E00E41AC5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USB64ZNNP6;
+				INFOPLIST_FILE = RSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMA.RSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Debug;
+		};
+		983254691F643B4E00E41AC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = USB64ZNNP6;
+				INFOPLIST_FILE = RSS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = YMA.RSS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		983254481F643B4E00E41AC5 /* Build configuration list for PBXProject "RSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983254651F643B4E00E41AC5 /* Debug */,
+				983254661F643B4E00E41AC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		983254671F643B4E00E41AC5 /* Build configuration list for PBXNativeTarget "RSS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				983254681F643B4E00E41AC5 /* Debug */,
+				983254691F643B4E00E41AC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9832545C1F643B4E00E41AC5 /* RSS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */,
+			);
+			currentVersion = 9832545D1F643B4E00E41AC5 /* RSS.xcdatamodel */;
+			path = RSS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 983254451F643B4E00E41AC5 /* Project object */;
+}
