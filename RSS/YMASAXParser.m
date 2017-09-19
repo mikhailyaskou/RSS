@@ -32,7 +32,6 @@
     if (self) {
         self.context = context;
     }
-
     return self;
 }
 
@@ -41,17 +40,17 @@
 }
 
 
-- (void)parseRSSChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *) channel{
+- (void)parseChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *)channel {
     self.rssChannel = channel;
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
     [parser setDelegate:self];
-    self.isChannelSection = YES;
     [parser parse];
 }
 
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
     NSLog(@"Start parsing");
     self.tagInnerText = [NSMutableString new];
+    self.isChannelSection = YES;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -73,23 +72,20 @@
 }
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    
+
     if (self.isChannelSection) {
         //for channel
-        ((void (^)())@{
+        ((void (^)()) @{
                 @"title": ^{
                     self.rssChannel.title = self.tagInnerText;
                 },
-                @"link": ^{
-                    self.rssChannel.link = self.tagInnerText;
-                },
                 @"description": ^{
                     self.rssChannel.topic = self.tagInnerText;
-                 },
-                @"url": ^{
-                    self.rssChannel.image = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.tagInnerText]];
                 },
-        }[elementName]?: ^{
+                @"url": ^{
+                    self.rssChannel.image = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:self.tagInnerText]];
+                },
+        }[elementName] ?: ^{
         })();
 
     } else {
@@ -106,14 +102,23 @@
                 },
                 @"category": ^{
                     self.rssItem.category = self.tagInnerText;
+                    NSLog(@"%@",self.tagInnerText);
                 },
                 @"pubDate": ^{
                     self.rssItem.date = [YMADateHelper dateFromRSSString:self.tagInnerText];
+
+                    if (self.rssChannel.lastUpdate) {
+                         NSComparisonResult result = [self.rssChannel.lastUpdate compare:self.rssItem.date];
+                        if (result ==  NSOrderedDescending) {
+                            NSLog(@"RSS Channel Updated stop loading %@", self.rssChannel.title);
+                            [parser abortParsing];
+                        }
+                    }
                 },
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;
                     [self.rssChannel addItemsObject:self.rssItem];
-                        },
+                },
         }[elementName] ?: ^{
         })();
 

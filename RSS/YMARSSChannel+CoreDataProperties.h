@@ -2,7 +2,7 @@
 //  YMARSSChannel+CoreDataProperties.h
 //  
 //
-//  Created by Mikhail Yaskou on 11.09.17.
+//  Created by Mikhail Yaskou on 19.09.17.
 //
 //
 
@@ -17,6 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic) int16_t id;
 @property (nullable, nonatomic, retain) NSData *image;
+@property (nullable, nonatomic, copy) NSDate *lastUpdate;
 @property (nullable, nonatomic, copy) NSString *link;
 @property (nullable, nonatomic, copy) NSString *title;
 @property (nullable, nonatomic, copy) NSString *topic;
