@@ -1,14 +1,14 @@
 //
-//  YMAMenuStaticCellTableViewCell.m
+//  YMAMenuStaticTableViewCell.m
 //  RSS
 //
-//  Created by Mikhail Yaskou on 17.09.17.
+//  Created by Mikhail Yaskou on 18.09.17.
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import "YMAMenuStaticCellTableViewCell.h"
+#import "YMAMenuStaticTableViewCell.h"
 
-@implementation YMAMenuStaticCellTableViewCell
+@implementation YMAMenuStaticTableViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];

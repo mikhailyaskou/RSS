@@ -17,8 +17,6 @@
 
 @implementation YMALeftMenuVC
 
--(void)viewDidLoad{
-    [super viewDidLoad];
-}
+
 
 @end

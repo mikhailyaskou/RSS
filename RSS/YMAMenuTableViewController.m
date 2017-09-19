@@ -7,7 +7,7 @@
 //
 
 #import "YMAMenuTableViewController.h"
-
+#import "YMAController.h"
 @interface YMAMenuTableViewController ()
 
 @property (strong, nonatomic) NSIndexPath *selectedRowIndexPach;
@@ -26,10 +26,37 @@
     
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedRowIndexPach = indexPath;
+    
+    switch (indexPath.row) {
+        case 0:
+            [[YMAController sharedInstance] setSelectedChannelIndex:@(indexPath.row)];
+
+            break;
+        case 1:
+            [[YMAController sharedInstance] setSelectedChannelIndex:@(indexPath.row)];
+            break;
+        case 2:
+            [[YMAController sharedInstance] setSelectedChannelIndex:@(indexPath.row)];
+            break;
+        case 3:
+
+            break;
+        case 4:
+
+            break;
+        case 5:
+
+
+        default:
+            break;
+    }
+
+    [[YMAController sharedInstance] applySelectedParameters];
+
 }
+
 
 
 @end

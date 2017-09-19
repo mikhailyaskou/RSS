@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,9 +77,9 @@
                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <sections>
-                            <tableViewSection id="moN-FK-s2e">
+                            <tableViewSection id="DtS-CG-kli">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="zAa-Qr-dFb" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="zAa-Qr-dFb" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zAa-Qr-dFb" id="gYw-mG-s9b">
@@ -103,7 +102,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="F7t-n2-dOZ" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="F7t-n2-dOZ" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="64" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="F7t-n2-dOZ" id="S2R-DN-GPE">
@@ -126,7 +125,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="6kf-Lj-jyB" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="6kf-Lj-jyB" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="128" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6kf-Lj-jyB" id="eor-fe-0tS">
@@ -149,7 +148,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="oXk-BG-N4m" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="oXk-BG-N4m" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="192" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oXk-BG-N4m" id="aZp-Ux-AQu">
@@ -179,7 +178,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="eNP-bB-am0" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="eNP-bB-am0" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="256" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eNP-bB-am0" id="8kd-hX-XTM">
@@ -202,7 +201,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="rXJ-hl-RaP" customClass="YMAMenuStaticCellTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="rXJ-hl-RaP" customClass="YMAMenuStaticTableViewCell">
                                         <rect key="frame" x="0.0" y="320" width="207" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="rXJ-hl-RaP" id="Oib-B8-zgF">
@@ -282,15 +281,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="216"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-t3-8mm">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8K-t3-8mm">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="142"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imi-6w-maD">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="imi-6w-maD">
                                                     <rect key="frame" x="0.0" y="142" width="150" height="74"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="74" id="8d5-tf-cOh"/>
-                                                        <constraint firstAttribute="width" secondItem="imi-6w-maD" secondAttribute="height" multiplier="75:37" id="Ugo-eS-ScU"/>
-                                                    </constraints>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Label">
                                                             <attributes>
@@ -304,15 +301,6 @@
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="u8K-t3-8mm" firstAttribute="leading" secondItem="kdD-uC-9A4" secondAttribute="leading" id="Arc-xV-UcZ"/>
-                                            <constraint firstItem="imi-6w-maD" firstAttribute="leading" secondItem="kdD-uC-9A4" secondAttribute="leading" id="HAT-NT-QR2"/>
-                                            <constraint firstAttribute="trailing" secondItem="imi-6w-maD" secondAttribute="trailing" id="Rf4-G9-gpZ"/>
-                                            <constraint firstAttribute="bottom" secondItem="imi-6w-maD" secondAttribute="bottom" id="cgj-1C-PC0"/>
-                                            <constraint firstAttribute="trailing" secondItem="u8K-t3-8mm" secondAttribute="trailing" id="sDG-gv-pOS"/>
-                                            <constraint firstItem="imi-6w-maD" firstAttribute="top" secondItem="u8K-t3-8mm" secondAttribute="bottom" id="wRb-Wl-kyn"/>
-                                            <constraint firstItem="u8K-t3-8mm" firstAttribute="top" secondItem="kdD-uC-9A4" secondAttribute="top" id="yHM-eY-xuv"/>
-                                        </constraints>
                                         <size key="customSize" width="150" height="216"/>
                                         <connections>
                                             <outlet property="itemImage" destination="u8K-t3-8mm" id="vmD-yi-nCM"/>
@@ -329,43 +317,43 @@
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <tabBarItem tag="1" title="" image="world" id="VhI-i6-Roa" customClass="YMACustomTabBarItem">
+                                    <tabBarItem title="" image="world" id="VhI-i6-Roa" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="В мире"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="2" title="" image="society" id="Hth-eI-2UW" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="1" title="" image="society" id="Hth-eI-2UW" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Общество"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="3" title="" image="realty" id="nuW-fz-pnM" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="2" title="" image="realty" id="nuW-fz-pnM" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Недвижимость"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="4" title="" image="auto" id="Gk3-oj-pI3" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="3" title="" image="auto" id="Gk3-oj-pI3" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Авто"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="5" title="" image="technologies" id="GlK-cD-DEo" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="4" title="" image="technologies" id="GlK-cD-DEo" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Технологии"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="6" title="" image="finance" id="WNc-YW-kIO" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="5" title="" image="finance" id="WNc-YW-kIO" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Финансы"/>
                                         </userDefinedRuntimeAttributes>
                                     </tabBarItem>
-                                    <tabBarItem tag="7" image="bicycle" id="3nC-Kx-lvE" customClass="YMACustomTabBarItem">
+                                    <tabBarItem tag="6" image="bicycle" id="3nC-Kx-lvE" customClass="YMACustomTabBarItem">
                                         <inset key="imageInsets" minX="0.0" minY="6" maxX="0.0" maxY="-6"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="tabTitle" value="Спорт"/>

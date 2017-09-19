@@ -3,6 +3,7 @@
     <entity name="YMARSSChannel" representedClassName="YMARSSChannel" syncable="YES">
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
         <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="topic" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,7 +22,7 @@
         <relationship name="channel" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="YMARSSChannel" inverseName="items" inverseEntity="YMARSSChannel" syncable="YES"/>
     </entity>
     <elements>
-        <element name="YMARSSChannel" positionX="-135" positionY="-106" width="128" height="150"/>
+        <element name="YMARSSChannel" positionX="-135" positionY="-106" width="128" height="165"/>
         <element name="YMARSSItem" positionX="108" positionY="-142" width="128" height="180"/>
     </elements>
 </model>

@@ -24,8 +24,8 @@
     
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YMAMainVC *mainVC = [storyboard instantiateViewControllerWithIdentifier:@"YMAMainVC"];
-    YMALeftMenuVC *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"YMALeftMenuVC"];
+    UIViewController *mainVC = [storyboard instantiateViewControllerWithIdentifier:@"YMAMainVC"];
+    UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"YMALeftMenuVC"];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:mainVC leftViewController:leftMenuVC];
     //Configure.
     [self.revealController setMinimumWidth:207 maximumWidth:207 forViewController:leftMenuVC];
