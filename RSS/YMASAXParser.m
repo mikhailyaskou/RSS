@@ -102,7 +102,6 @@
                 },
                 @"category": ^{
                     self.rssItem.category = self.tagInnerText;
-                    NSLog(@"%@",self.tagInnerText);
                 },
                 @"pubDate": ^{
                     self.rssItem.date = [YMADateHelper dateFromRSSString:self.tagInnerText];
@@ -111,6 +110,7 @@
                          NSComparisonResult result = [self.rssChannel.lastUpdate compare:self.rssItem.date];
                         if (result ==  NSOrderedDescending) {
                             NSLog(@"RSS Channel Updated stop loading %@", self.rssChannel.title);
+                            self.rssChannel.lastUpdate = [NSDate new];
                             [parser abortParsing];
                         }
                     }
@@ -126,6 +126,7 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
+    self.rssChannel.lastUpdate = [NSDate new];
     NSLog(@"end parsing");
 }
 

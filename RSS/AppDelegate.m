@@ -12,9 +12,6 @@
 #import <MagicalRecord/MagicalRecord.h>
 
 @interface AppDelegate ()
-
-@property (nonatomic, strong, readwrite) PKRevealController *revealController;
-
 @end
 
 @implementation AppDelegate
@@ -24,16 +21,17 @@
     
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    YMAMainVC *mainVC = [storyboard instantiateViewControllerWithIdentifier:@"YMAMainVC"];
-    YMALeftMenuVC *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"YMALeftMenuVC"];
+    UIViewController *mainVC = YMAMainVC.sharedInstance;
+    UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:@"YMALeftMenuVC"];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:mainVC leftViewController:leftMenuVC];
     //Configure.
     [self.revealController setMinimumWidth:207 maximumWidth:207 forViewController:leftMenuVC];
      //Apply.
     self.window.rootViewController = self.revealController;
-    self.revealController.delegate = mainVC;
+    //self.revealController.delegate = mainVC;
     //setupCoreDataStack
     [MagicalRecord setupCoreDataStack];
+
 
     return YES;
 }
