@@ -7,8 +7,11 @@
 //
 
 #import "YMAMenuTableViewController.h"
-
-@interface YMAMenuTableViewController ()
+#import "YMAController.h"
+#import "PKRevealController.h"
+#import "YMAOfferNewsViewController.h"
+#import "YMAMainVC.h"
+@interface YMAMenuTableViewController () <PKRevealing>
 
 @property (strong, nonatomic) NSIndexPath *selectedRowIndexPach;
 
@@ -27,9 +30,34 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-   
-    self.selectedRowIndexPach = indexPath;
-}
+   self.selectedRowIndexPach = indexPath;
+    
+    UIViewController *nextFronViewController;
+    
+    switch (indexPath.row) {
+        case 0:
+        case 1:
+        case 2:
+            nextFronViewController = YMAMainVC.sharedInstance;
+            [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
+            [YMAController.sharedInstance applySelectedParameters];
+            break;
+        case 3: {
+            
+            nextFronViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOfferNewsViewController"];
+            }
+            break;
+        case 4:
+            
+            break;
+        case 5:
+            
+            break;
+    }
+    self.revealController.frontViewController = nextFronViewController;
+    [self.revealController showViewController:self.revealController.frontViewController];
+    
+   }
 
 
 @end

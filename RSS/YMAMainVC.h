@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMAMainVC : UIViewController 
+@interface YMAMainVC : UIViewController
+
++ (YMAMainVC *)sharedInstance;
 
 @end
