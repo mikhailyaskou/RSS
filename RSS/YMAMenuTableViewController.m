@@ -38,10 +38,15 @@
     switch (indexPath.row) {
         case 0:
         case 1:
-        case 2:
+        case 2: {
             nextFronViewController = YMAMainVC.sharedInstance;
             [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
             [YMAController.sharedInstance applySelectedParameters];
+            [YMAMainVC.sharedInstance resetScrollCollectionView];
+            [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
+               [YMAController.sharedInstance applySelectedParameters];
+             }];
+        }
             break;
         case 3: {
             nextFronViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOfferNewsViewController"];
@@ -54,6 +59,10 @@
     }
     self.revealController.frontViewController = nextFronViewController;
     [self.revealController showViewController:self.revealController.frontViewController];
+}
+
+-(void)switchChannel {
+
 }
 
 

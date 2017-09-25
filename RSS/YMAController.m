@@ -15,9 +15,9 @@
 
 @interface YMAController ()
 
-@property (nonatomic, strong) NSDictionary *channelsDescription;
-@property (nonatomic, strong) NSDictionary *categoryDescription;
-@property (nonatomic, strong) NSArray<YMARSSItem *> *privateItems;
+@property(nonatomic, strong) NSDictionary *channelsDescription;
+@property(nonatomic, strong) NSDictionary *categoryDescription;
+@property(nonatomic, strong) NSArray<YMARSSItem *> *privateItems;
 
 @end
 
@@ -33,37 +33,36 @@
 }
 
 - (NSNumber *)selectedCategoryIndex {
-    if (!_selectedCategoryIndex){
+    if (!_selectedCategoryIndex) {
         _selectedCategoryIndex = @0;
     }
     return _selectedCategoryIndex;
 }
 
 - (NSNumber *)selectedChannelIndex {
-    if (!_selectedChannelIndex){
-       _selectedChannelIndex = @0;
+    if (!_selectedChannelIndex) {
+        _selectedChannelIndex = @0;
     }
     return _selectedChannelIndex;
 }
 
 - (NSDictionary *)channelsDescription {
     if (!_channelsDescription) {
-        _channelsDescription = @{   @0: @[@"http://people.onliner.by/feed",
-        @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
-                                     @1 : @[
+        _channelsDescription = @{@0: @[@"http://people.onliner.by/feed",
+                @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
+                @1: @[
                         @"https://news.tut.by/rss/economics.rss", @"https://news.tut.by/rss/society.rss",
-                        @"https://news.tut.by/rss/world.rss" ,@"https://news.tut.by/rss/culture.rss",
-                        @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss"
-                        ,@"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
-                @"https://news.tut.by/rss/auto.rss"],
-                                     @2 : @[@"http://lenta.ru/rss"]};
+                        @"https://news.tut.by/rss/world.rss", @"https://news.tut.by/rss/culture.rss",
+                        @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss", @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
+                        @"https://news.tut.by/rss/auto.rss"],
+                @2: @[@"http://lenta.ru/rss"]};
     }
     return _channelsDescription;
 }
 
-- (NSDictionary *)categoryDescription{
+- (NSDictionary *)categoryDescription {
     if (!_categoryDescription) {
-        _categoryDescription = @{ @0: @[@"Россия", @"Мир", @"Крым", @"Бывший СССР", @"Путешествия", @"В мире",
+        _categoryDescription = @{@0: @[@"Россия", @"Мир", @"Крым", @"Бывший СССР", @"Путешествия", @"В мире",
                 @"Происшествия", @"Эксклюзив", @"Кругозор", @"События в мире", @"Городская жизнь", @"Проблемы", @"Новые места", @"Официально"],
                 @1: @[@"Люди", @"Мнения", @"Из жизни", @"Интернет и СМИ", @"Культура", @"Социум",
                         @"Силовые структуры", @"Ценности", @"Культпросвет", @"Общество", @"Офтоп", @"Профессионалы", @"Закон и порядок", @"Деревня"],
@@ -78,28 +77,44 @@
     return _categoryDescription;
 }
 
-- (void)updateChannelForIndex:(NSNumber *) index {
+- (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion {
+    [self updateChannelForIndex:self.selectedChannelIndex withCompletionBlock:completion];
+}
+
+- (void)updateChannelForIndex:(NSNumber *)index {
+    [self updateChannelForIndex:index withCompletionBlock:^{}];
+}
+
+- (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion {
     NSArray *channelLinks = self.channelsDescription[index];
-    for (NSString *link in channelLinks){
-        NSURL *url = [NSURL URLWithString:link];
-        [self loadChannelWithURL:url];
+    dispatch_group_t updateGroup = dispatch_group_create();
+    dispatch_queue_t globalQueueDefaultPriority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
+    for (NSString *link in channelLinks) {
+        dispatch_group_async(updateGroup, globalQueueDefaultPriority, ^{
+            NSURL *url = [NSURL URLWithString:link];
+            [self loadChannelWithURL:url];
+        });
+    }
+    if (completion) {
+    dispatch_group_notify(updateGroup, dispatch_get_main_queue(), ^{
+        completion();
+    });
     }
 }
 
-- (void)updateSelectedChannel{
+- (void)updateSelectedChannel {
     [self updateChannelForIndex:self.selectedChannelIndex];
 }
 
 - (void)updateAllChannels {
-    for (int i = 0; i<= self.channelsDescription.count; i++) {
+    for (int i = 0; i <= self.channelsDescription.count; i++) {
         [self updateChannelForIndex:@(i)];
     }
 }
 
-- (void) loadChannelWithURL:(NSURL *)url {
-    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext) {
-        YMARSSChannel *channel = [YMARSSChannel MR_findFirstByAttribute:@"link"
-                                                              withValue:url inContext:localContext];
+- (void)loadChannelWithURL:(NSURL *)url {
+    [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
+        YMARSSChannel *channel = [YMARSSChannel MR_findFirstByAttribute:@"link" withValue:url inContext:localContext];
         if (!channel) {
             channel = [YMARSSChannel MR_createEntityInContext:localContext];
             channel.link = url.absoluteString;
@@ -108,7 +123,6 @@
         YMASAXParser *parser = [[YMASAXParser alloc] initWithContext:localContext];
         [parser parseChannelWithURL:url inCoreDataMOChannel:channel];
         NSLog(@"RSS Channel loaded %@: %lu", url, [[channel items] count]);
-    } completion:^(BOOL success, NSError *error) {
     }];
 }
 
@@ -116,7 +130,7 @@
     NSString *predicateFormat = @"SELF.channel.link in %@ AND SELF.category in %@";
     NSArray *channelLinks = self.channelsDescription[self.selectedChannelIndex];
     NSArray *categoryTags = self.categoryDescription[self.selectedCategoryIndex];
-    return  [NSPredicate predicateWithFormat:predicateFormat, channelLinks, categoryTags];
+    return [NSPredicate predicateWithFormat:predicateFormat, channelLinks, categoryTags];
 }
 
 - (void)applySelectedParameters {
