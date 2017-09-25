@@ -12,4 +12,6 @@
 
 + (YMAMainVC *)sharedInstance;
 
+- (void)resetScrollCollectionView;
+
 @end

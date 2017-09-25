@@ -24,5 +24,8 @@
 - (void)updateChannelForIndex:(NSNumber *)index;
 - (void)updateAllChannels;
 - (void)updateSelectedChannel;
+- (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion;
+- (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion;
+
 
 @end

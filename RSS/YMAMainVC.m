@@ -11,9 +11,7 @@
 #import "YMARSSItem+CoreDataClass.h"
 #import "RFQuiltLayout.h"
 #import "YMARSSItemCollectionViewCell.h"
-#import "YMADateHelper.h"
 #import "AsyncImageView.h"
-#import "NSManagedObject+MagicalAggregation.h"
 #import "PKRevealController.h"
 #import "YMAController.h"
 
@@ -22,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @property (assign, nonatomic) BOOL isNextLong;
 
@@ -46,37 +45,37 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-
     RFQuiltLayout* layout = (id)[self.collectionView collectionViewLayout];
     layout.direction = UICollectionViewScrollDirectionVertical;
     layout.blockPixels = CGSizeMake((self.view.frame.size.width / 2)-10, 200);
     layout.delegate = self;
     
     //select first tabItem 
-    [self.tabBar setSelectedItem:[self.tabBar.items objectAtIndex:0]];
-    
-    
-    [[YMAController sharedInstance] addObserver:self forKeyPath:@"rssItems" options:0 context:nil];
-    
-    [[YMAController sharedInstance] updateAllChannels];
-    [[YMAController sharedInstance] applySelectedParameters];
-    
+    [self.tabBar setSelectedItem:self.tabBar.items[0]];
+    //set observer
+    [YMAController.sharedInstance addObserver:self forKeyPath:@"rssItems" options:0 context:nil];
+    //load and show first channel
+    [YMAController.sharedInstance updateChannelForIndex:@0 withCompletionBlock:^{
+        [YMAController.sharedInstance applySelectedParameters];
+    }];
+    //refresh control
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.collectionView addSubview:self.refreshControl];
+    [self.refreshControl addTarget:self action:@selector(refreshCollectionView) forControlEvents:UIControlEventValueChanged];
 }
 
 #pragma mark - Actions
 
-- (IBAction)showLeftMenuTapped:(id)sender {
-   [self.revealController showViewController:self.revealController.leftViewController];
+- (void)refreshCollectionView {
+     NSLog(@"refresh Triggered");
+    [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
+        [YMAController.sharedInstance applySelectedParameters];
+        [self.refreshControl endRefreshing];
+    }];
 }
 
-
-- (void)tabBarTapped {
-    [self.navigationItem setTitle:@"В мире"];
-    [self.tabBar setSelectedItem:0];
-    
+- (IBAction)showLeftMenuTapped:(id)sender {
+   [self.revealController showViewController:self.revealController.leftViewController];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath
@@ -86,20 +85,21 @@
     if ([keyPath isEqualToString:@"rssItems"])
     {
         NSLog(@"observerTriggered");
-        [self.collectionView setContentOffset:CGPointZero animated:NO];
         [self.collectionView reloadData];
-        
     }
+}
+
+- (void)resetScrollCollectionView {
+    [self.collectionView setContentOffset:CGPointZero animated:NO];
 }
 
 #pragma mark - TabBar Delegate
 
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item{
     self.navigationBarTitle.title = [item valueForKey:@"tabTitle"];
-    
     [[YMAController sharedInstance] setSelectedCategoryIndex:@(item.tag)];
     [[YMAController sharedInstance] applySelectedParameters];
-    
+    [self resetScrollCollectionView];
 }
 
 #pragma mark - UICollectionView Delegate
@@ -118,19 +118,17 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
     YMARSSItemCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"YMARSSItemCell" forIndexPath:indexPath];
-    
-   
+
     if (cell != nil) {
       //cancel loading previous image for cell
-      [[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.itemImage];
+      //[[AsyncImageLoader sharedLoader] cancelLoadingImagesForTarget:cell.itemImage];
     }
     
     YMARSSItem *item = YMAController.sharedInstance.rssItems[indexPath.row];
     cell.itemTitle.text = item.title;
-    //set placeholder image or cell show old image for new reuuse cell
+    //set placeholder image or cell show old image for new reuse cell
     cell.itemImage.image = [UIImage imageNamed:@"Placeholder.png"];
     cell.itemImage.imageURL = [NSURL URLWithString:[item imageUrl]];
-
     return cell;
 }
 
