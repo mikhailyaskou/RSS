@@ -33,21 +33,28 @@ NSString * const termsLinks[] = {@"http://blog.onliner.by/siterules",@"https://n
     self.addImageButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     //textView placeHolder
     self.newsTextView.delegate = self;
-    self.newsTextView.text = @"Максимум 5000 символов.";
-    self.newsTextView.textColor = [UIColor lightGrayColor];
+    [self setTextViewPlaceHolder:self.newsTextView];
     //segmentControl heght
     CGRect frame = self.newsPortalSegmentControl.frame;
-    frame.size.height = 40;
+    frame.size.height = 80;
     self.newsPortalSegmentControl.frame = frame;
     //custom font segment controll
     UIFont *font = [UIFont fontWithName:@"Times New Roman" size:17];
     NSDictionary *attributes = [NSDictionary dictionaryWithObject:font forKey:NSFontAttributeName];
     [self.newsPortalSegmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
-    //text fields
-    self.cellPhoneTextField.placeholder = @"   +375(___)___-__-__";
-    self.emailTextField.placeholder = @"   e-mail";
     //text terms - set link
     [self setTermslinkWithIndex:0];
+    
+    //dissmiss keyboard
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard
+{
+    [self.newsTextView resignFirstResponder];
+    [self.cellPhoneTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
 }
 
 - (IBAction)segmentControlVelueChanged:(UISegmentedControl *)sender {
@@ -68,20 +75,41 @@ NSString * const termsLinks[] = {@"http://blog.onliner.by/siterules",@"https://n
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if ([textView.text isEqualToString:@"Максимум 5000 символов."]) {
-        textView.text = @"";
-        textView.textColor = [UIColor blackColor];
-    }
+    [self setTextViewPlaceHolder:textView];
     [textView becomeFirstResponder];
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
+    [self setTextViewPlaceHolder:textView];
+    [textView resignFirstResponder];
+}
+
+- (void)setTextViewPlaceHolder:(UITextView *)textView {
     if ([textView.text isEqualToString:@""]) {
         textView.text = @"Максимум 5000 символов.";
         textView.textColor = [UIColor lightGrayColor];
+    } else if ([textView.text isEqualToString:@"Максимум 5000 символов."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor];
     }
-    [textView resignFirstResponder];
+}
+
+- (IBAction)textFiledDidBeginEditing:(id)sender {
+    [self moveViewToOriginY:-125];
+}
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+    [self moveViewToOriginY:0];
+}
+
+- (void)moveViewToOriginY:(CGFloat)originY {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:0.35f];
+    CGRect frame = self.view.frame;
+    frame.origin.y = originY;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
 }
 
 @end
