@@ -7,11 +7,16 @@
 //
 
 #import "YMAAboutUSViewController.h"
+#import "PKRevealController.h"
 
-@interface YMAAboutUSViewController ()
+@interface YMAAboutUSViewController () <PKRevealing>
 
 @end
 
 @implementation YMAAboutUSViewController
+
+- (IBAction)menuTapped:(id)sender {
+    [self.revealController showViewController:self.revealController.leftViewController];
+}
 
 @end

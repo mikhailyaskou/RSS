@@ -19,9 +19,9 @@
 		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
 		983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832545F1F643B4E00E41AC5 /* Assets.xcassets */; };
 		983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */; };
-		986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 986B5C151F6BC8DB009274CA /* AsyncImageView.m */; };
 		986EBCE81F72BFFE00E21E42 /* YMAOfferNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986EBCE71F72BFFE00E21E42 /* YMAOfferNewsViewController.m */; };
 		987157881F66E18600770E5F /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157871F66E18600770E5F /* YMADateHelper.m */; };
+		9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */; };
 		989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 989E192C1F6BD68B00BD43B3 /* Placeholder.png */; };
 		98CDF1311F71508E006ED714 /* YMASAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1301F71508E006ED714 /* YMASAXParser.m */; };
 		98CDF1341F71509A006ED714 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1331F71509A006ED714 /* YMAController.m */; };
@@ -30,7 +30,6 @@
 		98CDF1411F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13B1F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m */; };
 		98CDF1421F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13D1F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m */; };
 		98CDF1431F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13F1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m */; };
-		98CDF1461F7151F4006ED714 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1451F7151F4006ED714 /* Reachability.m */; };
 		98CF0C191F6E96DD00D293DD /* YMACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */; };
 		98CF0C201F6EA6BD00D293DD /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C1F1F6EA6BD00D293DD /* line.png */; };
 		98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C211F6EA7BD00D293DD /* lineTop.png */; };
@@ -68,12 +67,11 @@
 		9832545F1F643B4E00E41AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		983254621F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983254641F643B4E00E41AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		986B5C141F6BC8DB009274CA /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
-		986B5C151F6BC8DB009274CA /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		986EBCE61F72BFFE00E21E42 /* YMAOfferNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOfferNewsViewController.h; sourceTree = "<group>"; };
 		986EBCE71F72BFFE00E21E42 /* YMAOfferNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOfferNewsViewController.m; sourceTree = "<group>"; };
 		987157861F66E18600770E5F /* YMADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADateHelper.h; sourceTree = "<group>"; };
 		987157871F66E18600770E5F /* YMADateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMADateHelper.m; sourceTree = "<group>"; };
+		9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo-available.png"; sourceTree = "<group>"; };
 		989E192C1F6BD68B00BD43B3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = RSS/Placeholder.png; sourceTree = SOURCE_ROOT; };
 		98CDF12F1F71508E006ED714 /* YMASAXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMASAXParser.h; sourceTree = "<group>"; };
 		98CDF1301F71508E006ED714 /* YMASAXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMASAXParser.m; sourceTree = "<group>"; };
@@ -88,8 +86,6 @@
 		98CDF13D1F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMARSSChannel+CoreDataClass.m"; sourceTree = "<group>"; };
 		98CDF13E1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMARSSChannel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		98CDF13F1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMARSSChannel+CoreDataProperties.m"; sourceTree = "<group>"; };
-		98CDF1441F7151F4006ED714 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
-		98CDF1451F7151F4006ED714 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		98CF0C171F6E96DD00D293DD /* YMACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBarItem.h; sourceTree = "<group>"; };
 		98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBarItem.m; sourceTree = "<group>"; };
 		98CF0C1F1F6EA6BD00D293DD /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
@@ -122,8 +118,6 @@
 		1D84ECA0A488B68407E198CA /* lib */ = {
 			isa = PBXGroup;
 			children = (
-				98CDF1471F7151F8006ED714 /* AppleRecheability */,
-				986B5C131F6BC8DB009274CA /* AsyncImageView */,
 				1D84EFDF8C9FB7ADEF4473A8 /* TVQuiltLayout */,
 			);
 			path = lib;
@@ -244,15 +238,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		986B5C131F6BC8DB009274CA /* AsyncImageView */ = {
-			isa = PBXGroup;
-			children = (
-				986B5C141F6BC8DB009274CA /* AsyncImageView.h */,
-				986B5C151F6BC8DB009274CA /* AsyncImageView.m */,
-			);
-			path = AsyncImageView;
-			sourceTree = "<group>";
-		};
 		986EBCE91F72C01200E21E42 /* offerNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,15 +254,6 @@
 				987157871F66E18600770E5F /* YMADateHelper.m */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		98CDF1471F7151F8006ED714 /* AppleRecheability */ = {
-			isa = PBXGroup;
-			children = (
-				98CDF1441F7151F4006ED714 /* Reachability.h */,
-				98CDF1451F7151F4006ED714 /* Reachability.m */,
-			);
-			name = AppleRecheability;
 			sourceTree = "<group>";
 		};
 		98CF0C1A1F6E96EF00D293DD /* TabBar */ = {
@@ -305,6 +281,7 @@
 		98D6902F1F6C4EA3008B2C37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */,
 				98198D391F7428770058D07F /* left.png */,
 				98198D3B1F74287B0058D07F /* right.png */,
 				989E192C1F6BD68B00BD43B3 /* Placeholder.png */,
@@ -397,6 +374,7 @@
 				983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */,
 				989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */,
 				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
+				9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */,
 				98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */,
 				98198D3C1F74287B0058D07F /* right.png in Resources */,
 				98198D3A1F7428770058D07F /* left.png in Resources */,
@@ -421,11 +399,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RSS/Pods-RSS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/PKRevealController/PKRevealController.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKRevealController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -474,7 +454,6 @@
 			files = (
 				986EBCE81F72BFFE00E21E42 /* YMAOfferNewsViewController.m in Sources */,
 				98CDF1431F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m in Sources */,
-				986B5C161F6BC8DB009274CA /* AsyncImageView.m in Sources */,
 				982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */,
 				98CDF1401F7151CD006ED714 /* YMARSSItem+CoreDataClass.m in Sources */,
 				98CDF1421F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m in Sources */,
@@ -482,7 +461,6 @@
 				987157881F66E18600770E5F /* YMADateHelper.m in Sources */,
 				9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */,
 				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
-				98CDF1461F7151F4006ED714 /* Reachability.m in Sources */,
 				98CDF1311F71508E006ED714 /* YMASAXParser.m in Sources */,
 				983254521F643B4E00E41AC5 /* main.m in Sources */,
 				98CDF1371F71517D006ED714 /* RSS.xcdatamodeld in Sources */,

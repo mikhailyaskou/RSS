@@ -11,7 +11,7 @@
 @implementation YMARSSChannel (CoreDataProperties)
 
 + (NSFetchRequest<YMARSSChannel *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMARSSChannel"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMARSSChannel"];
 }
 
 @dynamic id;

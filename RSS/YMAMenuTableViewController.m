@@ -9,61 +9,58 @@
 #import "YMAMenuTableViewController.h"
 #import "YMAController.h"
 #import "PKRevealController.h"
-#import "YMAOfferNewsViewController.h"
 #import "YMAMainVC.h"
 
 @interface YMAMenuTableViewController () <PKRevealing>
 
-@property(strong, nonatomic) NSIndexPath *selectedRowIndexPach;
+@property(strong, nonatomic) NSIndexPath *selectedRowIndexPatch;
 
 @end
 
 @implementation YMAMenuTableViewController
 
 - (void)viewDidLoad {
-    self.selectedRowIndexPach = [NSIndexPath indexPathForItem:0 inSection:0];
+    [super viewDidLoad];
+    self.selectedRowIndexPatch = [NSIndexPath indexPathForItem:0 inSection:0];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self.tableView selectRowAtIndexPath:self.selectedRowIndexPach animated:YES scrollPosition:UITableViewScrollPositionNone];
+    [self.tableView selectRowAtIndexPath:self.selectedRowIndexPatch animated:YES scrollPosition:UITableViewScrollPositionNone];
 
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    self.selectedRowIndexPach = indexPath;
+    self.selectedRowIndexPatch = indexPath;
 
-    UIViewController *nextFronViewController;
+    UIViewController *nextFrontViewController;
 
     switch (indexPath.row) {
         case 0:
         case 1:
         case 2: {
-            nextFronViewController = YMAMainVC.sharedInstance;
+            nextFrontViewController = YMAMainVC.sharedInstance;
             [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
             [YMAController.sharedInstance applySelectedParameters];
             [YMAMainVC.sharedInstance resetScrollCollectionView];
             [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
-               [YMAController.sharedInstance applySelectedParameters];
-             }];
+                [YMAController.sharedInstance applySelectedParameters];
+            }];
         }
             break;
         case 3: {
-            nextFronViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOfferNewsViewController"];
+            nextFrontViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAOfferNewsViewController"];
         }
             break;
         case 5: {
-            nextFronViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAAboutUSViewController"];
+            nextFrontViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"YMAAboutUSViewController"];
         }
             break;
+        default:
+            break;
     }
-    self.revealController.frontViewController = nextFronViewController;
+    self.revealController.frontViewController = nextFrontViewController;
     [self.revealController showViewController:self.revealController.frontViewController];
 }
-
--(void)switchChannel {
-
-}
-
 
 @end

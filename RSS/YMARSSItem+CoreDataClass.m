@@ -7,7 +7,6 @@
 //
 
 #import "YMARSSItem+CoreDataClass.h"
-#import "YMARSSChannel+CoreDataClass.h"
 
 @implementation YMARSSItem
 

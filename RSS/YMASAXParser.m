@@ -39,7 +39,6 @@
     return [[self alloc] initWithContext:context];
 }
 
-
 - (void)parseChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *)channel {
     self.rssChannel = channel;
     NSXMLParser *parser = [[NSXMLParser alloc] initWithContentsOfURL:url];
@@ -61,7 +60,6 @@
         self.isChannelSection = NO;
         self.rssItem = [YMARSSItem MR_createEntityInContext:self.context];
     }
-
     if ([elementName isEqualToString:@"enclosure"] || [elementName isEqualToString:@"media:thumbnail"]) {
         self.itemImageUrl = [attributeDict valueForKey:@"url"];
     }
@@ -117,6 +115,7 @@
                 },
                 @"item": ^{
                     self.rssItem.imageUrl = self.itemImageUrl;
+                    self.itemImageUrl = nil;
                     [self.rssChannel addItemsObject:self.rssItem];
                 },
         }[elementName] ?: ^{

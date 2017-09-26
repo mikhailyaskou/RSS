@@ -12,20 +12,24 @@
 
 @interface YMAController : NSObject
 
-@property (nonatomic, strong) NSArray<YMARSSItem *> *rssItems;
-@property (nonatomic, strong) NSNumber *selectedChannelIndex;
-@property (nonatomic, strong) NSNumber *selectedCategoryIndex;
+@property(nonatomic, copy) NSArray<YMARSSItem *> *rssItems;
+@property(nonatomic, strong) NSNumber *selectedChannelIndex;
+@property(nonatomic, strong) NSNumber *selectedCategoryIndex;
 
 + (YMAController *)sharedInstance;
-+ (BOOL)isInternetConnected;
 
 - (void)loadChannelWithURL:(NSURL *)url;
-- (void)applySelectedParameters;
-- (void)updateChannelForIndex:(NSNumber *)index;
-- (void)updateAllChannels;
-- (void)updateSelectedChannel;
-- (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion;
-- (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion;
 
+- (void)applySelectedParameters;
+
+- (void)updateChannelForIndex:(NSNumber *)index;
+
+- (void)updateAllChannels;
+
+- (void)updateSelectedChannel;
+
+- (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion;
+
+- (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion;
 
 @end

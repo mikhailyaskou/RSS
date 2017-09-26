@@ -11,13 +11,11 @@
 #import "YMARSSChannel+CoreDataClass.h"
 #import "YMASAXParser.h"
 #import "YMARSSItem+CoreDataClass.h"
-#import "Reachability.h"
 
 @interface YMAController ()
 
 @property(nonatomic, strong) NSDictionary *channelsDescription;
 @property(nonatomic, strong) NSDictionary *categoryDescription;
-@property(nonatomic, strong) NSArray<YMARSSItem *> *privateItems;
 
 @end
 
@@ -55,7 +53,8 @@
                         @"https://news.tut.by/rss/world.rss", @"https://news.tut.by/rss/culture.rss",
                         @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss", @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
                         @"https://news.tut.by/rss/auto.rss"],
-                @2: @[@"http://lenta.ru/rss"]};
+                @2: @[@"http://lenta.ru/rss", @"https://lenta.ru/rss/news", @"https://lenta.ru/rss/top7", @"https://lenta.ru/rss/last24",
+                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo", @"https://lenta.ru/rss/photo/russia"]};
     }
     return _channelsDescription;
 }
@@ -82,7 +81,8 @@
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index {
-    [self updateChannelForIndex:index withCompletionBlock:^{}];
+    [self updateChannelForIndex:index withCompletionBlock:^{
+    }];
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion {
@@ -96,9 +96,9 @@
         });
     }
     if (completion) {
-    dispatch_group_notify(updateGroup, dispatch_get_main_queue(), ^{
-        completion();
-    });
+        dispatch_group_notify(updateGroup, dispatch_get_main_queue(), ^{
+            completion();
+        });
     }
 }
 
@@ -122,7 +122,7 @@
         }
         YMASAXParser *parser = [[YMASAXParser alloc] initWithContext:localContext];
         [parser parseChannelWithURL:url inCoreDataMOChannel:channel];
-        NSLog(@"RSS Channel loaded %@: %lu", url, [[channel items] count]);
+        NSLog(@"RSS Channel loaded %@: %u", url, [channel.items count]);
     }];
 }
 
@@ -134,13 +134,22 @@
 }
 
 - (void)applySelectedParameters {
-    self.rssItems = [YMARSSItem MR_findAllSortedBy:@"date" ascending:NO withPredicate:self.selectedOptionsPredicate];
-}
-
-+ (BOOL)isInternetConnected {
-    Reachability *reachability = [Reachability reachabilityForInternetConnection];
-    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
-    return networkStatus != NotReachable;
+    NSMutableArray<YMARSSItem *> *result = [[YMARSSItem MR_findAllSortedBy:@"date" ascending:NO withPredicate:self.selectedOptionsPredicate] mutableCopy];
+    //remove duplicated news (it happens when one news in few xml files)
+    NSMutableArray *discardedItems = [NSMutableArray array];
+    NSInteger deepOfDuplicateScan = 2;
+    for (int i = 0; i < result.count; i++) {
+        for (int j = i + 1; j < result.count; j++) {
+            if ([result[i].title isEqualToString:result[j].title]) {
+                [discardedItems addObject:result[j]];
+            }
+            if (j - i > deepOfDuplicateScan) {
+                break;
+            }
+        }
+    }
+    [result removeObjectsInArray:discardedItems];
+    self.rssItems = [result copy];
 }
 
 @end
