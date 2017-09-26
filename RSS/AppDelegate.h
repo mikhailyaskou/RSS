@@ -14,11 +14,11 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property (strong, nonatomic) UIWindow *window;
+@property(strong, nonatomic) UIWindow *window;
 
-@property (readonly, strong) NSPersistentContainer *persistentContainer;
+@property(readonly, strong) NSPersistentContainer *persistentContainer;
 //@property (strong, nonatomic) RFViewController *viewController;
-@property (nonatomic, strong, readwrite) PKRevealController *revealController;
+@property(nonatomic, strong, readwrite) PKRevealController *revealController;
 
 - (void)saveContext;
 

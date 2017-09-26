@@ -10,8 +10,8 @@
 
 @interface YMACustomTabBar ()
 
-@property (nonatomic,strong) UIView *buttonView;
-@property (nonatomic,strong) UIImageView *buttonImage;
+@property(nonatomic, strong) UIView *buttonView;
+@property(nonatomic, strong) UIImageView *buttonImage;
 
 @end
 
@@ -23,19 +23,19 @@
 }
 
 //replace and recalculate button View if size changed (device rotated)
--(CGRect)bounds {
-    if ((self.selectedItemView.frame.size.width) != (self.buttonView.frame.size.width - (YMACustomTabBarSelectedItemInset * 2)) ){
+- (CGRect)bounds {
+    if ((self.selectedItemView.frame.size.width) != (self.buttonView.frame.size.width - (YMACustomTabBarSelectedItemInset * 2))) {
         [self placeBigSelectedItem];
     }
-   return  [super bounds];
-   
+    return [super bounds];
+
 }
 
 /*
  create UIView then on this view crate UIImageView, and place it
- on front selected UITabBarItem - every time when it tappped.
+ on front selected UITabBarItem - every time when it tapped.
 */
--(void)placeBigSelectedItem {
+- (void)placeBigSelectedItem {
     if (self.selectedItem) {
         //get selectedItem view
         UIView *selectedItemView = self.selectedItemView;
@@ -51,7 +51,7 @@
         imageFrame.origin.y = YMACustomTabBarSelectedItemImageInset;
         imageFrame.size.height = viewFrame.size.height - (YMACustomTabBarSelectedItemImageInset * 2);
         imageFrame.size.width = viewFrame.size.width - (YMACustomTabBarSelectedItemImageInset * 2);
-        if (!self.buttonView){
+        if (!self.buttonView) {
             //create view - set color
             self.buttonView = [[UIView alloc] initWithFrame:viewFrame];
             self.buttonView.backgroundColor = self.barTintColor;
@@ -62,8 +62,8 @@
             [self.buttonView addSubview:self.buttonImage];
             //add view on tabBar
             [self addSubview:self.buttonView];
-        } else
-        {
+        }
+        else {
             //if view already initialized set current frame (for current selectedItem)
             [self.buttonView setFrame:viewFrame];
             [self.buttonImage setFrame:imageFrame];
@@ -77,7 +77,7 @@
 
 //place bigItem every time when Item selected
 - (void)setSelectedItem:(UITabBarItem *)selectedItem {
-       [super setSelectedItem:selectedItem];
+    [super setSelectedItem:selectedItem];
     [self placeBigSelectedItem];
 }
 

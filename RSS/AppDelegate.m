@@ -18,7 +18,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController *mainVC = YMAMainVC.sharedInstance;
@@ -26,7 +26,7 @@
     self.revealController = [PKRevealController revealControllerWithFrontViewController:mainVC leftViewController:leftMenuVC];
     //Configure.
     [self.revealController setMinimumWidth:207 maximumWidth:207 forViewController:leftMenuVC];
-     //Apply.
+    //Apply.
     self.window.rootViewController = self.revealController;
     //self.revealController.delegate = mainVC;
     //setupCoreDataStack
@@ -80,7 +80,7 @@
                 if (error != nil) {
                     // Replace this implementation with code to handle the error appropriately.
                     // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                    
+
                     /*
                      Typical reasons for an error here include:
                      * The parent directory does not exist, cannot be created, or disallows writing.
@@ -95,7 +95,7 @@
             }];
         }
     }
-    
+
     return _persistentContainer;
 }
 

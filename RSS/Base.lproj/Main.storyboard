@@ -330,10 +330,10 @@
                                                         <constraint firstAttribute="width" secondItem="imi-6w-maD" secondAttribute="height" multiplier="75:37" id="Ugo-eS-ScU"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
-                                                        <fragment content="Label">
+                                                        <fragment content="Label ">
                                                             <attributes>
-                                                                <font key="NSFont" size="15" name="TimesNewRomanPSMT"/>
-                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                                <font key="NSFont" size="14" name="TimesNewRomanPSMT"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
                                                     </attributedString>
@@ -455,7 +455,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="menu_icon" style="plain" id="Keg-ie-x8f">
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="menyTapped:" destination="qrx-3T-Fcd" id="SfG-K3-rww"/>
+                                                <action selector="menuTapped:" destination="qrx-3T-Fcd" id="SfG-K3-rww"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -473,7 +473,7 @@
                                         </segments>
                                         <color key="tintColor" white="0.14999999999999999" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <action selector="segmentControlVelueChanged:" destination="qrx-3T-Fcd" eventType="valueChanged" id="hGs-eE-Hwg"/>
+                                            <action selector="segmentControlValueChanged:" destination="qrx-3T-Fcd" eventType="valueChanged" id="dl6-Wz-06T"/>
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTj-ep-6wp">
@@ -668,7 +668,7 @@
                                         <barButtonItem key="leftBarButtonItem" image="menu_icon" style="plain" id="Lds-AU-1GE">
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <action selector="showLeftMenuTapped:" destination="BYZ-38-t0r" id="e8h-rk-h8K"/>
+                                                <action selector="menuTapped:" destination="xEL-Cn-sWC" id="LA0-Pr-11H"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>

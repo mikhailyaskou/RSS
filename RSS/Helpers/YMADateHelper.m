@@ -54,5 +54,4 @@ static NSString *const YMATimeFormat = @"HH:mm";
 }
 
 
-
 @end

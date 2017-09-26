@@ -11,7 +11,7 @@
 @implementation YMARSSItem (CoreDataProperties)
 
 + (NSFetchRequest<YMARSSItem *> *)fetchRequest {
-	return [[NSFetchRequest alloc] initWithEntityName:@"YMARSSItem"];
+    return [[NSFetchRequest alloc] initWithEntityName:@"YMARSSItem"];
 }
 
 @dynamic category;
