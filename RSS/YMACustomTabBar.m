@@ -8,10 +8,16 @@
 
 #import "YMACustomTabBar.h"
 
+static const CGFloat YMACustomTabBarSelectedItemInset = 7.5;
+static const CGFloat YMACustomTabBarSelectedItemImageInset = 12.5;
+static const CGFloat YMACustomTabBarSelectedItemHighDifference = 15;
+static NSString *const YMACustomBarViewKey = @"view";
+static const int YMACustomTabBarMultiplier = 2;
+
 @interface YMACustomTabBar ()
 
-@property(nonatomic, strong) UIView *buttonView;
-@property(nonatomic, strong) UIImageView *buttonImage;
+@property (nonatomic, strong) UIView *buttonView;
+@property (nonatomic, strong) UIImageView *buttonImage;
 
 @end
 
@@ -19,16 +25,15 @@
 
 //return UIView for selected item
 - (UIView *)selectedItemView {
-    return [self.selectedItem valueForKey:@"view"];
+    return [self.selectedItem valueForKey:YMACustomBarViewKey];
 }
 
 //replace and recalculate button View if size changed (device rotated)
 - (CGRect)bounds {
-    if ((self.selectedItemView.frame.size.width) != (self.buttonView.frame.size.width - (YMACustomTabBarSelectedItemInset * 2))) {
+    if (CGRectGetWidth(self.selectedItemView.frame) != (CGRectGetWidth(self.buttonView.frame) - (YMACustomTabBarSelectedItemInset * YMACustomTabBarMultiplier))) {
         [self placeBigSelectedItem];
     }
     return [super bounds];
-
 }
 
 /*
@@ -41,16 +46,16 @@
         UIView *selectedItemView = self.selectedItemView;
         //create view frame
         CGRect viewFrame = selectedItemView.frame;
-        viewFrame.origin.x = selectedItemView.frame.origin.x - YMACustomTabBarSelectedItemInset;
-        viewFrame.origin.y = selectedItemView.frame.origin.y - YMACustomTabBarSelectedItemHighDifference;
-        viewFrame.size.height = viewFrame.size.height + (YMACustomTabBarSelectedItemInset * 2);
-        viewFrame.size.width = viewFrame.size.width + (YMACustomTabBarSelectedItemInset * 2);
+        viewFrame.origin.x = CGRectGetMinX(selectedItemView.frame) - YMACustomTabBarSelectedItemInset;
+        viewFrame.origin.y = CGRectGetMinY(selectedItemView.frame) - YMACustomTabBarSelectedItemHighDifference;
+        viewFrame.size.height = CGRectGetHeight(viewFrame) + (YMACustomTabBarSelectedItemInset * YMACustomTabBarMultiplier);
+        viewFrame.size.width = CGRectGetWidth(viewFrame) + (YMACustomTabBarSelectedItemInset * YMACustomTabBarMultiplier);
         // crate frame for image
         CGRect imageFrame = viewFrame;
         imageFrame.origin.x = YMACustomTabBarSelectedItemImageInset;
         imageFrame.origin.y = YMACustomTabBarSelectedItemImageInset;
-        imageFrame.size.height = viewFrame.size.height - (YMACustomTabBarSelectedItemImageInset * 2);
-        imageFrame.size.width = viewFrame.size.width - (YMACustomTabBarSelectedItemImageInset * 2);
+        imageFrame.size.height = CGRectGetHeight(viewFrame) - (YMACustomTabBarSelectedItemImageInset * YMACustomTabBarMultiplier);
+        imageFrame.size.width = CGRectGetWidth(viewFrame) - (YMACustomTabBarSelectedItemImageInset * YMACustomTabBarMultiplier);
         if (!self.buttonView) {
             //create view - set color
             self.buttonView = [[UIView alloc] initWithFrame:viewFrame];
@@ -69,7 +74,7 @@
             [self.buttonImage setFrame:imageFrame];
         }
         //make view round
-        self.buttonView.layer.cornerRadius = viewFrame.size.width / 2;
+        self.buttonView.layer.cornerRadius = CGRectGetWidth(viewFrame) / YMACustomTabBarMultiplier;
         //set image on view from item
         self.buttonImage.image = self.selectedItem.image;
     }

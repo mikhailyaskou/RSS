@@ -7,21 +7,21 @@
 //
 
 #import <MagicalRecord/NSManagedObject+MagicalFinders.h>
+#import "YMAController.h"
 #import "YMAMainVC.h"
 #import "YMARSSItem+CoreDataClass.h"
-#import "RFQuiltLayout.h"
 #import "YMARSSItemCollectionViewCell.h"
+#import "RFQuiltLayout.h"
 #import "PKRevealController.h"
-#import "YMAController.h"
 #import "UIImageView+HighlightedWebCache.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
 @interface YMAMainVC () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing>
 
-@property(weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
-@property(weak, nonatomic) IBOutlet UITabBar *tabBar;
-@property(weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property(strong, nonatomic) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 

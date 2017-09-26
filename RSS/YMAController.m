@@ -8,18 +8,26 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 #import "YMAController.h"
-#import "YMARSSChannel+CoreDataClass.h"
 #import "YMASAXParser.h"
 #import "YMARSSItem+CoreDataClass.h"
+#import "YMARSSChannel+CoreDataClass.h"
+
+static NSString * const YMALogAddNewChannel = @"Channel not added creating new channel";
+static NSString * const YMALogChannelLoaded = @"RSS Channel loaded %@: %u";
+static NSString * const YMAPredicateSelectedRssItems = @"SELF.channel.link in %@ AND SELF.category in %@";
+static NSString * const YMADateFieldNameCoreData = @"date";
+static const int YMADeepDuplicateItemsSearch = 2;
 
 @interface YMAController ()
 
-@property(nonatomic, strong) NSDictionary *channelsDescription;
-@property(nonatomic, strong) NSDictionary *categoryDescription;
+@property (nonatomic, strong) NSDictionary *channelsDescription;
+@property (nonatomic, strong) NSDictionary *categoryDescription;
 
 @end
 
 @implementation YMAController
+
+#pragma mark - Initialization
 
 + (YMAController *)sharedInstance {
     static YMAController *_sharedInstance = nil;
@@ -32,14 +40,14 @@
 
 - (NSNumber *)selectedCategoryIndex {
     if (!_selectedCategoryIndex) {
-        _selectedCategoryIndex = @0;
+        _selectedCategoryIndex = @(YMAInitialSelectedIndex);
     }
     return _selectedCategoryIndex;
 }
 
 - (NSNumber *)selectedChannelIndex {
     if (!_selectedChannelIndex) {
-        _selectedChannelIndex = @0;
+        _selectedChannelIndex = @(YMAInitialSelectedIndex);
     }
     return _selectedChannelIndex;
 }
@@ -76,8 +84,14 @@
     return _categoryDescription;
 }
 
+#pragma mark - Methods
+
 - (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion {
     [self updateChannelForIndex:self.selectedChannelIndex withCompletionBlock:completion];
+}
+
+- (void)updateSelectedChannel {
+    [self updateChannelForIndex:self.selectedChannelIndex];
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index {
@@ -102,48 +116,36 @@
     }
 }
 
-- (void)updateSelectedChannel {
-    [self updateChannelForIndex:self.selectedChannelIndex];
-}
-
-- (void)updateAllChannels {
-    for (int i = 0; i <= self.channelsDescription.count; i++) {
-        [self updateChannelForIndex:@(i)];
-    }
-}
-
 - (void)loadChannelWithURL:(NSURL *)url {
     [MagicalRecord saveWithBlockAndWait:^(NSManagedObjectContext *localContext) {
         YMARSSChannel *channel = [YMARSSChannel MR_findFirstByAttribute:@"link" withValue:url inContext:localContext];
         if (!channel) {
             channel = [YMARSSChannel MR_createEntityInContext:localContext];
             channel.link = url.absoluteString;
-            NSLog(@"Channel not added creating new channel");
+            NSLog(YMALogAddNewChannel);
         }
         YMASAXParser *parser = [[YMASAXParser alloc] initWithContext:localContext];
         [parser parseChannelWithURL:url inCoreDataMOChannel:channel];
-        NSLog(@"RSS Channel loaded %@: %u", url, [channel.items count]);
+        NSLog(YMALogChannelLoaded, url, [channel.items count]);
     }];
 }
 
-- (NSPredicate *)selectedOptionsPredicate {
-    NSString *predicateFormat = @"SELF.channel.link in %@ AND SELF.category in %@";
+- (void)applySelectedParameters {
     NSArray *channelLinks = self.channelsDescription[self.selectedChannelIndex];
     NSArray *categoryTags = self.categoryDescription[self.selectedCategoryIndex];
-    return [NSPredicate predicateWithFormat:predicateFormat, channelLinks, categoryTags];
-}
-
-- (void)applySelectedParameters {
-    NSMutableArray<YMARSSItem *> *result = [[YMARSSItem MR_findAllSortedBy:@"date" ascending:NO withPredicate:self.selectedOptionsPredicate] mutableCopy];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:YMAPredicateSelectedRssItems, channelLinks, categoryTags];
+    NSMutableArray<YMARSSItem *> *result = [[YMARSSItem MR_findAllSortedBy:YMADateFieldNameCoreData
+                                                                 ascending:NO
+                                                             withPredicate:predicate] mutableCopy];
     //remove duplicated news (it happens when one news in few xml files)
     NSMutableArray *discardedItems = [NSMutableArray array];
-    NSInteger deepOfDuplicateScan = 2;
     for (int i = 0; i < result.count; i++) {
         for (int j = i + 1; j < result.count; j++) {
             if ([result[i].title isEqualToString:result[j].title]) {
                 [discardedItems addObject:result[j]];
             }
-            if (j - i > deepOfDuplicateScan) {
+            //items sorbet by date duplicated items allays placed close to each other
+            if (j - i > YMADeepDuplicateItemsSearch) {
                 break;
             }
         }

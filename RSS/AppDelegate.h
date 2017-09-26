@@ -8,20 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
-#import "PKRevealController.h"
 
-//@class RFViewController;
+@class PKRevealController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-@property(strong, nonatomic) UIWindow *window;
-
-@property(readonly, strong) NSPersistentContainer *persistentContainer;
-//@property (strong, nonatomic) RFViewController *viewController;
-@property(nonatomic, strong, readwrite) PKRevealController *revealController;
-
-- (void)saveContext;
-
+@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, strong, readwrite) PKRevealController *revealController;
 
 @end
 

@@ -465,7 +465,10 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="BPm-34-lbk">
-                                        <rect key="frame" x="-6" y="0.0" width="331" height="29"/>
+                                        <rect key="frame" x="-6" y="0.0" width="331" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="ept-Fs-g8I"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="Onliner.by"/>
                                             <segment title="TUT.by"/>
@@ -477,10 +480,10 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTj-ep-6wp">
-                                        <rect key="frame" x="7" y="44" width="305" height="107"/>
+                                        <rect key="frame" x="7" y="61" width="305" height="90"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="vcr-pZ-9xC">
-                                                <rect key="frame" x="8" y="41" width="289" height="66"/>
+                                                <rect key="frame" x="8" y="41" width="289" height="49"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="15"/>

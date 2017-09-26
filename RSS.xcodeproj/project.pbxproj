@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D84EC16E74D058B6119533F /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */; };
 		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
 		981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */; };
 		9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */; };
 		98198D341F74221A0058D07F /* YMAAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98198D331F74221A0058D07F /* YMAAboutUSViewController.m */; };
 		98198D3A1F7428770058D07F /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 98198D391F7428770058D07F /* left.png */; };
 		98198D3C1F74287B0058D07F /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 98198D3B1F74287B0058D07F /* right.png */; };
-		982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 982FB3E11F668EA100119075 /* YMAMainVC.m */; };
 		983254521F643B4E00E41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254511F643B4E00E41AC5 /* main.m */; };
 		983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* AppDelegate.m */; };
 		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
@@ -45,8 +45,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D84E2506FA99E6C3988D20C /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMAMainVC.h; path = RSS/YMAMainVC.h; sourceTree = "<group>"; };
 		1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
 		1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
+		1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMAMainVC.m; path = RSS/YMAMainVC.m; sourceTree = "<group>"; };
 		37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.debug.xcconfig"; sourceTree = "<group>"; };
 		5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.release.xcconfig"; sourceTree = "<group>"; };
 		981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMARSSItemCollectionViewCell.h; path = ../YMARSSItemCollectionViewCell.h; sourceTree = "<group>"; };
@@ -57,8 +59,6 @@
 		98198D331F74221A0058D07F /* YMAAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAAboutUSViewController.m; sourceTree = "<group>"; };
 		98198D391F7428770058D07F /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		98198D3B1F74287B0058D07F /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
-		982FB3E01F668EA100119075 /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainVC.h; sourceTree = "<group>"; };
-		982FB3E11F668EA100119075 /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainVC.m; sourceTree = "<group>"; };
 		9832544D1F643B4E00E41AC5 /* RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983254511F643B4E00E41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		983254531F643B4E00E41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -175,6 +175,8 @@
 			isa = PBXGroup;
 			children = (
 				9832544D1F643B4E00E41AC5 /* RSS.app */,
+				1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */,
+				1D84E2506FA99E6C3988D20C /* YMAMainVC.h */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -215,8 +217,6 @@
 				981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */,
 				981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */,
 				983254591F643B4E00E41AC5 /* Main.storyboard */,
-				982FB3E01F668EA100119075 /* YMAMainVC.h */,
-				982FB3E11F668EA100119075 /* YMAMainVC.m */,
 				983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */,
 			);
 			name = View;
@@ -454,7 +454,6 @@
 			files = (
 				986EBCE81F72BFFE00E21E42 /* YMAOfferNewsViewController.m in Sources */,
 				98CDF1431F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m in Sources */,
-				982FB3E21F668EA100119075 /* YMAMainVC.m in Sources */,
 				98CDF1401F7151CD006ED714 /* YMARSSItem+CoreDataClass.m in Sources */,
 				98CDF1421F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m in Sources */,
 				98198D341F74221A0058D07F /* YMAAboutUSViewController.m in Sources */,
@@ -471,6 +470,7 @@
 				98CDF1411F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m in Sources */,
 				98CF0C311F6EC6D400D293DD /* YMAMenuTableViewController.m in Sources */,
 				1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */,
+				1D84EC16E74D058B6119533F /* YMAMainVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

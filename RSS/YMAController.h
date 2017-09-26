@@ -8,28 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+static const int YMAInitialSelectedIndex = 0;
+
 @class YMARSSItem;
 
 @interface YMAController : NSObject
 
-@property(nonatomic, copy) NSArray<YMARSSItem *> *rssItems;
-@property(nonatomic, strong) NSNumber *selectedChannelIndex;
-@property(nonatomic, strong) NSNumber *selectedCategoryIndex;
+@property (nonatomic, copy) NSArray<YMARSSItem *> *rssItems;
+@property (nonatomic, strong) NSNumber *selectedChannelIndex;
+@property (nonatomic, strong) NSNumber *selectedCategoryIndex;
 
 + (YMAController *)sharedInstance;
 
 - (void)loadChannelWithURL:(NSURL *)url;
-
 - (void)applySelectedParameters;
-
 - (void)updateChannelForIndex:(NSNumber *)index;
-
-- (void)updateAllChannels;
-
 - (void)updateSelectedChannel;
-
 - (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion;
-
 - (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion;
 
 @end
