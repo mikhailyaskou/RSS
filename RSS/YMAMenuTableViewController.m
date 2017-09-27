@@ -38,7 +38,7 @@ static NSString * const YMAAboutUsVCIdentifier = @"YMAAboutUSViewController";
         case 1:
         case 2: {
             nextFrontViewController = YMAMainViewController.sharedInstance;
-            if (YMAController.sharedInstance.selectedChannelIndex != @(indexPath.row)) {
+            if (![YMAController.sharedInstance.selectedChannelIndex  isEqual: @(indexPath.row)]) {
                 [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
                 [YMAController.sharedInstance applySelectedParameters];
                 [YMAMainViewController.sharedInstance resetScrollCollectionView];

@@ -74,7 +74,6 @@ static NSString * const YMAMainVCIdentifier = @"YMAMainViewController";
     [self.refreshControl addTarget:self action:@selector(refreshCollectionView) forControlEvents:UIControlEventValueChanged];
     //set empty collection view
     self.collectionView.emptyDataSetSource = self;
-    self.collectionView.emptyDataSetDelegate = self;
 }
 
 #pragma mark - Actions

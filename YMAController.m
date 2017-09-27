@@ -14,7 +14,7 @@
 #import "YMAConstants.h"
 
 static NSString * const YMALogAddNewChannel = @"Channel not added creating new channel";
-static NSString * const YMALogChannelLoaded = @"RSS Channel loaded %@: %u";
+static NSString * const YMALogChannelLoaded = @"RSS Channel loaded %@: %lu";
 static NSString * const YMAPredicateSelectedRssItems = @"SELF.channel.link in %@ AND SELF.category in %@";
 static NSString * const YMADateFieldNameCoreData = @"date";
 static const int YMADeepDuplicateItemsSearch = 2;

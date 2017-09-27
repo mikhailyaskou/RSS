@@ -258,7 +258,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="О нас" id="fPS-vA-suk">
-                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" style="plain" id="65Q-vK-HkA">
+                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="65Q-vK-HkA">
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="showLeftMenuTapped:" destination="BYZ-38-t0r" id="kdz-Wb-9Ap"/>
@@ -452,7 +452,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Предложить новсть" id="zle-i6-r8a">
-                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" style="plain" id="Keg-ie-x8f">
+                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="Keg-ie-x8f">
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="menuTapped:" destination="qrx-3T-Fcd" id="SfG-K3-rww"/>
@@ -668,7 +668,7 @@
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="О нас" id="s2Z-jB-eea">
-                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" style="plain" id="Lds-AU-1GE">
+                                        <barButtonItem key="leftBarButtonItem" image="menu_icon" id="Lds-AU-1GE">
                                             <color key="tintColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="menuTapped:" destination="xEL-Cn-sWC" id="LA0-Pr-11H"/>

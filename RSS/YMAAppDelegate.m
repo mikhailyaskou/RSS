@@ -8,7 +8,6 @@
 
 #import "YMAAppDelegate.h"
 #import "YMAMainViewController.h"
-#import "YMALeftMenuVC.h"
 #import "YMAConstants.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <PKRevealController/PKRevealController.h>
