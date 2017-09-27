@@ -6,20 +6,29 @@
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
+#import <PKRevealController/PKRevealController.h>
 #import "YMAOfferNewsViewController.h"
-#import "PKRevealController.h"
 
-NSString *const termsLinks[] = {@"http://blog.onliner.by/siterules", @"https://news.tut.by/limitation.html", @"https://lenta.ru/info/copyright/"};
+NSString * const termsLinks[] = {@"http://blog.onliner.by/siterules", @"https://news.tut.by/limitation.html", @"https://lenta.ru/info/copyright/"};
+static NSString * const YMAOfferNewsTextViewPlaceholderText = @"Максимум 5000 символов.";
+static const float YMAOfferNewsTextViewBorderWidth = 1.0f;
+static NSString * const YMAOfferNewsSegmentControlFont = @"Times New Roman";
+static const int YMAOfferNewsSegmentControlFontSize = 17;
+static const int YMAOfferNewsInitialIndexTermsLink = 0;
+static NSString * const YMAOfferNewsWordFormTermsLink = @"условиями";
+static const int YMAOfferNewsScreenShiftForKeyboard = -125;
+static const int YMAOfferNewsInitialScreenPosition = 0;
+static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
 
 @interface YMAOfferNewsViewController () <PKRevealing, UITextViewDelegate>
-@property(weak, nonatomic) IBOutlet UIView *textBlockView;
-@property(weak, nonatomic) IBOutlet UIButton *addAttachment;
-@property(weak, nonatomic) IBOutlet UIButton *addImageButton;
-@property(weak, nonatomic) IBOutlet UISegmentedControl *newsPortalSegmentControl;
-@property(weak, nonatomic) IBOutlet UITextView *newsTextView;
-@property(weak, nonatomic) IBOutlet UITextField *cellPhoneTextField;
-@property(weak, nonatomic) IBOutlet UITextField *emailTextField;
-@property(weak, nonatomic) IBOutlet UITextView *termsTextView;
+@property (weak, nonatomic) IBOutlet UIView *textBlockView;
+@property (weak, nonatomic) IBOutlet UIButton *addAttachment;
+@property (weak, nonatomic) IBOutlet UIButton *addImageButton;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *newsPortalSegmentControl;
+@property (weak, nonatomic) IBOutlet UITextView *newsTextView;
+@property (weak, nonatomic) IBOutlet UITextField *cellPhoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (weak, nonatomic) IBOutlet UITextView *termsTextView;
 
 @end
 
@@ -29,23 +38,18 @@ NSString *const termsLinks[] = {@"http://blog.onliner.by/siterules", @"https://n
     [super viewDidLoad];
     //apply design settings
     //border text view block
-    self.textBlockView.layer.borderWidth = 1.0f;
+    self.textBlockView.layer.borderWidth = YMAOfferNewsTextViewBorderWidth;
     self.addAttachment.imageView.contentMode = UIViewContentModeScaleAspectFit;
     self.addImageButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
     //textView placeHolder
     self.newsTextView.delegate = self;
     [self setTextViewPlaceHolder:self.newsTextView];
-    //segmentControl height
-    CGRect frame = self.newsPortalSegmentControl.frame;
-    frame.size.height = 80;
-    self.newsPortalSegmentControl.frame = frame;
     //custom font segment control
-    UIFont *font = [UIFont fontWithName:@"Times New Roman" size:17];
+    UIFont *font = [UIFont fontWithName:YMAOfferNewsSegmentControlFont size:YMAOfferNewsSegmentControlFontSize];
     NSDictionary *attributes = @{NSFontAttributeName: font};
     [self.newsPortalSegmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     //text terms - set link
-    [self setTermsLinkWithIndex:0];
-
+    [self setTermsLinkWithIndex:YMAOfferNewsInitialIndexTermsLink];
     //dismiss keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
@@ -63,7 +67,7 @@ NSString *const termsLinks[] = {@"http://blog.onliner.by/siterules", @"https://n
 
 - (void)setTermsLinkWithIndex:(NSInteger)index {
     NSMutableAttributedString *attributedString = self.termsTextView.attributedText.mutableCopy;
-    NSRange foundRange = [attributedString.mutableString rangeOfString:@"условиями"];
+    NSRange foundRange = [attributedString.mutableString rangeOfString:YMAOfferNewsWordFormTermsLink];
     NSURL *url = [NSURL URLWithString:termsLinks[index]];
     [attributedString addAttribute:NSLinkAttributeName value:url range:foundRange];
     self.termsTextView.attributedText = attributedString;
@@ -85,26 +89,26 @@ NSString *const termsLinks[] = {@"http://blog.onliner.by/siterules", @"https://n
 
 - (void)setTextViewPlaceHolder:(UITextView *)textView {
     if ([textView.text isEqualToString:@""]) {
-        textView.text = @"Максимум 5000 символов.";
+        textView.text = YMAOfferNewsTextViewPlaceholderText;
         textView.textColor = [UIColor lightGrayColor];
     }
-    else if ([textView.text isEqualToString:@"Максимум 5000 символов."]) {
+    else if ([textView.text isEqualToString:YMAOfferNewsTextViewPlaceholderText]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
 }
 
 - (IBAction)textFiledDidBeginEditing:(id)sender {
-    [self moveViewToOriginY:-125];
+    [self shiftScreenToOriginY:YMAOfferNewsScreenShiftForKeyboard];
 }
 
 - (IBAction)textFieldDidEndEditing:(id)sender {
-    [self moveViewToOriginY:0];
+    [self shiftScreenToOriginY:YMAOfferNewsInitialScreenPosition];
 }
 
-- (void)moveViewToOriginY:(CGFloat)originY {
+- (void)shiftScreenToOriginY:(CGFloat)originY {
     [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:0.35f];
+    [UIView setAnimationDuration:YMAOfferNewsScreenShiftAnimationDuration];
     CGRect frame = self.view.frame;
     frame.origin.y = originY;
     [self.view setFrame:frame];

@@ -8,29 +8,29 @@
 #import "RFQuiltLayout.h"
 
 @interface RFQuiltLayout ()
-@property(nonatomic) CGPoint firstOpenSpace;
-@property(nonatomic) CGPoint furthestBlockPoint;
+@property (nonatomic) CGPoint firstOpenSpace;
+@property (nonatomic) CGPoint furthestBlockPoint;
 
 // this will be a 2x2 dictionary storing nsindexpaths
 // which indicate the available/filled spaces in our quilt
-@property(nonatomic) NSMutableDictionary *indexPathByPosition;
+@property (nonatomic) NSMutableDictionary *indexPathByPosition;
 
 // indexed by "section, row" this will serve as the rapid
 // lookup of block position by indexpath.
-@property(nonatomic) NSMutableDictionary *positionByIndexPath;
+@property (nonatomic) NSMutableDictionary *positionByIndexPath;
 
-@property(nonatomic, assign) BOOL hasPositionsCached;
+@property (nonatomic, assign) BOOL hasPositionsCached;
 
 // previous layout cache.  this is to prevent choppiness
 // when we scroll to the bottom of the screen - uicollectionview
 // will repeatedly call layoutattributesforelementinrect on
 // each scroll event.  pow!
-@property(nonatomic) NSArray *previousLayoutAttributes;
-@property(nonatomic) CGRect previousLayoutRect;
+@property (nonatomic) NSArray *previousLayoutAttributes;
+@property (nonatomic) CGRect previousLayoutRect;
 
 // remember the last indexpath placed, as to not
 // relayout the same indexpaths while scrolling
-@property(nonatomic) NSIndexPath *lastIndexPathPlaced;
+@property (nonatomic) NSIndexPath *lastIndexPathPlaced;
 @end
 
 

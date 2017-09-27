@@ -15,25 +15,22 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSFetchRequest<YMARSSChannel *> *)fetchRequest;
 
-@property(nonatomic) int16_t id;
-@property(nullable, nonatomic, retain) NSData *image;
-@property(nullable, nonatomic, copy) NSDate *lastUpdate;
-@property(nullable, nonatomic, copy) NSString *link;
-@property(nullable, nonatomic, copy) NSString *title;
-@property(nullable, nonatomic, copy) NSString *topic;
-@property(nullable, nonatomic, copy) NSString *url;
-@property(nullable, nonatomic, retain) NSSet<YMARSSItem *> *items;
+@property (nonatomic) int16_t id;
+@property (nullable, nonatomic, retain) NSData *image;
+@property (nullable, nonatomic, copy) NSDate *lastUpdate;
+@property (nullable, nonatomic, copy) NSString *link;
+@property (nullable, nonatomic, copy) NSString *title;
+@property (nullable, nonatomic, copy) NSString *topic;
+@property (nullable, nonatomic, copy) NSString *url;
+@property (nullable, nonatomic, retain) NSSet<YMARSSItem *> *items;
 
 @end
 
 @interface YMARSSChannel (CoreDataGeneratedAccessors)
 
 - (void)addItemsObject:(YMARSSItem *)value;
-
 - (void)removeItemsObject:(YMARSSItem *)value;
-
 - (void)addItems:(NSSet<YMARSSItem *> *)values;
-
 - (void)removeItems:(NSSet<YMARSSItem *> *)values;
 
 @end

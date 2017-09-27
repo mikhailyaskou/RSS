@@ -1,38 +1,50 @@
 //
-//  YMAMainVC.m
+//  YMAMainViewController.m
 //  RSS
 //
 //  Created by Mikhail Yaskou on 11.09.17.
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import <MagicalRecord/NSManagedObject+MagicalFinders.h>
-#import "YMAMainVC.h"
-#import "YMARSSItem+CoreDataClass.h"
-#import "RFQuiltLayout.h"
-#import "YMARSSItemCollectionViewCell.h"
-#import "PKRevealController.h"
 #import "YMAController.h"
+#import "YMAMainViewController.h"
+#import "YMARSSItem+CoreDataClass.h"
+#import "YMARSSItemCollectionViewCell.h"
+#import "RFQuiltLayout.h"
+#import "PKRevealController.h"
 #import "UIImageView+HighlightedWebCache.h"
+#import "YMAConstants.h"
 #import <SDWebImage/UIImageView+WebCache.h>
 
-@interface YMAMainVC () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing>
+static const int YMAMainVCCellInsets = 5;
+static const int YMAMainVCCellMultiplierByOne = 1;
+static const int YMAMainVCCellMultiplierByTwo = 2;
+static const int YMAMainVCLongCellDivider = 3;
+static const int YMAMainVCFirstIndex = 0;
+static NSString * const YMARSSItemCellIdentifier = @"YMARSSItemCell";
+static NSString * const YMACustomTabTabTitleKey = @"tabTitle";
+static NSString * const YMAMainVCNoPhotoImageName = @"no-photo-available.png";
+static NSString * const YMAMainVCIdentifier = @"YMAMainViewController";
 
-@property(weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
-@property(weak, nonatomic) IBOutlet UITabBar *tabBar;
-@property(weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property(strong, nonatomic) UIRefreshControl *refreshControl;
+@interface YMAMainViewController () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing>
+
+@property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
+@property (weak, nonatomic) IBOutlet UITabBar *tabBar;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
-@implementation YMAMainVC
+@implementation YMAMainViewController
 
-+ (YMAMainVC *)sharedInstance {
-    static YMAMainVC *_sharedInstance = nil;
+#pragma mark - Initialization
+
++ (YMAMainViewController *)sharedInstance {
+    static YMAMainViewController *_sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        _sharedInstance = [sb instantiateViewControllerWithIdentifier:@"YMAMainVC"];
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:YMAMainStoryboardName bundle:nil];
+        _sharedInstance = [sb instantiateViewControllerWithIdentifier:YMAMainVCIdentifier];
     });
     return _sharedInstance;
 }
@@ -44,14 +56,15 @@
     RFQuiltLayout *layout = (id) [self.collectionView collectionViewLayout];
     layout.direction = UICollectionViewScrollDirectionVertical;
     layout.prelayoutEverything = YES;
-    layout.blockPixels = CGSizeMake((self.view.frame.size.width / 2) - 10, 200);
+    layout.blockPixels = CGSizeMake((CGRectGetWidth(self.view.frame) / 2) - YMAMainVCCellInsets*2, 200);
     layout.delegate = self;
-    //select first tabItem 
-    [self.tabBar setSelectedItem:self.tabBar.items[0]];
-    //set observer
-    [YMAController.sharedInstance addObserver:self forKeyPath:@"rssItems" options:0 context:nil];
+    //select first tabItem
+    [self.tabBar setSelectedItem:self.tabBar.items[YMAMainVCFirstIndex]];
+    //set observers
+    [YMAController.sharedInstance setObserverForRSSItems:self];
+    [YMAController.sharedInstance setObserverForUpdateProgress:self];
     //load and show first channel
-    [YMAController.sharedInstance updateChannelForIndex:@0 withCompletionBlock:^{
+    [YMAController.sharedInstance updateChannelForIndex:@(YMAMainVCFirstIndex) withCompletionBlock:^{
         [YMAController.sharedInstance applySelectedParameters];
     }];
     //refresh control
@@ -63,7 +76,6 @@
 #pragma mark - Actions
 
 - (void)refreshCollectionView {
-    NSLog(@"refresh Triggered");
     [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
         [YMAController.sharedInstance applySelectedParameters];
         [self.refreshControl endRefreshing];
@@ -78,23 +90,28 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if ([keyPath isEqualToString:@"rssItems"]) {
-        NSLog(@"observerTriggered");
+    if ([keyPath isEqualToString:YMAControllerRSSItemsArrayPropertyName]) {
         [self.collectionView reloadData];
+    }
+    if ([keyPath isEqualToString:YMAControllerUpdateProgressPropertyName]) {
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YMAController.sharedInstance.isUpdateInProgress];
     }
 }
 
-- (void)resetScrollCollectionView {
-    [self.collectionView setContentOffset:CGPointZero animated:NO];
-}
-
-#pragma mark - TabBar Delegate
+#pragma mark - TabBar Action
 
 - (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item {
-    self.navigationBarTitle.title = [item valueForKey:@"tabTitle"];
+    self.navigationBarTitle.title = [item valueForKey:YMACustomTabTabTitleKey];
     [[YMAController sharedInstance] setSelectedCategoryIndex:@(item.tag)];
     [[YMAController sharedInstance] applySelectedParameters];
     [self resetScrollCollectionView];
+}
+
+#pragma mark - Methods
+
+- (void)resetScrollCollectionView {
+    //reset collection view scroll
+    [self.collectionView setContentOffset:CGPointZero animated:NO];
 }
 
 #pragma mark - UICollectionView Delegate
@@ -113,7 +130,7 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    YMARSSItemCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"YMARSSItemCell" forIndexPath:indexPath];
+    YMARSSItemCollectionViewCell *cell = [cv dequeueReusableCellWithReuseIdentifier:YMARSSItemCellIdentifier forIndexPath:indexPath];
     YMARSSItem *item = YMAController.sharedInstance.rssItems[indexPath.row];
     cell.itemTitle.text = item.title;
     if (item.imageUrl != nil) {
@@ -125,11 +142,15 @@
         [cell.itemImage sd_setImageWithURL:[NSURL URLWithString:item.imageUrl]
                                  completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                                      [activityIndicator stopAnimating];
+                                     if (error) {
+                                         //if has problem with image loading data about image.
+                                         cell.itemImage.image = [UIImage imageNamed:YMAMainVCNoPhotoImageName];
+                                     }
                                  }];
     }
     else {
-        //sometimes in xml no data about image (lenta.ru).
-        cell.itemImage.image = [UIImage imageNamed:@"no-photo-available.png"];
+        //if in xml no data about image (lenta.ru).
+        cell.itemImage.image = [UIImage imageNamed:YMAMainVCNoPhotoImageName];
     }
     return cell;
 }
@@ -137,14 +158,15 @@
 #pragma mark - RFQuiltLayoutDelegate
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout blockSizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row % 3) {
-        return CGSizeMake(1, 2);
+   //all cell with index which the divides by YMAMainVCLongCellDivider wil be big
+    if (indexPath.row % YMAMainVCLongCellDivider) {
+        return CGSizeMake(YMAMainVCCellMultiplierByOne, YMAMainVCCellMultiplierByTwo);
     }
-    return CGSizeMake(1, 1);
+    return CGSizeMake(YMAMainVCCellMultiplierByOne, YMAMainVCCellMultiplierByOne);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetsForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return UIEdgeInsetsMake(5, 5, 5, 5);
+    return UIEdgeInsetsMake(YMAMainVCCellInsets, YMAMainVCCellInsets, YMAMainVCCellInsets, YMAMainVCCellInsets);
 }
 
 @end

@@ -11,8 +11,8 @@
 @class YMARSSChannel;
 
 @interface YMASAXParser : NSObject <NSXMLParserDelegate>
-- (instancetype)initWithContext:(NSManagedObjectContext *)context;
 
+- (instancetype)initWithContext:(NSManagedObjectContext *)context;
 + (instancetype)parserWithContext:(NSManagedObjectContext *)context;
 
 - (void)parseChannelWithURL:(NSURL *)url inCoreDataMOChannel:(YMARSSChannel *)channel;

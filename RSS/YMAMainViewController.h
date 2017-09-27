@@ -1,5 +1,5 @@
 //
-//  YMAMainVC.h
+//  YMAMainViewController.h
 //  RSS
 //
 //  Created by Mikhail Yaskou on 11.09.17.
@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YMAMainVC : UIViewController
+@interface YMAMainViewController : UIViewController
 
-+ (YMAMainVC *)sharedInstance;
++ (YMAMainViewController *)sharedInstance;
 
 - (void)resetScrollCollectionView;
 

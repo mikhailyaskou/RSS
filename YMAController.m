@@ -6,20 +6,30 @@
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import <MagicalRecord/MagicalRecord.h>
+#import "MagicalRecord.h"
 #import "YMAController.h"
-#import "YMARSSChannel+CoreDataClass.h"
 #import "YMASAXParser.h"
 #import "YMARSSItem+CoreDataClass.h"
+#import "YMARSSChannel+CoreDataClass.h"
+#import "YMAConstants.h"
+
+static NSString * const YMALogAddNewChannel = @"Channel not added creating new channel";
+static NSString * const YMALogChannelLoaded = @"RSS Channel loaded %@: %u";
+static NSString * const YMAPredicateSelectedRssItems = @"SELF.channel.link in %@ AND SELF.category in %@";
+static NSString * const YMADateFieldNameCoreData = @"date";
+static const int YMADeepDuplicateItemsSearch = 2;
+static const int YMANumberCharactersToCompare = 20;
 
 @interface YMAController ()
 
-@property(nonatomic, strong) NSDictionary *channelsDescription;
-@property(nonatomic, strong) NSDictionary *categoryDescription;
+@property (nonatomic, strong) NSDictionary *channelsDescription;
+@property (nonatomic, strong) NSDictionary *categoryDescription;
 
 @end
 
 @implementation YMAController
+
+#pragma mark - Initialization
 
 + (YMAController *)sharedInstance {
     static YMAController *_sharedInstance = nil;
@@ -32,21 +42,21 @@
 
 - (NSNumber *)selectedCategoryIndex {
     if (!_selectedCategoryIndex) {
-        _selectedCategoryIndex = @0;
+        _selectedCategoryIndex = @(YMAInitialSelectedIndex);
     }
     return _selectedCategoryIndex;
 }
 
 - (NSNumber *)selectedChannelIndex {
     if (!_selectedChannelIndex) {
-        _selectedChannelIndex = @0;
+        _selectedChannelIndex = @(YMAInitialSelectedIndex);
     }
     return _selectedChannelIndex;
 }
 
 - (NSDictionary *)channelsDescription {
     if (!_channelsDescription) {
-        _channelsDescription = @{@0: @[@"http://people.onliner.by/feed",
+        _channelsDescription = @{@0: @[@"https://www.onliner.by/feed", @"http://people.onliner.by/feed",
                 @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
                 @1: @[
                         @"https://news.tut.by/rss/economics.rss", @"https://news.tut.by/rss/society.rss",
@@ -54,7 +64,7 @@
                         @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss", @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
                         @"https://news.tut.by/rss/auto.rss"],
                 @2: @[@"http://lenta.ru/rss", @"https://lenta.ru/rss/news", @"https://lenta.ru/rss/top7", @"https://lenta.ru/rss/last24",
-                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo", @"https://lenta.ru/rss/photo/russia"]};
+                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo"]};
     }
     return _channelsDescription;
 }
@@ -76,8 +86,30 @@
     return _categoryDescription;
 }
 
+#pragma mark - Methods
+
+- (void)setObserverForRSSItems:(id)observer {
+    [self addObserver:observer forKeyPath:YMAControllerRSSItemsArrayPropertyName options:0 context:nil];
+}
+
+- (void)removeObserverForRSSItems:(id)observer {
+    [self removeObserver:observer forKeyPath:YMAControllerRSSItemsArrayPropertyName];
+}
+
+- (void)setObserverForUpdateProgress:(id)observer {
+    [self addObserver:observer forKeyPath:YMAControllerUpdateProgressPropertyName options:0 context:nil];
+}
+
+- (void)removeObserverForUpdateProgress:(id)observer {
+    [self removeObserver:observer forKeyPath:YMAControllerUpdateProgressPropertyName];
+}
+
 - (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion {
     [self updateChannelForIndex:self.selectedChannelIndex withCompletionBlock:completion];
+}
+
+- (void)updateSelectedChannel {
+    [self updateChannelForIndex:self.selectedChannelIndex];
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index {
@@ -86,6 +118,7 @@
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion {
+    self.updateInProgress = YES;
     NSArray *channelLinks = self.channelsDescription[index];
     dispatch_group_t updateGroup = dispatch_group_create();
     dispatch_queue_t globalQueueDefaultPriority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
@@ -97,18 +130,9 @@
     }
     if (completion) {
         dispatch_group_notify(updateGroup, dispatch_get_main_queue(), ^{
+            self.updateInProgress = NO;
             completion();
         });
-    }
-}
-
-- (void)updateSelectedChannel {
-    [self updateChannelForIndex:self.selectedChannelIndex];
-}
-
-- (void)updateAllChannels {
-    for (int i = 0; i <= self.channelsDescription.count; i++) {
-        [self updateChannelForIndex:@(i)];
     }
 }
 
@@ -118,38 +142,40 @@
         if (!channel) {
             channel = [YMARSSChannel MR_createEntityInContext:localContext];
             channel.link = url.absoluteString;
-            NSLog(@"Channel not added creating new channel");
+            NSLog(YMALogAddNewChannel);
         }
         YMASAXParser *parser = [[YMASAXParser alloc] initWithContext:localContext];
         [parser parseChannelWithURL:url inCoreDataMOChannel:channel];
-        NSLog(@"RSS Channel loaded %@: %u", url, [channel.items count]);
+        NSLog(YMALogChannelLoaded, url, [channel.items count]);
     }];
 }
 
-- (NSPredicate *)selectedOptionsPredicate {
-    NSString *predicateFormat = @"SELF.channel.link in %@ AND SELF.category in %@";
+- (void)applySelectedParameters {
     NSArray *channelLinks = self.channelsDescription[self.selectedChannelIndex];
     NSArray *categoryTags = self.categoryDescription[self.selectedCategoryIndex];
-    return [NSPredicate predicateWithFormat:predicateFormat, channelLinks, categoryTags];
-}
-
-- (void)applySelectedParameters {
-    NSMutableArray<YMARSSItem *> *result = [[YMARSSItem MR_findAllSortedBy:@"date" ascending:NO withPredicate:self.selectedOptionsPredicate] mutableCopy];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:YMAPredicateSelectedRssItems, channelLinks, categoryTags];
+    NSMutableArray<YMARSSItem *> *result = [[YMARSSItem MR_findAllSortedBy:YMADateFieldNameCoreData
+                                                                 ascending:NO
+                                                             withPredicate:predicate] mutableCopy];
     //remove duplicated news (it happens when one news in few xml files)
     NSMutableArray *discardedItems = [NSMutableArray array];
-    NSInteger deepOfDuplicateScan = 2;
     for (int i = 0; i < result.count; i++) {
-        for (int j = i + 1; j < result.count; j++) {
-            if ([result[i].title isEqualToString:result[j].title]) {
+        for (int j = i+1; j < result.count; j++) {
+            if ([ [self stringToCompare:result[i].title] isEqualToString:[self stringToCompare:result[j].title]]) {
                 [discardedItems addObject:result[j]];
             }
-            if (j - i > deepOfDuplicateScan) {
+            //items sorbet by date, duplicated allays placed close to each other
+            if (j - i > YMADeepDuplicateItemsSearch) {
                 break;
             }
         }
     }
     [result removeObjectsInArray:discardedItems];
     self.rssItems = [result copy];
+}
+
+- (NSString *)stringToCompare:(NSString *)string {
+    return string.length > YMANumberCharactersToCompare ? [string substringToIndex:YMANumberCharactersToCompare] : string;
 }
 
 @end

@@ -12,7 +12,7 @@
 
 
 @interface YMALeftMenuVC ()
-@property(weak, nonatomic) IBOutlet UIView *tableMenuContainerView;
+@property (weak, nonatomic) IBOutlet UIView *tableMenuContainerView;
 @end
 
 @implementation YMALeftMenuVC

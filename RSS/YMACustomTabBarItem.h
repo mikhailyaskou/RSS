@@ -10,6 +10,6 @@
 
 @interface YMACustomTabBarItem : UITabBarItem
 
-@property(nonatomic, strong) NSString *tabTitle;
+@property (nonatomic, strong) NSString *tabTitle;
 
 @end
