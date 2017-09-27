@@ -1,0 +1,7 @@
+use_frameworks!
+target 'RSS' do
+ pod 'MagicalRecord'
+ pod 'PKRevealController'
+ pod 'SDWebImage'
+ pod 'DZNEmptyDataSet'
+end
