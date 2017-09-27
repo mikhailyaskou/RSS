@@ -57,14 +57,15 @@ static const int YMANumberCharactersToCompare = 20;
 - (NSDictionary *)channelsDescription {
     if (!_channelsDescription) {
         _channelsDescription = @{@0: @[@"https://www.onliner.by/feed", @"http://people.onliner.by/feed",
-                @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
-                @1: @[
-                        @"https://news.tut.by/rss/economics.rss", @"https://news.tut.by/rss/society.rss",
-                        @"https://news.tut.by/rss/world.rss", @"https://news.tut.by/rss/culture.rss",
-                        @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss", @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
-                        @"https://news.tut.by/rss/auto.rss"],
-                @2: @[@"http://lenta.ru/rss", @"https://lenta.ru/rss/news", @"https://lenta.ru/rss/top7", @"https://lenta.ru/rss/last24",
-                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo"]};
+                                       @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
+                                 @1: @[@"https://news.tut.by/rss/economics.rss", @"https://news.tut.by/rss/society.rss",
+                                       @"https://news.tut.by/rss/world.rss", @"https://news.tut.by/rss/culture.rss",
+                                       @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss",
+                                       @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
+                                       @"https://news.tut.by/rss/auto.rss"],
+                                 @2: @[@"http://lenta.ru/rss", @"https://lenta.ru/rss/news", @"https://lenta.ru/rss/top7",
+                                       @"https://lenta.ru/rss/  last24", @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns",
+                                       @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo"]};
     }
     return _channelsDescription;
 }
@@ -72,15 +73,17 @@ static const int YMANumberCharactersToCompare = 20;
 - (NSDictionary *)categoryDescription {
     if (!_categoryDescription) {
         _categoryDescription = @{@0: @[@"Россия", @"Мир", @"Крым", @"Бывший СССР", @"Путешествия", @"В мире",
-                @"Происшествия", @"Эксклюзив", @"Кругозор", @"События в мире", @"Городская жизнь", @"Проблемы", @"Новые места", @"Официально"],
-                @1: @[@"Люди", @"Мнения", @"Из жизни", @"Интернет и СМИ", @"Культура", @"Социум",
-                        @"Силовые структуры", @"Ценности", @"Культпросвет", @"Общество", @"Офтоп", @"Профессионалы", @"Закон и порядок", @"Деревня"],
-                @2: @[@"Недвижимость", @"Архитектура", @"Интерьер"],
-                @3: @[@"Авто", @"Автобизнес", @"Дорога", @"Аварии", @"Дорожная обстановка",
-                        @"Разбор с Красновым"],
-                @4: @[@"Наука и техника", @"69-я параллель", @"Наука", @"Гаджеты и вендоры", @"Интернет", @"Технологии"],
-                @5: @[@"Бизнес", @"Финансы", @"Деньги и власть", @"Публичный счет", @"Личный счет", @"Цены"],
-                @6: @[@"Спорт", @"Хоккей", @"Околоспорт", @"Футбол", @"Теннис"],
+                                       @"Происшествия", @"Эксклюзив", @"Кругозор", @"События в мире",
+                                       @"Городская жизнь", @"Проблемы", @"Новые места", @"Официально"],
+                                 @1: @[@"Люди", @"Мнения", @"Из жизни", @"Интернет и СМИ", @"Культура", @"Социум",
+                                       @"Силовые структуры", @"Ценности", @"Культпросвет", @"Общество", @"Офтоп",
+                                       @"Профессионалы", @"Закон и порядок", @"Деревня"],
+                                 @2: @[@"Недвижимость", @"Архитектура", @"Интерьер"],
+                                 @3: @[@"Авто", @"Автобизнес", @"Дорога", @"Аварии", @"Дорожная обстановка",
+                                       @"Разбор с Красновым"],
+                                 @4: @[@"Наука и техника", @"69-я параллель", @"Наука", @"Гаджеты и вендоры", @"Интернет", @"Технологии"],
+                                 @5: @[@"Бизнес", @"Финансы", @"Деньги и власть", @"Публичный счет", @"Личный счет", @"Цены"],
+                                 @6: @[@"Спорт", @"Хоккей", @"Околоспорт", @"Футбол", @"Теннис"],
         };
     }
     return _categoryDescription;
