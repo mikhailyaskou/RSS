@@ -32,7 +32,7 @@ static NSString * const YMALogParsingEnded = @"end parsing";
 @property (nonatomic, strong) YMARSSChannel *rssChannel;
 @property (nonatomic, strong) YMARSSItem *rssItem;
 @property (nonatomic, strong) NSMutableString *tagInnerText;
-@property (nonatomic, assign) BOOL isChannelSection;
+@property (nonatomic, assign, getter=isChannelSection) BOOL channelSection;
 @property (nonatomic, strong) NSString *itemImageUrl;
 
 @end;
@@ -65,7 +65,7 @@ static NSString * const YMALogParsingEnded = @"end parsing";
 - (void)parserDidStartDocument:(NSXMLParser *)parser {
     NSLog(YMALogStartParsing);
     self.tagInnerText = [NSMutableString new];
-    self.isChannelSection = YES;
+    self.channelSection = YES;
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
@@ -73,7 +73,7 @@ static NSString * const YMALogParsingEnded = @"end parsing";
     [self.tagInnerText setString:@""];
     //set item section
     if ([elementName isEqualToString:YMAItemTagXML]) {
-        self.isChannelSection = NO;
+        self.channelSection = NO;
         self.rssItem = [YMARSSItem MR_createEntityInContext:self.context];
     }
     if ([elementName isEqualToString:YMAEnclosureTagXML] || [elementName isEqualToString:YMAMediaTagXML]) {

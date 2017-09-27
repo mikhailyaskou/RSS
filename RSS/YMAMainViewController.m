@@ -15,6 +15,7 @@
 #import "UIImageView+HighlightedWebCache.h"
 #import "YMAConstants.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "UIScrollView+EmptyDataSet.h"
 
 static const int YMAMainVCCellInsets = 5;
 static const int YMAMainVCCellMultiplierByOne = 1;
@@ -26,7 +27,7 @@ static NSString * const YMACustomTabTabTitleKey = @"tabTitle";
 static NSString * const YMAMainVCNoPhotoImageName = @"no-photo-available.png";
 static NSString * const YMAMainVCIdentifier = @"YMAMainViewController";
 
-@interface YMAMainViewController () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing>
+@interface YMAMainViewController () <UICollectionViewDelegate, UICollectionViewDataSource, RFQuiltLayoutDelegate, PKRevealing, DZNEmptyDataSetSource>
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navigationBarTitle;
 @property (weak, nonatomic) IBOutlet UITabBar *tabBar;
@@ -71,6 +72,9 @@ static NSString * const YMAMainVCIdentifier = @"YMAMainViewController";
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.collectionView addSubview:self.refreshControl];
     [self.refreshControl addTarget:self action:@selector(refreshCollectionView) forControlEvents:UIControlEventValueChanged];
+    //set empty collection view
+    self.collectionView.emptyDataSetSource = self;
+    self.collectionView.emptyDataSetDelegate = self;
 }
 
 #pragma mark - Actions
@@ -167,6 +171,12 @@ static NSString * const YMAMainVCIdentifier = @"YMAMainViewController";
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetsForItemAtIndexPath:(NSIndexPath *)indexPath {
     return UIEdgeInsetsMake(YMAMainVCCellInsets, YMAMainVCCellInsets, YMAMainVCCellInsets, YMAMainVCCellInsets);
+}
+
+#pragma mark  - ZNEmptyDataSetSource
+
+- (UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView {
+    return [UIImage imageNamed:@"NoDataFound.png.png"];
 }
 
 @end

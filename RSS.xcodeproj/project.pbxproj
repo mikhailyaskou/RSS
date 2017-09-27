@@ -11,10 +11,10 @@
 		1D84E3B29810A73731B1C774 /* YMAMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E05450A1016EF168B638 /* YMAMenuTableViewController.m */; };
 		1D84E4DDB6179830AEE68002 /* YMACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E13A135FA3B37EB7DADB /* YMACustomTabBarItem.m */; };
 		1D84E64C118905D76CFF2435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E02344E7746340572696 /* Main.storyboard */; };
-		1D84E6B5E82D0FCEE8532CB6 /* YMAAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */; };
 		1D84E728701E008569F46BC0 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E680FBA05EA82ED5D1F9 /* YMACustomTabBar.m */; };
 		1D84E87072462D76FEFC8704 /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E0C74710AE2A12586E63 /* YMARSSItemCollectionViewCell.m */; };
 		1D84E87D0456342FDD137861 /* YMAMenuStaticCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E1DAF775DC7C4C73AD3D /* YMAMenuStaticCellTableViewCell.m */; };
+		1D84E8993C1CD647115AC214 /* YMAAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E56BFA117C9CCCA0E1C4 /* YMAAboutUSViewController.m */; };
 		1D84ED95040E5F80DE13E565 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9232A5078946EC1DE53 /* YMAController.m */; };
 		1D84EE02A26DBDF136D16F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E87363B6F954955FDEDA /* LaunchScreen.storyboard */; };
 		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
@@ -27,6 +27,7 @@
 		987157881F66E18600770E5F /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157871F66E18600770E5F /* YMADateHelper.m */; };
 		9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */; };
 		988FBB131F7B80F30032D793 /* YMAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 988FBB121F7B80F30032D793 /* YMAConstants.m */; };
+		988FBB151F7BB8F10032D793 /* NoDataFound.png in Resources */ = {isa = PBXBuildFile; fileRef = 988FBB141F7BB8F10032D793 /* NoDataFound.png */; };
 		989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 989E192C1F6BD68B00BD43B3 /* Placeholder.png */; };
 		98CDF1311F71508E006ED714 /* YMASAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1301F71508E006ED714 /* YMASAXParser.m */; };
 		98CDF1371F71517D006ED714 /* RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1351F71517D006ED714 /* RSS.xcdatamodeld */; };
@@ -56,15 +57,15 @@
 		1D84E3BFFAD2DB9BA1019E4A /* YMAMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuTableViewController.h; sourceTree = "<group>"; };
 		1D84E50A282DAB2339973D4A /* YMAMenuStaticCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuStaticCellTableViewCell.h; sourceTree = "<group>"; };
 		1D84E5500F4FB9C4BC2B0DDC /* YMAOfferNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOfferNewsViewController.m; sourceTree = "<group>"; };
+		1D84E56BFA117C9CCCA0E1C4 /* YMAAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAAboutUSViewController.m; sourceTree = "<group>"; };
 		1D84E680FBA05EA82ED5D1F9 /* YMACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBar.m; sourceTree = "<group>"; };
 		1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
 		1D84E74161A8067A6019CEAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D84E7C904B82D42B76FCA96 /* YMAAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAAboutUSViewController.h; sourceTree = "<group>"; };
 		1D84E9232A5078946EC1DE53 /* YMAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAController.m; sourceTree = SOURCE_ROOT; };
 		1D84E9D9173008A63D6C6DD9 /* YMACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBar.h; sourceTree = "<group>"; };
-		1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAAboutUSViewController.m; sourceTree = "<group>"; };
 		1D84EBD42844492710EA9369 /* YMAOfferNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOfferNewsViewController.h; sourceTree = "<group>"; };
 		1D84ECCD353F02B30F299EF3 /* YMACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBarItem.h; sourceTree = "<group>"; };
-		1D84EDD328C69B6BA155BC37 /* YMAAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAAboutUSViewController.h; sourceTree = "<group>"; };
 		1D84EE89BFED93B5AD359AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1D84EEA92D55D4F401CF3DFC /* YMAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAController.h; sourceTree = SOURCE_ROOT; };
 		1D84EF0057C19CDFD26B432E /* YMAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainViewController.m; sourceTree = "<group>"; };
@@ -83,6 +84,7 @@
 		9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo-available.png"; sourceTree = "<group>"; };
 		988FBB111F7B80F30032D793 /* YMAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAConstants.h; sourceTree = "<group>"; };
 		988FBB121F7B80F30032D793 /* YMAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAConstants.m; sourceTree = "<group>"; };
+		988FBB141F7BB8F10032D793 /* NoDataFound.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoDataFound.png; sourceTree = "<group>"; };
 		989E192C1F6BD68B00BD43B3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = RSS/Placeholder.png; sourceTree = SOURCE_ROOT; };
 		98CDF12F1F71508E006ED714 /* YMASAXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMASAXParser.h; sourceTree = "<group>"; };
 		98CDF1301F71508E006ED714 /* YMASAXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMASAXParser.m; sourceTree = "<group>"; };
@@ -132,13 +134,13 @@
 		1D84E4DCBA7B57E81A1FAC7D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				1D84E9190001B56BC232477F /* AboutUs */,
 				1D84E83F55987692C65AFD68 /* OfferNews */,
 				1D84E04E1B5F769402058D40 /* LeftMenu */,
 				988FBB0F1F7ACF0D0032D793 /* Main */,
 				1D84E02344E7746340572696 /* Main.storyboard */,
 				1D84E87363B6F954955FDEDA /* LaunchScreen.storyboard */,
 				1D84E7609F29CCD29FEAD158 /* TabBar */,
+				1D84E76E71AC86D095DA3960 /* AboutUs */,
 			);
 			name = View;
 			path = RSS;
@@ -155,6 +157,15 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
+		1D84E76E71AC86D095DA3960 /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E7C904B82D42B76FCA96 /* YMAAboutUSViewController.h */,
+				1D84E56BFA117C9CCCA0E1C4 /* YMAAboutUSViewController.m */,
+			);
+			name = AboutUs;
+			sourceTree = "<group>";
+		};
 		1D84E83F55987692C65AFD68 /* OfferNews */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,15 +173,6 @@
 				1D84E5500F4FB9C4BC2B0DDC /* YMAOfferNewsViewController.m */,
 			);
 			name = OfferNews;
-			sourceTree = "<group>";
-		};
-		1D84E9190001B56BC232477F /* AboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				1D84EDD328C69B6BA155BC37 /* YMAAboutUSViewController.h */,
-				1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */,
-			);
-			name = AboutUs;
 			sourceTree = "<group>";
 		};
 		1D84ECA0A488B68407E198CA /* lib */ = {
@@ -303,6 +305,7 @@
 		98D6902F1F6C4EA3008B2C37 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				988FBB141F7BB8F10032D793 /* NoDataFound.png */,
 				9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */,
 				98198D391F7428770058D07F /* left.png */,
 				98198D3B1F74287B0058D07F /* right.png */,
@@ -396,6 +399,7 @@
 				989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */,
 				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
 				9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */,
+				988FBB151F7BB8F10032D793 /* NoDataFound.png in Resources */,
 				98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */,
 				98198D3C1F74287B0058D07F /* right.png in Resources */,
 				98198D3A1F7428770058D07F /* left.png in Resources */,
@@ -487,7 +491,6 @@
 				98CDF1371F71517D006ED714 /* RSS.xcdatamodeld in Sources */,
 				98CDF1411F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m in Sources */,
 				1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */,
-				1D84E6B5E82D0FCEE8532CB6 /* YMAAboutUSViewController.m in Sources */,
 				1D84EF6B04A38DCEF63F52DF /* YMAOfferNewsViewController.m in Sources */,
 				1D84E87D0456342FDD137861 /* YMAMenuStaticCellTableViewCell.m in Sources */,
 				1D84E3B29810A73731B1C774 /* YMAMenuTableViewController.m in Sources */,
@@ -496,6 +499,7 @@
 				1D84ED95040E5F80DE13E565 /* YMAController.m in Sources */,
 				1D84E728701E008569F46BC0 /* YMACustomTabBar.m in Sources */,
 				1D84E4DDB6179830AEE68002 /* YMACustomTabBarItem.m in Sources */,
+				1D84E8993C1CD647115AC214 /* YMAAboutUSViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
