@@ -9,11 +9,10 @@
 #import <PKRevealController/PKRevealController.h>
 #import "YMAMenuTableViewController.h"
 #import "YMAController.h"
-#import "YMAMainVC.h"
+#import "YMAMainViewController.h"
 
-static NSString *const YMAOfferNewsVCIdentifier = @"YMAOfferNewsViewController";
-
-static NSString *const YMAAboutUsVCIdentifier = @"YMAAboutUSViewController";
+static NSString * const YMAOfferNewsVCIdentifier = @"YMAOfferNewsViewController";
+static NSString * const YMAAboutUsVCIdentifier = @"YMAAboutUSViewController";
 
 @interface YMAMenuTableViewController () <PKRevealing>
 
@@ -29,7 +28,6 @@ static NSString *const YMAAboutUsVCIdentifier = @"YMAAboutUSViewController";
         self.selectedRowIndexPatch = [NSIndexPath indexPathForItem:0 inSection:0];
     }
     [self.tableView selectRowAtIndexPath:self.selectedRowIndexPatch animated:YES scrollPosition:UITableViewScrollPositionNone];
-
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -39,13 +37,15 @@ static NSString *const YMAAboutUsVCIdentifier = @"YMAAboutUSViewController";
         case 0:
         case 1:
         case 2: {
-            nextFrontViewController = YMAMainVC.sharedInstance;
-            [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
-            [YMAController.sharedInstance applySelectedParameters];
-            [YMAMainVC.sharedInstance resetScrollCollectionView];
-            [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
+            nextFrontViewController = YMAMainViewController.sharedInstance;
+            if (YMAController.sharedInstance.selectedChannelIndex != @(indexPath.row)) {
+                [YMAController.sharedInstance setSelectedChannelIndex:@(indexPath.row)];
                 [YMAController.sharedInstance applySelectedParameters];
-            }];
+                [YMAMainViewController.sharedInstance resetScrollCollectionView];
+                [YMAController.sharedInstance updateSelectedChannelWithCompletionBlock:^{
+                    [YMAController.sharedInstance applySelectedParameters];
+                }];
+            }
         }
             break;
         case 3: {

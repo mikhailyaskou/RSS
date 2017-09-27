@@ -7,76 +7,85 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D84EC16E74D058B6119533F /* YMAMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */; };
+		1D84E13018038AE4A0775027 /* YMAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84EF0057C19CDFD26B432E /* YMAMainViewController.m */; };
+		1D84E3B29810A73731B1C774 /* YMAMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E05450A1016EF168B638 /* YMAMenuTableViewController.m */; };
+		1D84E4DDB6179830AEE68002 /* YMACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E13A135FA3B37EB7DADB /* YMACustomTabBarItem.m */; };
+		1D84E64C118905D76CFF2435 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E02344E7746340572696 /* Main.storyboard */; };
+		1D84E6B5E82D0FCEE8532CB6 /* YMAAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */; };
+		1D84E728701E008569F46BC0 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E680FBA05EA82ED5D1F9 /* YMACustomTabBar.m */; };
+		1D84E87072462D76FEFC8704 /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E0C74710AE2A12586E63 /* YMARSSItemCollectionViewCell.m */; };
+		1D84E87D0456342FDD137861 /* YMAMenuStaticCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E1DAF775DC7C4C73AD3D /* YMAMenuStaticCellTableViewCell.m */; };
+		1D84ED95040E5F80DE13E565 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E9232A5078946EC1DE53 /* YMAController.m */; };
+		1D84EE02A26DBDF136D16F50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1D84E87363B6F954955FDEDA /* LaunchScreen.storyboard */; };
 		1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */; };
-		981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */; };
-		9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */; };
-		98198D341F74221A0058D07F /* YMAAboutUSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98198D331F74221A0058D07F /* YMAAboutUSViewController.m */; };
+		1D84EF6B04A38DCEF63F52DF /* YMAOfferNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D84E5500F4FB9C4BC2B0DDC /* YMAOfferNewsViewController.m */; };
 		98198D3A1F7428770058D07F /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 98198D391F7428770058D07F /* left.png */; };
 		98198D3C1F74287B0058D07F /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 98198D3B1F74287B0058D07F /* right.png */; };
 		983254521F643B4E00E41AC5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254511F643B4E00E41AC5 /* main.m */; };
-		983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* AppDelegate.m */; };
-		9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254591F643B4E00E41AC5 /* Main.storyboard */; };
+		983254551F643B4E00E41AC5 /* YMAAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 983254541F643B4E00E41AC5 /* YMAAppDelegate.m */; };
 		983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9832545F1F643B4E00E41AC5 /* Assets.xcassets */; };
-		983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */; };
-		986EBCE81F72BFFE00E21E42 /* YMAOfferNewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 986EBCE71F72BFFE00E21E42 /* YMAOfferNewsViewController.m */; };
 		987157881F66E18600770E5F /* YMADateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 987157871F66E18600770E5F /* YMADateHelper.m */; };
 		9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */ = {isa = PBXBuildFile; fileRef = 9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */; };
+		988FBB131F7B80F30032D793 /* YMAConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 988FBB121F7B80F30032D793 /* YMAConstants.m */; };
 		989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 989E192C1F6BD68B00BD43B3 /* Placeholder.png */; };
 		98CDF1311F71508E006ED714 /* YMASAXParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1301F71508E006ED714 /* YMASAXParser.m */; };
-		98CDF1341F71509A006ED714 /* YMAController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1331F71509A006ED714 /* YMAController.m */; };
 		98CDF1371F71517D006ED714 /* RSS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1351F71517D006ED714 /* RSS.xcdatamodeld */; };
 		98CDF1401F7151CD006ED714 /* YMARSSItem+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF1391F7151CD006ED714 /* YMARSSItem+CoreDataClass.m */; };
 		98CDF1411F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13B1F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m */; };
 		98CDF1421F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13D1F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m */; };
 		98CDF1431F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CDF13F1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m */; };
-		98CF0C191F6E96DD00D293DD /* YMACustomTabBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */; };
 		98CF0C201F6EA6BD00D293DD /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C1F1F6EA6BD00D293DD /* line.png */; };
 		98CF0C221F6EA7BD00D293DD /* lineTop.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C211F6EA7BD00D293DD /* lineTop.png */; };
 		98CF0C241F6EA91000D293DD /* lineBottom.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C231F6EA91000D293DD /* lineBottom.png */; };
 		98CF0C261F6EA9FA00D293DD /* lineBottomHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C251F6EA9FA00D293DD /* lineBottomHighlighted.png */; };
 		98CF0C281F6EAAE300D293DD /* lineTopHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C271F6EAAE300D293DD /* lineTopHighlighted.png */; };
 		98CF0C2A1F6EAAEA00D293DD /* lineHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 98CF0C291F6EAAEA00D293DD /* lineHighlighted.png */; };
-		98CF0C2D1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */; };
-		98CF0C311F6EC6D400D293DD /* YMAMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */; };
 		98D690321F6C5BD3008B2C37 /* ayar_juno.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */; };
 		98D690381F6C7CB5008B2C37 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 98D690371F6C7CB5008B2C37 /* logo.png */; };
 		C2489997160D3ED24298113B /* Pods_RSS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D84E2506FA99E6C3988D20C /* YMAMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMAMainVC.h; path = RSS/YMAMainVC.h; sourceTree = "<group>"; };
+		1D84E05450A1016EF168B638 /* YMAMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuTableViewController.m; sourceTree = "<group>"; };
+		1D84E08914841543EB8FABDB /* YMAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMainViewController.h; sourceTree = "<group>"; };
+		1D84E0C74710AE2A12586E63 /* YMARSSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMARSSItemCollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		1D84E13A135FA3B37EB7DADB /* YMACustomTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBarItem.m; sourceTree = "<group>"; };
+		1D84E1DAF775DC7C4C73AD3D /* YMAMenuStaticCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuStaticCellTableViewCell.m; sourceTree = "<group>"; };
 		1D84E26B3473AB5192F2E195 /* RFQuiltLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RFQuiltLayout.m; sourceTree = "<group>"; };
+		1D84E29B3771F41C2867B4E9 /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMARSSItemCollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		1D84E3BFFAD2DB9BA1019E4A /* YMAMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuTableViewController.h; sourceTree = "<group>"; };
+		1D84E50A282DAB2339973D4A /* YMAMenuStaticCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuStaticCellTableViewCell.h; sourceTree = "<group>"; };
+		1D84E5500F4FB9C4BC2B0DDC /* YMAOfferNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOfferNewsViewController.m; sourceTree = "<group>"; };
+		1D84E680FBA05EA82ED5D1F9 /* YMACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBar.m; sourceTree = "<group>"; };
 		1D84E6A7B0C96FFE27488854 /* RFQuiltLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RFQuiltLayout.h; sourceTree = "<group>"; };
-		1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMAMainVC.m; path = RSS/YMAMainVC.m; sourceTree = "<group>"; };
+		1D84E74161A8067A6019CEAC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1D84E9232A5078946EC1DE53 /* YMAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAController.m; sourceTree = SOURCE_ROOT; };
+		1D84E9D9173008A63D6C6DD9 /* YMACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBar.h; sourceTree = "<group>"; };
+		1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAAboutUSViewController.m; sourceTree = "<group>"; };
+		1D84EBD42844492710EA9369 /* YMAOfferNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOfferNewsViewController.h; sourceTree = "<group>"; };
+		1D84ECCD353F02B30F299EF3 /* YMACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBarItem.h; sourceTree = "<group>"; };
+		1D84EDD328C69B6BA155BC37 /* YMAAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAAboutUSViewController.h; sourceTree = "<group>"; };
+		1D84EE89BFED93B5AD359AE3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1D84EEA92D55D4F401CF3DFC /* YMAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAController.h; sourceTree = SOURCE_ROOT; };
+		1D84EF0057C19CDFD26B432E /* YMAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMainViewController.m; sourceTree = "<group>"; };
 		37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.debug.xcconfig"; sourceTree = "<group>"; };
 		5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RSS.release.xcconfig"; path = "Pods/Target Support Files/Pods-RSS/Pods-RSS.release.xcconfig"; sourceTree = "<group>"; };
-		981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YMARSSItemCollectionViewCell.h; path = ../YMARSSItemCollectionViewCell.h; sourceTree = "<group>"; };
-		981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YMARSSItemCollectionViewCell.m; path = ../YMARSSItemCollectionViewCell.m; sourceTree = "<group>"; };
-		9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBar.h; sourceTree = "<group>"; };
-		9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBar.m; sourceTree = "<group>"; };
-		98198D321F74221A0058D07F /* YMAAboutUSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAAboutUSViewController.h; sourceTree = "<group>"; };
-		98198D331F74221A0058D07F /* YMAAboutUSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAAboutUSViewController.m; sourceTree = "<group>"; };
 		98198D391F7428770058D07F /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
 		98198D3B1F74287B0058D07F /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		9832544D1F643B4E00E41AC5 /* RSS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		983254511F643B4E00E41AC5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		983254531F643B4E00E41AC5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		983254541F643B4E00E41AC5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9832545A1F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		983254531F643B4E00E41AC5 /* YMAAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YMAAppDelegate.h; sourceTree = "<group>"; };
+		983254541F643B4E00E41AC5 /* YMAAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YMAAppDelegate.m; sourceTree = "<group>"; };
 		9832545F1F643B4E00E41AC5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		983254621F643B4E00E41AC5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		983254641F643B4E00E41AC5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		986EBCE61F72BFFE00E21E42 /* YMAOfferNewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAOfferNewsViewController.h; sourceTree = "<group>"; };
-		986EBCE71F72BFFE00E21E42 /* YMAOfferNewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAOfferNewsViewController.m; sourceTree = "<group>"; };
 		987157861F66E18600770E5F /* YMADateHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMADateHelper.h; sourceTree = "<group>"; };
 		987157871F66E18600770E5F /* YMADateHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMADateHelper.m; sourceTree = "<group>"; };
 		9881F2A21F7A3C3A00D371C2 /* no-photo-available.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-photo-available.png"; sourceTree = "<group>"; };
+		988FBB111F7B80F30032D793 /* YMAConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAConstants.h; sourceTree = "<group>"; };
+		988FBB121F7B80F30032D793 /* YMAConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAConstants.m; sourceTree = "<group>"; };
 		989E192C1F6BD68B00BD43B3 /* Placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Placeholder.png; path = RSS/Placeholder.png; sourceTree = SOURCE_ROOT; };
 		98CDF12F1F71508E006ED714 /* YMASAXParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMASAXParser.h; sourceTree = "<group>"; };
 		98CDF1301F71508E006ED714 /* YMASAXParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMASAXParser.m; sourceTree = "<group>"; };
-		98CDF1321F71509A006ED714 /* YMAController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAController.h; sourceTree = "<group>"; };
-		98CDF1331F71509A006ED714 /* YMAController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAController.m; sourceTree = "<group>"; };
 		98CDF1361F71517D006ED714 /* RSS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RSS.xcdatamodel; sourceTree = "<group>"; };
 		98CDF1381F7151CD006ED714 /* YMARSSItem+CoreDataClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMARSSItem+CoreDataClass.h"; sourceTree = "<group>"; };
 		98CDF1391F7151CD006ED714 /* YMARSSItem+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMARSSItem+CoreDataClass.m"; sourceTree = "<group>"; };
@@ -86,18 +95,12 @@
 		98CDF13D1F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMARSSChannel+CoreDataClass.m"; sourceTree = "<group>"; };
 		98CDF13E1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "YMARSSChannel+CoreDataProperties.h"; sourceTree = "<group>"; };
 		98CDF13F1F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "YMARSSChannel+CoreDataProperties.m"; sourceTree = "<group>"; };
-		98CF0C171F6E96DD00D293DD /* YMACustomTabBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMACustomTabBarItem.h; sourceTree = "<group>"; };
-		98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMACustomTabBarItem.m; sourceTree = "<group>"; };
 		98CF0C1F1F6EA6BD00D293DD /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		98CF0C211F6EA7BD00D293DD /* lineTop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineTop.png; sourceTree = "<group>"; };
 		98CF0C231F6EA91000D293DD /* lineBottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineBottom.png; sourceTree = "<group>"; };
 		98CF0C251F6EA9FA00D293DD /* lineBottomHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineBottomHighlighted.png; sourceTree = "<group>"; };
 		98CF0C271F6EAAE300D293DD /* lineTopHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineTopHighlighted.png; sourceTree = "<group>"; };
 		98CF0C291F6EAAEA00D293DD /* lineHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lineHighlighted.png; sourceTree = "<group>"; };
-		98CF0C2B1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuStaticCellTableViewCell.h; sourceTree = "<group>"; };
-		98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuStaticCellTableViewCell.m; sourceTree = "<group>"; };
-		98CF0C2F1F6EC6D400D293DD /* YMAMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YMAMenuTableViewController.h; sourceTree = "<group>"; };
-		98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YMAMenuTableViewController.m; sourceTree = "<group>"; };
 		98D6902E1F6C4A83008B2C37 /* ayar_juno.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ayar_juno.ttf; path = RSS/ayar_juno.ttf; sourceTree = SOURCE_ROOT; };
 		98D690371F6C7CB5008B2C37 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		DEF456108F7523B1F2D98C5F /* Pods_RSS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RSS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +118,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D84E04E1B5F769402058D40 /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E50A282DAB2339973D4A /* YMAMenuStaticCellTableViewCell.h */,
+				1D84E1DAF775DC7C4C73AD3D /* YMAMenuStaticCellTableViewCell.m */,
+				1D84E3BFFAD2DB9BA1019E4A /* YMAMenuTableViewController.h */,
+				1D84E05450A1016EF168B638 /* YMAMenuTableViewController.m */,
+			);
+			name = LeftMenu;
+			sourceTree = "<group>";
+		};
+		1D84E4DCBA7B57E81A1FAC7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E9190001B56BC232477F /* AboutUs */,
+				1D84E83F55987692C65AFD68 /* OfferNews */,
+				1D84E04E1B5F769402058D40 /* LeftMenu */,
+				988FBB0F1F7ACF0D0032D793 /* Main */,
+				1D84E02344E7746340572696 /* Main.storyboard */,
+				1D84E87363B6F954955FDEDA /* LaunchScreen.storyboard */,
+				1D84E7609F29CCD29FEAD158 /* TabBar */,
+			);
+			name = View;
+			path = RSS;
+			sourceTree = SOURCE_ROOT;
+		};
+		1D84E7609F29CCD29FEAD158 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1D84E9D9173008A63D6C6DD9 /* YMACustomTabBar.h */,
+				1D84E680FBA05EA82ED5D1F9 /* YMACustomTabBar.m */,
+				1D84ECCD353F02B30F299EF3 /* YMACustomTabBarItem.h */,
+				1D84E13A135FA3B37EB7DADB /* YMACustomTabBarItem.m */,
+			);
+			name = TabBar;
+			sourceTree = "<group>";
+		};
+		1D84E83F55987692C65AFD68 /* OfferNews */ = {
+			isa = PBXGroup;
+			children = (
+				1D84EBD42844492710EA9369 /* YMAOfferNewsViewController.h */,
+				1D84E5500F4FB9C4BC2B0DDC /* YMAOfferNewsViewController.m */,
+			);
+			name = OfferNews;
+			sourceTree = "<group>";
+		};
+		1D84E9190001B56BC232477F /* AboutUs */ = {
+			isa = PBXGroup;
+			children = (
+				1D84EDD328C69B6BA155BC37 /* YMAAboutUSViewController.h */,
+				1D84EACF1663C9AD5CF416A0 /* YMAAboutUSViewController.m */,
+			);
+			name = AboutUs;
+			sourceTree = "<group>";
+		};
 		1D84ECA0A488B68407E198CA /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,22 +199,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		98198D311F7421EA0058D07F /* aboutUs */ = {
-			isa = PBXGroup;
-			children = (
-				98198D321F74221A0058D07F /* YMAAboutUSViewController.h */,
-				98198D331F74221A0058D07F /* YMAAboutUSViewController.m */,
-			);
-			name = aboutUs;
-			sourceTree = "<group>";
-		};
 		981A8A301F64568F00B6ACA1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				98CDF12F1F71508E006ED714 /* YMASAXParser.h */,
 				98CDF1301F71508E006ED714 /* YMASAXParser.m */,
-				98CDF1321F71509A006ED714 /* YMAController.h */,
-				98CDF1331F71509A006ED714 /* YMAController.m */,
+				1D84EEA92D55D4F401CF3DFC /* YMAController.h */,
+				1D84E9232A5078946EC1DE53 /* YMAController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -175,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				9832544D1F643B4E00E41AC5 /* RSS.app */,
-				1D84E9C6E9EEEE4150D94B3C /* YMAMainVC.m */,
-				1D84E2506FA99E6C3988D20C /* YMAMainVC.h */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,11 +231,12 @@
 		9832544F1F643B4E00E41AC5 /* RSS */ = {
 			isa = PBXGroup;
 			children = (
+				988FBB101F7B80880032D793 /* Constants */,
+				1D84E4DCBA7B57E81A1FAC7D /* View */,
 				98D6902F1F6C4EA3008B2C37 /* Resources */,
 				987157851F66E18600770E5F /* Helpers */,
 				981A8A301F64568F00B6ACA1 /* Controller */,
 				9832546F1F644B6C00E41AC5 /* Model */,
-				9832546D1F643C4E00E41AC5 /* View */,
 				983254501F643B4E00E41AC5 /* Supporting Files */,
 				1D84ECA0A488B68407E198CA /* lib */,
 			);
@@ -198,28 +246,13 @@
 		983254501F643B4E00E41AC5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				983254531F643B4E00E41AC5 /* AppDelegate.h */,
-				983254541F643B4E00E41AC5 /* AppDelegate.m */,
+				983254531F643B4E00E41AC5 /* YMAAppDelegate.h */,
+				983254541F643B4E00E41AC5 /* YMAAppDelegate.m */,
 				9832545F1F643B4E00E41AC5 /* Assets.xcassets */,
 				983254641F643B4E00E41AC5 /* Info.plist */,
 				983254511F643B4E00E41AC5 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		9832546D1F643C4E00E41AC5 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				98198D311F7421EA0058D07F /* aboutUs */,
-				986EBCE91F72C01200E21E42 /* offerNews */,
-				98CF0C2E1F6EB3F700D293DD /* leftMenu */,
-				98CF0C1A1F6E96EF00D293DD /* TabBar */,
-				981578571F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.h */,
-				981578581F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m */,
-				983254591F643B4E00E41AC5 /* Main.storyboard */,
-				983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */,
-			);
-			name = View;
 			sourceTree = "<group>";
 		};
 		9832546F1F644B6C00E41AC5 /* Model */ = {
@@ -238,15 +271,6 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
-		986EBCE91F72C01200E21E42 /* offerNews */ = {
-			isa = PBXGroup;
-			children = (
-				986EBCE61F72BFFE00E21E42 /* YMAOfferNewsViewController.h */,
-				986EBCE71F72BFFE00E21E42 /* YMAOfferNewsViewController.m */,
-			);
-			name = offerNews;
-			sourceTree = "<group>";
-		};
 		987157851F66E18600770E5F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,26 +280,24 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		98CF0C1A1F6E96EF00D293DD /* TabBar */ = {
+		988FBB0F1F7ACF0D0032D793 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9817C62F1F6D8D2E0035C970 /* YMACustomTabBar.h */,
-				9817C6301F6D8D2E0035C970 /* YMACustomTabBar.m */,
-				98CF0C171F6E96DD00D293DD /* YMACustomTabBarItem.h */,
-				98CF0C181F6E96DD00D293DD /* YMACustomTabBarItem.m */,
+				1D84E29B3771F41C2867B4E9 /* YMARSSItemCollectionViewCell.h */,
+				1D84E0C74710AE2A12586E63 /* YMARSSItemCollectionViewCell.m */,
+				1D84E08914841543EB8FABDB /* YMAMainViewController.h */,
+				1D84EF0057C19CDFD26B432E /* YMAMainViewController.m */,
 			);
-			name = TabBar;
+			name = Main;
 			sourceTree = "<group>";
 		};
-		98CF0C2E1F6EB3F700D293DD /* leftMenu */ = {
+		988FBB101F7B80880032D793 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				98CF0C2B1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.h */,
-				98CF0C2C1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m */,
-				98CF0C2F1F6EC6D400D293DD /* YMAMenuTableViewController.h */,
-				98CF0C301F6EC6D400D293DD /* YMAMenuTableViewController.m */,
+				988FBB111F7B80F30032D793 /* YMAConstants.h */,
+				988FBB121F7B80F30032D793 /* YMAConstants.m */,
 			);
-			name = leftMenu;
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		98D6902F1F6C4EA3008B2C37 /* Resources */ = {
@@ -371,7 +393,6 @@
 			files = (
 				98D690381F6C7CB5008B2C37 /* logo.png in Resources */,
 				98CF0C2A1F6EAAEA00D293DD /* lineHighlighted.png in Resources */,
-				983254631F643B4E00E41AC5 /* LaunchScreen.storyboard in Resources */,
 				989E192D1F6BD68B00BD43B3 /* Placeholder.png in Resources */,
 				983254601F643B4E00E41AC5 /* Assets.xcassets in Resources */,
 				9881F2A31F7A3C3A00D371C2 /* no-photo-available.png in Resources */,
@@ -383,7 +404,8 @@
 				98D690321F6C5BD3008B2C37 /* ayar_juno.ttf in Resources */,
 				98CF0C261F6EA9FA00D293DD /* lineBottomHighlighted.png in Resources */,
 				98CF0C201F6EA6BD00D293DD /* line.png in Resources */,
-				9832545B1F643B4E00E41AC5 /* Main.storyboard in Resources */,
+				1D84E64C118905D76CFF2435 /* Main.storyboard in Resources */,
+				1D84EE02A26DBDF136D16F50 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,43 +474,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				986EBCE81F72BFFE00E21E42 /* YMAOfferNewsViewController.m in Sources */,
 				98CDF1431F7151CD006ED714 /* YMARSSChannel+CoreDataProperties.m in Sources */,
 				98CDF1401F7151CD006ED714 /* YMARSSItem+CoreDataClass.m in Sources */,
 				98CDF1421F7151CD006ED714 /* YMARSSChannel+CoreDataClass.m in Sources */,
-				98198D341F74221A0058D07F /* YMAAboutUSViewController.m in Sources */,
 				987157881F66E18600770E5F /* YMADateHelper.m in Sources */,
-				9817C6311F6D8D2E0035C970 /* YMACustomTabBar.m in Sources */,
-				983254551F643B4E00E41AC5 /* AppDelegate.m in Sources */,
+				983254551F643B4E00E41AC5 /* YMAAppDelegate.m in Sources */,
+				988FBB131F7B80F30032D793 /* YMAConstants.m in Sources */,
 				98CDF1311F71508E006ED714 /* YMASAXParser.m in Sources */,
 				983254521F643B4E00E41AC5 /* main.m in Sources */,
 				98CDF1371F71517D006ED714 /* RSS.xcdatamodeld in Sources */,
-				981578591F6B1B9F00FBB67F /* YMARSSItemCollectionViewCell.m in Sources */,
-				98CF0C2D1F6EAEC300D293DD /* YMAMenuStaticCellTableViewCell.m in Sources */,
-				98CF0C191F6E96DD00D293DD /* YMACustomTabBarItem.m in Sources */,
-				98CDF1341F71509A006ED714 /* YMAController.m in Sources */,
 				98CDF1411F7151CD006ED714 /* YMARSSItem+CoreDataProperties.m in Sources */,
-				98CF0C311F6EC6D400D293DD /* YMAMenuTableViewController.m in Sources */,
 				1D84EEE544A8745E97EFD63A /* RFQuiltLayout.m in Sources */,
-				1D84EC16E74D058B6119533F /* YMAMainVC.m in Sources */,
+				1D84E6B5E82D0FCEE8532CB6 /* YMAAboutUSViewController.m in Sources */,
+				1D84EF6B04A38DCEF63F52DF /* YMAOfferNewsViewController.m in Sources */,
+				1D84E87D0456342FDD137861 /* YMAMenuStaticCellTableViewCell.m in Sources */,
+				1D84E3B29810A73731B1C774 /* YMAMenuTableViewController.m in Sources */,
+				1D84E87072462D76FEFC8704 /* YMARSSItemCollectionViewCell.m in Sources */,
+				1D84E13018038AE4A0775027 /* YMAMainViewController.m in Sources */,
+				1D84ED95040E5F80DE13E565 /* YMAController.m in Sources */,
+				1D84E728701E008569F46BC0 /* YMACustomTabBar.m in Sources */,
+				1D84E4DDB6179830AEE68002 /* YMACustomTabBarItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		983254591F643B4E00E41AC5 /* Main.storyboard */ = {
+		1D84E02344E7746340572696 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				9832545A1F643B4E00E41AC5 /* Base */,
+				1D84EE89BFED93B5AD359AE3 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		983254611F643B4E00E41AC5 /* LaunchScreen.storyboard */ = {
+		1D84E87363B6F954955FDEDA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				983254621F643B4E00E41AC5 /* Base */,
+				1D84E74161A8067A6019CEAC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -593,6 +616,7 @@
 			baseConfigurationReference = 37363F58F3BBF72BF0787659 /* Pods-RSS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = USB64ZNNP6;
 				INFOPLIST_FILE = RSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,6 +631,7 @@
 			baseConfigurationReference = 5AE3EC469ED955EAB312F6BD /* Pods-RSS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				DEVELOPMENT_TEAM = USB64ZNNP6;
 				INFOPLIST_FILE = RSS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

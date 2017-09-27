@@ -17,9 +17,14 @@ static const int YMAInitialSelectedIndex = 0;
 @property (nonatomic, copy) NSArray<YMARSSItem *> *rssItems;
 @property (nonatomic, strong) NSNumber *selectedChannelIndex;
 @property (nonatomic, strong) NSNumber *selectedCategoryIndex;
+@property (nonatomic, assign, getter=isUpdateInProgress) BOOL updateInProgress;
 
 + (YMAController *)sharedInstance;
 
+- (void)setObserverForRSSItems:(id)observer;
+- (void)removeObserverForRSSItems:(id)observer;
+- (void)setObserverForUpdateProgress:(id)observer;
+- (void)removeObserverForUpdateProgress:(id)observer;
 - (void)loadChannelWithURL:(NSURL *)url;
 - (void)applySelectedParameters;
 - (void)updateChannelForIndex:(NSNumber *)index;

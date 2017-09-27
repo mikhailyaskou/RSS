@@ -1,5 +1,5 @@
 //
-//  AppDelegate.h
+//  YMAAppDelegate.h
 //  RSS
 //
 //  Created by Mikhail Yaskou on 09.09.17.
@@ -11,7 +11,7 @@
 
 @class PKRevealController;
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate>
+@interface YMAAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong, readwrite) PKRevealController *revealController;

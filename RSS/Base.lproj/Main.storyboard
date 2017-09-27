@@ -276,10 +276,10 @@
             </objects>
             <point key="canvasLocation" x="2213.5999999999999" y="-261.31934032983509"/>
         </scene>
-        <!--MainVC-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="YMAMainVC" id="BYZ-38-t0r" customClass="YMAMainVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="YMAMainViewController" id="BYZ-38-t0r" customClass="YMAMainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>

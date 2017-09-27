@@ -1,30 +1,29 @@
 //
-//  AppDelegate.m
+//  YMAAppDelegate.m
 //  RSS
 //
 //  Created by Mikhail Yaskou on 09.09.17.
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import "AppDelegate.h"
-#import "YMAMainVC.h"
+#import "YMAAppDelegate.h"
+#import "YMAMainViewController.h"
 #import "YMALeftMenuVC.h"
+#import "YMAConstants.h"
 #import <MagicalRecord/MagicalRecord.h>
 #import <PKRevealController/PKRevealController.h>
 
-static NSString *const YMAMainStoryboardName = @"Main";
-static NSString * const YMALeftMenuVCIdentifier = @"YMALeftMenuVC";
 static const int YMALeftMenuWidth = 207;
 
-@interface AppDelegate ()
+@interface YMAAppDelegate ()
 @end
 
-@implementation AppDelegate
+@implementation YMAAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     //Instantiate.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:YMAMainStoryboardName bundle:nil];
-    UIViewController *mainVC = YMAMainVC.sharedInstance;
+    UIViewController *mainVC = YMAMainViewController.sharedInstance;
     UIViewController *leftMenuVC = [storyboard instantiateViewControllerWithIdentifier:YMALeftMenuVCIdentifier];
     self.revealController = [PKRevealController revealControllerWithFrontViewController:mainVC leftViewController:leftMenuVC];
     //Configure.

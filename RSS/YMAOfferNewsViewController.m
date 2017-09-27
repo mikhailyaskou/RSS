@@ -50,7 +50,6 @@ static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
     [self.newsPortalSegmentControl setTitleTextAttributes:attributes forState:UIControlStateNormal];
     //text terms - set link
     [self setTermsLinkWithIndex:YMAOfferNewsInitialIndexTermsLink];
-
     //dismiss keyboard
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];

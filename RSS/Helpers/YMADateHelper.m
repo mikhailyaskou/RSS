@@ -11,7 +11,7 @@
 static NSString * const YMARSSDateFormat = @"EEE, dd MMM yyyy HH:mm:ss ZZ";
 static NSString * const YMADateFormat = @"dd.MM.yy";
 static NSString * const YMATimeFormat = @"HH:mm";
-static NSString * const YMALocaleIdenttifierUS = @"en_US_POSIX";
+static NSString * const YMALocaleIdentifierUS = @"en_US_POSIX";
 
 @implementation YMADateHelper
 
@@ -24,7 +24,7 @@ static NSString * const YMALocaleIdenttifierUS = @"en_US_POSIX";
 + (NSDate *)dateFromRSSString:(NSString *)dateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:YMARSSDateFormat];
-    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:YMALocaleIdenttifierUS];
+    NSLocale *enUSPOSIXLocale = [[NSLocale alloc] initWithLocaleIdentifier:YMALocaleIdentifierUS];
     [dateFormatter setLocale:enUSPOSIXLocale];
     NSDate *date = [dateFormatter dateFromString:dateString];
     return date;

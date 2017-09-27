@@ -88,7 +88,7 @@ static NSString * const YMALogParsingEnded = @"end parsing";
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 
     if (self.isChannelSection) {
-        //for channel
+        //for channel section
         ((void (^)()) @{
                 YMATitleTagXML: ^{
                     self.rssChannel.title = self.tagInnerText;

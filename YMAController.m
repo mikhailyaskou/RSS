@@ -6,17 +6,19 @@
 //  Copyright © 2017 Mikhail Yaskou. All rights reserved.
 //
 
-#import <MagicalRecord/MagicalRecord.h>
+#import "MagicalRecord.h"
 #import "YMAController.h"
 #import "YMASAXParser.h"
 #import "YMARSSItem+CoreDataClass.h"
 #import "YMARSSChannel+CoreDataClass.h"
+#import "YMAConstants.h"
 
 static NSString * const YMALogAddNewChannel = @"Channel not added creating new channel";
 static NSString * const YMALogChannelLoaded = @"RSS Channel loaded %@: %u";
 static NSString * const YMAPredicateSelectedRssItems = @"SELF.channel.link in %@ AND SELF.category in %@";
 static NSString * const YMADateFieldNameCoreData = @"date";
 static const int YMADeepDuplicateItemsSearch = 2;
+static const int YMANumberCharactersToCompare = 20;
 
 @interface YMAController ()
 
@@ -54,7 +56,7 @@ static const int YMADeepDuplicateItemsSearch = 2;
 
 - (NSDictionary *)channelsDescription {
     if (!_channelsDescription) {
-        _channelsDescription = @{@0: @[@"http://people.onliner.by/feed",
+        _channelsDescription = @{@0: @[@"https://www.onliner.by/feed", @"http://people.onliner.by/feed",
                 @"http://auto.onliner.by/feed", @"http://tech.onliner.by/feed", @"http://realt.onliner.by/feed"],
                 @1: @[
                         @"https://news.tut.by/rss/economics.rss", @"https://news.tut.by/rss/society.rss",
@@ -62,7 +64,7 @@ static const int YMADeepDuplicateItemsSearch = 2;
                         @"https://news.tut.by/rss/accidents.rss", @"https://news.tut.by/rss/finance.rss", @"https://news.tut.by/rss/realty.rss", @"https://news.tut.by/rss/sport.rss",
                         @"https://news.tut.by/rss/auto.rss"],
                 @2: @[@"http://lenta.ru/rss", @"https://lenta.ru/rss/news", @"https://lenta.ru/rss/top7", @"https://lenta.ru/rss/last24",
-                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo", @"https://lenta.ru/rss/photo/russia"]};
+                        @"https://lenta.ru/rss/articles", @"https://lenta.ru/rss/columns", @"https://lenta.ru/rss/news/russia", @"https://lenta.ru/rss/articles/russia", @"https://lenta.ru/rss/photo"]};
     }
     return _channelsDescription;
 }
@@ -86,6 +88,22 @@ static const int YMADeepDuplicateItemsSearch = 2;
 
 #pragma mark - Methods
 
+- (void)setObserverForRSSItems:(id)observer {
+    [self addObserver:observer forKeyPath:YMAControllerRSSItemsArrayPropertyName options:0 context:nil];
+}
+
+- (void)removeObserverForRSSItems:(id)observer {
+    [self removeObserver:observer forKeyPath:YMAControllerRSSItemsArrayPropertyName];
+}
+
+- (void)setObserverForUpdateProgress:(id)observer {
+    [self addObserver:observer forKeyPath:YMAControllerUpdateProgressPropertyName options:0 context:nil];
+}
+
+- (void)removeObserverForUpdateProgress:(id)observer {
+    [self removeObserver:observer forKeyPath:YMAControllerUpdateProgressPropertyName];
+}
+
 - (void)updateSelectedChannelWithCompletionBlock:(nullable void (^)())completion {
     [self updateChannelForIndex:self.selectedChannelIndex withCompletionBlock:completion];
 }
@@ -100,6 +118,7 @@ static const int YMADeepDuplicateItemsSearch = 2;
 }
 
 - (void)updateChannelForIndex:(NSNumber *)index withCompletionBlock:(nullable void (^)())completion {
+    self.updateInProgress = YES;
     NSArray *channelLinks = self.channelsDescription[index];
     dispatch_group_t updateGroup = dispatch_group_create();
     dispatch_queue_t globalQueueDefaultPriority = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0);
@@ -111,6 +130,7 @@ static const int YMADeepDuplicateItemsSearch = 2;
     }
     if (completion) {
         dispatch_group_notify(updateGroup, dispatch_get_main_queue(), ^{
+            self.updateInProgress = NO;
             completion();
         });
     }
@@ -140,11 +160,11 @@ static const int YMADeepDuplicateItemsSearch = 2;
     //remove duplicated news (it happens when one news in few xml files)
     NSMutableArray *discardedItems = [NSMutableArray array];
     for (int i = 0; i < result.count; i++) {
-        for (int j = i + 1; j < result.count; j++) {
-            if ([result[i].title isEqualToString:result[j].title]) {
+        for (int j = i+1; j < result.count; j++) {
+            if ([ [self stringToCompare:result[i].title] isEqualToString:[self stringToCompare:result[j].title]]) {
                 [discardedItems addObject:result[j]];
             }
-            //items sorbet by date duplicated items allays placed close to each other
+            //items sorbet by date, duplicated allays placed close to each other
             if (j - i > YMADeepDuplicateItemsSearch) {
                 break;
             }
@@ -152,6 +172,10 @@ static const int YMADeepDuplicateItemsSearch = 2;
     }
     [result removeObjectsInArray:discardedItems];
     self.rssItems = [result copy];
+}
+
+- (NSString *)stringToCompare:(NSString *)string {
+    return string.length > YMANumberCharactersToCompare ? [string substringToIndex:YMANumberCharactersToCompare] : string;
 }
 
 @end

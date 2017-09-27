@@ -28,7 +28,7 @@ static const int YMACustomTabBarMultiplier = 2;
     return [self.selectedItem valueForKey:YMACustomBarViewKey];
 }
 
-//replace and recalculate button View if size changed (device rotated)
+//replace and recalculate button view if size changed (device rotated)
 - (CGRect)bounds {
     if (CGRectGetWidth(self.selectedItemView.frame) != (CGRectGetWidth(self.buttonView.frame) - (YMACustomTabBarSelectedItemInset * YMACustomTabBarMultiplier))) {
         [self placeBigSelectedItem];
