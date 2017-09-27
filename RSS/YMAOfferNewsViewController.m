@@ -34,6 +34,8 @@ static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
 
 @implementation YMAOfferNewsViewController
 
+#pragma mark - Initialization
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     //apply design settings
@@ -55,15 +57,17 @@ static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
     [self.view addGestureRecognizer:tap];
 }
 
-- (void)dismissKeyboard {
-    [self.newsTextView resignFirstResponder];
-    [self.cellPhoneTextField resignFirstResponder];
-    [self.emailTextField resignFirstResponder];
+#pragma mark - Actions
+
+- (IBAction)menuTapped:(id)sender {
+    [self.revealController showViewController:self.revealController.leftViewController];
 }
 
 - (IBAction)segmentControlValueChanged:(UISegmentedControl *)sender {
     [self setTermsLinkWithIndex:sender.selectedSegmentIndex];
 }
+
+#pragma mark - Methods
 
 - (void)setTermsLinkWithIndex:(NSInteger)index {
     NSMutableAttributedString *attributedString = self.termsTextView.attributedText.mutableCopy;
@@ -73,9 +77,35 @@ static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
     self.termsTextView.attributedText = attributedString;
 }
 
-- (IBAction)menuTapped:(id)sender {
-    [self.revealController showViewController:self.revealController.leftViewController];
+- (IBAction)textFiledDidBeginEditing:(id)sender {
+    [self shiftScreenToOriginY:YMAOfferNewsScreenShiftForKeyboard];
 }
+
+- (IBAction)textFieldDidEndEditing:(id)sender {
+    [self shiftScreenToOriginY:YMAOfferNewsInitialScreenPosition];
+}
+
+- (void)shiftScreenToOriginY:(CGFloat)originY {
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:YMAOfferNewsScreenShiftAnimationDuration];
+    CGRect frame = self.view.frame;
+    frame.origin.y = originY;
+    [self.view setFrame:frame];
+    [UIView commitAnimations];
+}
+
+
+- (void)dismissKeyboard {
+    [self.newsTextView resignFirstResponder];
+    [self.cellPhoneTextField resignFirstResponder];
+    [self.emailTextField resignFirstResponder];
+}
+
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
+#pragma mark - Placeholders Methods
 
 - (void)textViewDidBeginEditing:(UITextView *)textView {
     [self setTextViewPlaceHolder:textView];
@@ -96,23 +126,6 @@ static const float YMAOfferNewsScreenShiftAnimationDuration = 0.35f;
         textView.text = @"";
         textView.textColor = [UIColor blackColor];
     }
-}
-
-- (IBAction)textFiledDidBeginEditing:(id)sender {
-    [self shiftScreenToOriginY:YMAOfferNewsScreenShiftForKeyboard];
-}
-
-- (IBAction)textFieldDidEndEditing:(id)sender {
-    [self shiftScreenToOriginY:YMAOfferNewsInitialScreenPosition];
-}
-
-- (void)shiftScreenToOriginY:(CGFloat)originY {
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:YMAOfferNewsScreenShiftAnimationDuration];
-    CGRect frame = self.view.frame;
-    frame.origin.y = originY;
-    [self.view setFrame:frame];
-    [UIView commitAnimations];
 }
 
 @end

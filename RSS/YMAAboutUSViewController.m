@@ -19,4 +19,8 @@
     [self.revealController showViewController:self.revealController.leftViewController];
 }
 
+-(BOOL)shouldAutorotate {
+    return NO;
+}
+
 @end
